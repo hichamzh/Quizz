@@ -3,9 +3,9 @@
 -- https://www.phpmyadmin.net/
 --
 -- Hôte : 127.0.0.1
--- Généré le : mar. 16 mai 2023 à 15:08
+-- Généré le : mer. 17 mai 2023 à 23:04
 -- Version du serveur : 10.4.27-MariaDB
--- Version de PHP : 8.1.12
+-- Version de PHP : 8.2.0
 
 SET SQL_MODE = "NO_AUTO_VALUE_ON_ZERO";
 START TRANSACTION;
@@ -30,10 +30,33 @@ SET time_zone = "+00:00";
 CREATE TABLE `questions` (
   `id_question` int(11) NOT NULL,
   `question` varchar(200) CHARACTER SET utf8 COLLATE utf8_general_ci NOT NULL,
-  `type` varchar(20) CHARACTER SET utf8 COLLATE utf8_general_ci NOT NULL,
+  `type` int(20) NOT NULL,
   `niveau` text NOT NULL,
   `id_theme` int(11) NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_general_ci;
+
+--
+-- Déchargement des données de la table `questions`
+--
+
+INSERT INTO `questions` (`id_question`, `question`, `type`, `niveau`, `id_theme`) VALUES
+(3, 'Quel est le sport le plus populaire dans le monde ?', 1, 'facile', 7),
+(4, 'Quel pays a remporté le plus de coupes du monde ?', 1, 'facile', 7),
+(5, 'Combien de joueurs y a-t-il dans une équipe de football ?', 1, 'facile', 7),
+(6, 'Quel est le nom du trophée remis au vainqueur de la coupe du monde ?', 1, 'facile', 7),
+(7, 'Quel joueur de football est surnommé \"La Pulga\" ?', 1, 'facile', 7),
+(8, 'Combien de temps dure un match de football ?', 1, 'facile', 7),
+(9, 'Quel joueur a remporté le Ballon d\'Or en 2021 ?', 1, 'facile', 7),
+(10, 'Quel est le nom du stade du Real Madrid ?', 1, 'facile', 7),
+(11, 'Qui est l\'entraîneur actuel de l\'équipe de France de football ?', 1, 'facile', 7),
+(12, 'Quel joueur est considéré comme le meilleur buteur de l\'histoire du football ?', 1, 'facile', 7),
+(13, 'Quel est le nom de l\'équipe de football de Barcelone ?', 1, 'facile', 7),
+(14, 'Quel joueur de football est surnommé \"CR7\" ?', 1, 'facile', 7),
+(15, 'Dans quel pays a eu lieu la coupe du monde de football en 2018 ?', 1, 'facile', 7),
+(16, 'Quel est le nom de l\'équipe de football de Liverpool ?', 1, 'facile', 7),
+(17, 'Quel est le nom de l\'équipe de football de Manchester United ?', 1, 'facile', 7),
+(18, 'Quel joueur a remporté le Ballon d\'Or le plus de fois ?', 1, 'facile', 7),
+(19, 'Qui est l\'entraîneur actuel de l\'équipe de football du Real Madrid ?', 1, 'facile', 7);
 
 -- --------------------------------------------------------
 
@@ -45,7 +68,8 @@ CREATE TABLE `reponses` (
   `id_reponse` int(11) NOT NULL,
   `id_question` int(11) NOT NULL,
   `reponse` varchar(100) NOT NULL,
-  `niveau` text NOT NULL
+  `niveau` text NOT NULL,
+  `etat` tinyint(1) NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_general_ci;
 
 -- --------------------------------------------------------
@@ -158,7 +182,7 @@ ALTER TABLE `utilisateur`
 -- AUTO_INCREMENT pour la table `questions`
 --
 ALTER TABLE `questions`
-  MODIFY `id_question` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=3;
+  MODIFY `id_question` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=20;
 
 --
 -- AUTO_INCREMENT pour la table `reponses`
