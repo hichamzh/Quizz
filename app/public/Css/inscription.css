@@ -1,0 +1,76 @@
+ /* FICHIER CSS POUR LA VIEW INSCRIPTION ET CONNEXION  */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body{
+    height: 100vh;
+    width: 100%;
+    background-color: #2c2c2c;
+}
+header{
+    margin: 2%;
+}
+header h1{
+    text-align: center;
+    color: greenyellow;
+}
+
+.formulaire-inscription{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: space-evenly;
+    width: 30%;
+    height: 400px;
+    margin: 0 auto;
+    background-color: #222021;
+    border-radius: 10px;
+}
+
+.formulaire-inscription .container-input{
+    text-align: center;
+    width: 100%;
+    margin: 20px auto;
+}
+ /* FICHIER CSS POUR LA VIEW INSCRIPTION ET CONNEXION  */
+.container-input input{
+    width: 50%;
+    margin: 0 auto;
+    padding: 5px 0;
+    border: none;
+    border-bottom: 1px solid #fff;
+    background: transparent;
+    outline: none;
+    color: greenyellow;
+    text-align: center;
+    position: relative;
+}
+
+.container-input input::-webkit-input-placeholder{
+    color: #fff;
+}
+
+.container-input i {
+    position: absolute;
+    cursor: pointer;
+    color: white;
+}
+
+.butt_inscription, .butt{
+    all: initial;
+    background: greenyellow;
+    color: #222021;
+    padding: 5px 8px;
+    border-radius: 8px;
+    cursor: pointer;
+    transition: all ease 0.2s;
+}
+
+.butt_inscription:hover, .butt:hover{
+    transform: scale(1.1);
+}
+
+ /* FICHIER CSS POUR LA VIEW INSCRIPTION ET CONNEXION  */
