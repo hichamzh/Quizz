@@ -1,5 +1,6 @@
 
 <nav class="nav-bar">
+<img src="./public/Assets/logo_hfk.png" alt=""> 
         <ul class="nav-right">
             <?php if ($nom_controller !== 'inscription') : ?>
             <li>

@@ -16,9 +16,15 @@ a{
     color: inherit;
 }
 .nav-bar{
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
     width: 100%;
     background: #222021;
-    padding: 2%;
+}
+
+.nav-bar img{
+    transform: scale(0.5);
 }
 .nav-right{
     display: flex;
