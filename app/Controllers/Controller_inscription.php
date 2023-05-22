@@ -14,12 +14,13 @@ class Controller_inscription extends Controller
     public function action_inscription_insert (){
         $login = $_POST['login'];
         $mdp = $_POST['mdp'];
+        $role ="user";
 
-        if ($mdp === "ladmin") {
-            $role = "admin";
-        } else {
-            $role = "user";
-        }
+        // if ($mdp === "ladmin") {
+        //     $role = "admin";
+        // } else {
+        //     $role = "user";
+        // }
 
         $m = Model::get_model();
         
