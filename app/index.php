@@ -10,6 +10,14 @@
 <body>
     <?php
     session_start();
+// Test a essayer
+    // if (isset($_SESSION['user_id'])) {
+    //     // L'utilisateur est authentifié
+    //     // Effectuer les actions nécessaires
+    // } else {
+    //     // Rediriger l'utilisateur vers la page de connexion ou afficher un message d'erreur
+    // }
+    
     require_once 'Controllers/Controller.php';
     require_once 'Models/Model.php';
     $controllers = ["home","question","reponse", "inscription"];
