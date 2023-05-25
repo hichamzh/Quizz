@@ -1,4 +1,8 @@
-<?php session_start(); ?>
+<?php 
+
+session_start();
+
+ ?>
 <!DOCTYPE html>
 <html lang="fr">
 
@@ -10,13 +14,23 @@
 
 <body>
     <?php
-// Test a essayer
-    // if (isset($_SESSION['user_id'])) {
-    //     // L'utilisateur est authentifié
-    //     // Effectuer les actions nécessaires
-    // } else {
-    //     // Rediriger l'utilisateur vers la page de connexion ou afficher un message d'erreur
-    // }
+        // Vérification de la durée d'inactivité
+        if (isset($_SESSION['last_activity'])) {
+            $inactive_duration = 3; // 3 sec test
+            $current_time = time();
+            $last_activity = $_SESSION['last_activity'];
+
+            if ($current_time - $last_activity > $inactive_duration) {
+                session_unset();
+                session_destroy();
+                // Rediriger vers une page de déconnexion ou une autre page appropriée
+                header("Location: logout.php");
+                exit();
+            }
+        }
+
+        // Enregistrer la date et l'heure de la dernière activité
+        $_SESSION['last_activity'] = time();
     
     require_once 'Controllers/Controller.php';
     require_once 'Models/Model.php';
