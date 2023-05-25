@@ -74,3 +74,70 @@ header h1{
 }
 
  /* FICHIER CSS POUR LA VIEW INSCRIPTION ET CONNEXION  */
+
+
+ /*TEST ANIMATION */
+
+ .carre{
+    width: 50px;
+    height: 50px;
+    background: greenyellow;
+    position: absolute;
+    bottom: 0%;
+    opacity: 0;
+    right: 10%;
+    animation: animate 15s linear infinite;
+    transition: all ease 0.1s;
+ }
+
+ .carre:nth-of-type(2) {
+    width: 30px;
+    height: 30px;
+    right: 20%;
+    animation-delay: 3s;
+}
+
+.carre:nth-of-type(3) {
+    width: 60px;
+    height: 60px;
+    right: 30%;
+    animation-delay: 5s;
+ }
+.carre:nth-of-type(4) {
+    width: 20px;
+    height: 20px;
+    right: 40%;
+    animation-delay: 10s;
+ }
+.carre:nth-of-type(5) {
+    width: 30px;
+    height: 30px;
+    right: 50%;
+    animation-delay: 5s;
+ }
+.carre:nth-of-type(6) {
+    width: 70px;
+    height: 70px;
+    right: 60%;
+    animation-delay: 3s;
+ }
+.carre:nth-of-type(7) {
+    width: 20px;
+    height: 20px;
+    right: 70%;
+    animation-delay: 0s;
+ }
+
+ @keyframes animate {
+    0% {
+        transform: translateY(0) rotate(0deg);
+        opacity: 1;
+        border-radius: 0;
+    }
+
+    100% {
+        transform: translateY(-1000px) rotate(720deg);
+        opacity: 0;
+        border-radius: 50%;
+    }
+ }

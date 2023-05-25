@@ -25,9 +25,10 @@ class Model {
 // FUNCTION POUR FAIRE L INSERTION A LA BDD
     public function get_inscription($login, $mdp, $role) {
 
+        $hashedPassword = password_hash($mdp, PASSWORD_DEFAULT);
         $requete = $this->bdd->prepare("INSERT INTO `utilisateur`(`login`, `mdp`, `roles`) VALUES (:user, :mdp, :roles)");
         $requete->bindParam(':user', $login);
-        $requete->bindParam(':mdp', $mdp);
+        $requete->bindParam(':mdp', $hashedPassword);
         $requete->bindParam(':roles', $role);
 
         if ($requete->execute()) {
@@ -38,18 +39,49 @@ class Model {
     }
 // FUNCTION POUR FAIRE LA CONNEXION DES UTILISATEUR AU WEBSITE 
     public function get_connexion($login, $mdp){
-        $requete = $this->bdd->prepare("SELECT * FROM utilisateur WHERE login = :login AND mdp = :mdp");
+
+        $requete = $this->bdd->prepare("SELECT * FROM utilisateur WHERE login = :login");
         $requete->bindParam(':login', $login);
-        $requete->bindParam(':mdp', $mdp);
+        // $requete->bindParam(':mdp', $mdp);
         $requete->execute();
-        // $requete->fetch(PDO::FETCH_ASSOC);
-        // return $requete;
+
         $result = $requete->fetch(PDO::FETCH_ASSOC);
-        if ($result !== false) {
+        if ($result !== false && password_verify($mdp, $result['mdp']) && $result['login'] === $login ) {
             return true; // Connexion réussie
         } else {
             return false; // Identifiants invalides
         }
     }
+// SELECTIONNER LES THEMES 
+    public function get_theme(){
 
+        $requete = $this->bdd->prepare("SELECT * FROM theme");
+        $requete->execute();
+        $result = $requete->fetchAll(PDO::FETCH_ASSOC);
+        return $result;
+    }
+
+// RECUP TOUTE LES QUESTIONS en fonction de l'id choisi et du niveau    
+    public function get_question($id_theme, $niveau) {
+
+        $requete = $this->bdd->prepare("SELECT q.id_question, q.question FROM questions q  WHERE id_theme = :id AND q.niveau = :niveau");
+        $requete->bindParam(":id", $id_theme);
+        $requete->bindParam(":niveau", $niveau);
+        $requete->execute();
+        $result = $requete->fetchAll(PDO::FETCH_ASSOC);
+        // while ($row =  $requete->fetch(PDO::FETCH_ASSOC)) {
+        //     yield $row; // pour voir ligne par ligne 
+        // }
+        return $result;
+    }
+// pareil mais pour les reponses 
+    public function get_reponse($id_theme) {
+        $requete = $this->bdd->prepare("SELECT r.reponse, r.id_question FROM reponses r INNER JOIN questions q ON r.id_question = q.id_question WHERE q.id_theme = :id_theme");
+        $requete->bindParam(":id_theme", $id_theme);
+        $requete->execute();
+        $result = $requete->fetchAll(PDO::FETCH_ASSOC);
+        return $result;
+    }
+
+    
 }

@@ -4,15 +4,15 @@
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="./public/Css/acceuil.css">
     <title>Acceuil Quizz</title>
 </head>
 <body>
-    <h1>View Acceuil Quizz</h1>
     <?php if (isset($_SESSION['login'])): ?>
-        <p>Hollaa <?php echo $_SESSION['login'];  ?></p>
-    <?php endif ?>
-    <div>
-
-    </div>
+        <header class="header_text">
+            <h1>Salut <?php echo $_SESSION['login'];  ?></h1>
+        </header>
+        <?php endif ?>
+        <a href="?controller=qcm&action=theme" style='color: greenyellow;'>Voir les themes</a>
 </body>
 </html>

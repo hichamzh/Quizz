@@ -9,6 +9,16 @@
     <title>Inscription</title>
 </head>
 <body>
+    <div>
+
+    </div>
+    <div class="carre"></div>
+    <div class="carre"></div>
+    <div class="carre"></div>
+    <div class="carre"></div>
+    <div class="carre"></div>
+    <div class="carre"></div>
+    <div class="carre"></div>
     <header>
         <h1>Créer un compte Quizz</h1>
     </header>
