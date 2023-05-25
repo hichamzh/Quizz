@@ -34,7 +34,7 @@ a{
     gap: 30px;
 }
 
-.butt {
+.butt a, .butt{
     color: #222021;
     background: greenyellow;
     padding: 5px 10px;
@@ -45,7 +45,7 @@ a{
 }
 
 
-.butt:hover{
+.but:hover{
     transform: scale(1.3);
 
 }
