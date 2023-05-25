@@ -34,7 +34,7 @@ a{
     gap: 30px;
 }
 
-.nav-right li:nth-last-child(-n+2) {
+.butt {
     color: #222021;
     background: greenyellow;
     padding: 5px 10px;
@@ -45,7 +45,7 @@ a{
 }
 
 
-.nav-right li:nth-last-child(-n+2):hover{
+.butt:hover{
     transform: scale(1.3);
 
 }
@@ -57,7 +57,7 @@ a{
     cursor: pointer;
 }
 
-.nav-right li:nth-child(1):before{
+.nav-right li.ligne:before{
     content: "";
     position: absolute;
     top: 20px;
@@ -67,6 +67,6 @@ a{
     transition: all ease 0.5s;
 }
 
-.nav-right li:nth-child(1):hover::before{
+.nav-right li.ligne:hover::before{
     width: 100%;
 }

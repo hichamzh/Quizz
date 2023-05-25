@@ -20,9 +20,11 @@ if (session_status() === PHP_SESSION_ACTIVE) {
                     <button type="submit">Déconnexion</button>
                 </form>
             </li>
-        <?php else : ?>
-            <li></li>
+            <form method="post" action="logout.php">
+            <button type="submit" class="butt">Déconnexion</button>
+            </form>
         <?php endif; ?>
+
         <?php if (!isset( $_SESSION['login'])) : ?>
             <li><a href='?controller=inscription&action=inscription' class='butt'>Sign Up</a></li>
             <li><a href='?controller=inscription&action=connexion' class='butt'>Sign In</a></li>
