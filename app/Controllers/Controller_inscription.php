@@ -41,8 +41,8 @@ class Controller_inscription extends Controller
         $success = $m->get_connexion($login, $mdp);
 
         if($success){
-        $_SESSION['login'] = $login;
-        $this->render("acceuil", ["login" => $_SESSION['login']]);
+            $_SESSION['login'] = $login;
+            $this->render("acceuil", ["login" => $_SESSION['login']]);
 
         } else {
             $data = ["erreur" => 'Identifiant ou Mot de passe incorrect'];

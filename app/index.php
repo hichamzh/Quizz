@@ -1,3 +1,4 @@
+<?php session_start(); ?>
 <!DOCTYPE html>
 <html lang="fr">
 
@@ -9,7 +10,6 @@
 
 <body>
     <?php
-    session_start();
 // Test a essayer
     // if (isset($_SESSION['user_id'])) {
     //     // L'utilisateur est authentifié
