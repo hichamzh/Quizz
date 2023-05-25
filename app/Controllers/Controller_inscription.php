@@ -39,7 +39,8 @@ class Controller_inscription extends Controller
             $success = $m->get_connexion($login, $mdp);
             if($success){
                 $_SESSION['login'] = $login;
-                $this->render("acceuil", ["login" => $_SESSION['login']]);
+                header("location: index.php?controller=home&action=acceuil");
+                // $this->render("Acceui", ["login" => $_SESSION['login']]);
                 
             } 
             else {
