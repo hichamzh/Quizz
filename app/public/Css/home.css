@@ -1,0 +1,60 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+  
+body{
+    width: 100%;
+    font-family: Arial, Helvetica, sans-serif;
+    background: #2c2c2c;
+}
+
+/************************************************** ACCEUIL WEBSITE AVANT CONNEXION*/
+.container-bienvenue{
+    height: 100vh;
+    width: 100%;
+}
+.bienvenue{
+   text-align: center;
+   margin: 2% 0 5% 0;
+}
+
+.bienvenue h1{
+    font-size: 34px;
+    padding: 2%;
+    color: greenyellow;
+}
+
+.presentation { /*main*/
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    max-width: 70%;
+    margin: 0 auto;
+}
+
+.presentation p { /*POUR LA PARTIE REGLES AUSSI */
+    font-size: 22px;
+    text-align: center;
+    margin-bottom: 20px;
+    color: whitesmoke;
+}
+/**************************** LES REGLES DU QUIZZ */
+
+#regles{
+    height: 100vh;
+    width: 100%;
+    padding-top: 2%;
+}
+.regles{
+    text-align: center;
+    margin-bottom: 5%;
+}
+.regles h3{
+    font-size: 34px;
+    color: greenyellow;
+
+}

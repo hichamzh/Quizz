@@ -9,6 +9,13 @@
     <title>Sign In</title>
 </head>
 <body>
+    <div class="carre"></div>
+    <div class="carre"></div>
+    <div class="carre"></div>
+    <div class="carre"></div>
+    <div class="carre"></div>
+    <div class="carre"></div>
+    <div class="carre"></div>
 <?php if (isset($data)): ?>
     <script>alert("<?php echo $data['erreur'] ?>")</script>
 <?php endif ?>
