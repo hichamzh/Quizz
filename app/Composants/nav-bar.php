@@ -17,16 +17,15 @@ if (session_status() === PHP_SESSION_ACTIVE) {
             <li>
                 <a href='#regles'>Les Règles</a>
                 <form method="post" action="logout.php">
-    <button type="submit">Déconnexion</button>
-</form>
-
+                    <button type="submit">Déconnexion</button>
+                </form>
             </li>
         <?php else : ?>
             <li></li>
         <?php endif; ?>
         <?php if (!isset( $_SESSION['login'])) : ?>
-            <li><a href='?controller=inscription&action=inscription'>Sign Up</a></li>
-            <li><a href='?controller=inscription&action=connexion'>Sign In</a></li>
+            <li><a href='?controller=inscription&action=inscription' class='butt'>Sign Up</a></li>
+            <li><a href='?controller=inscription&action=connexion' class='butt'>Sign In</a></li>
         <?php endif; ?>
     </ul>
 </nav>
