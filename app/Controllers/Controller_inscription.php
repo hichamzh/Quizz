@@ -32,7 +32,9 @@ class Controller_inscription extends Controller
 
     public function action_connexion_verif(){
 
-        if($_SERVER['REQUEST_METHOD'] === 'POST'){
+        if($success){
+            $_SESSION['login'] = $login;
+            $this->render("acceuil", ["login" => $_SESSION['login']]);
 
             $login = $_POST['login'];
             $mdp = $_POST['mdp'];
