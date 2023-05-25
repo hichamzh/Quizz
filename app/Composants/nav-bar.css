@@ -34,7 +34,7 @@ a{
     gap: 30px;
 }
 
-.nav-right li:nth-last-child(-n+2) {
+.nav-right li.butt {
     color: #222021;
     background: greenyellow;
     padding: 5px 10px;
@@ -45,7 +45,7 @@ a{
 }
 
 
-.nav-right li:nth-last-child(-n+2):hover{
+.nav-right li.butt:hover{
     transform: scale(1.3);
 
 }

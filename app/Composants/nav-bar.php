@@ -9,7 +9,7 @@
             <?php else : ?>
                 <li></li>
             <?php endif; ?>
-            <li><a href='?controller=inscription&action=inscription'>Sign Up</a></li>
-            <li><a href='?controller=inscription&action=connexion'>Sign In</a></li>
+            <li><a href='?controller=inscription&action=inscription' class='butt'>Sign Up</a></li>
+            <li><a href='?controller=inscription&action=connexion' class='butt'>Sign In</a></li>
         </ul>
     </nav>
