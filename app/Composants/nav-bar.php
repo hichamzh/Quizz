@@ -19,12 +19,14 @@
             </li>
             <li class="ligne">
             <a href="?controller=qcm&action=theme"  >Commencer le Quizz </a>
+
             </li>
             <form method="post" action="?controller=inscription&action=log_out">
                 <button type="submit" class="butt">Déconnexion</button>
             </form>
             <?php else :?>
             <li class="ligne"> <a href="?controller=home&action=home">Accueil</a></li>
+
             <?php endif; ?>
 
         <?php if (!isset($_SESSION['login'])) : ?>
