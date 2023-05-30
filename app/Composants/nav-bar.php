@@ -1,26 +1,28 @@
 <?php
-if (session_status() === PHP_SESSION_ACTIVE) {
-    // Session is active
-    echo "Session is active.";
-} else {
-    // Session is not active
-    echo "Session is not active.";
-}
+// if (session_status() === PHP_SESSION_ACTIVE) {
+//     // Session is active
+//     echo "Session is active.";
+// } else {
+//     // Session is not active
+//     echo "Session is not active.";
+// }
 
 ?>
 
 <nav class="nav-bar">
     <img src="./public/Assets/logo_hfk.png" alt=""> 
     <ul class="nav-right">
-        <li> <a href="?controller=home&action=home">Accueil</a></li>
         <?php if (isset($_SESSION['login'])) : ?>
+            <li> <a href="?controller=home&action=acceuil">Accueil</a></li>
             <li>
-                <a href='#regles'>Les Règles</a>
+                <a href='?controller=home&action=acceuil#regles'>Les Règles</a>
             </li>
             <form method="post" action="?controller=inscription&action=log_out">
-            <button type="submit" class="butt">Déconnexion</button>
+                <button type="submit" class="butt">Déconnexion</button>
             </form>
-        <?php endif; ?>
+            <?php else :?>
+            <li> <a href="?controller=home&action=home">Accueil</a></li>
+            <?php endif; ?>
 
         <?php if (!isset($_SESSION['login'])) : ?>
             <li class='butt' ><a href='?controller=inscription&action=inscription'>S'inscrire</a></li>
