@@ -17,7 +17,15 @@ body{
 }
 
 #regles{
+    color: white ;
     width: 50%;
     margin: auto;
 }
+.regles{
+    margin-bottom: 5px;
+}
 
+.presentation{
+    color: white;
+    margin-bottom: 20px;
+}

@@ -23,7 +23,8 @@
                 <p>Préparez-vous à ressentir l'excitation des grandes compétitions et à vivre une expérience de quiz unique en son genre. Alors, préparez vos crampons virtuels, enfilez votre maillot et embarquez pour une aventure footballistique captivante !</p>
                 <p>Bonne chance et que le meilleur joueur gagne !</p>
             </main>
-            <a href="?controller=qcm&action=theme"  class="butt">Voir les themes</a>
+
+            <a href="?controller=qcm&action=theme"  class="butt">Go ! </a>
     </section>
 </body>
 </html>
