@@ -53,11 +53,11 @@ class Controller_inscription extends Controller
 
     
         public function action_log_out(){
+            
             unset($_SESSION['login']); // Destruction de la variable $_SESSION['login']
             session_destroy(); // Destruction complète de la session
             header("location: index.php?controller=inscription&action=connexion");
             exit;
-            var_dump($_SESSION['login']);
         }
         
 

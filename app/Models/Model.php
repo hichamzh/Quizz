@@ -76,6 +76,7 @@ class Model {
     }
 // pareil mais pour les reponses 
     public function get_reponse($id_theme) {
+        
         $requete = $this->bdd->prepare("SELECT r.reponse, r.id_question FROM reponses r INNER JOIN questions q ON r.id_question = q.id_question WHERE q.id_theme = :id_theme");
         $requete->bindParam(":id_theme", $id_theme);
         $requete->execute();
