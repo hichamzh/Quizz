@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Hôte : 127.0.0.1
--- Généré le : lun. 22 mai 2023 à 14:55
+-- Généré le : mar. 30 mai 2023 à 14:40
 -- Version du serveur : 10.4.27-MariaDB
 -- Version de PHP : 8.2.0
 
@@ -117,16 +117,17 @@ CREATE TABLE `score` (
 CREATE TABLE `theme` (
   `id_theme` int(11) NOT NULL,
   `id_score` int(11) DEFAULT NULL,
-  `nom_theme` varchar(100) CHARACTER SET utf8 COLLATE utf8_general_ci NOT NULL
+  `nom_theme` varchar(100) CHARACTER SET utf8 COLLATE utf8_general_ci NOT NULL,
+  `image_theme` varchar(100) CHARACTER SET utf8 COLLATE utf8_general_ci NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_general_ci;
 
 --
 -- Déchargement des données de la table `theme`
 --
 
-INSERT INTO `theme` (`id_theme`, `id_score`, `nom_theme`) VALUES
-(7, NULL, 'Football'),
-(8, NULL, 'Développeur Web');
+INSERT INTO `theme` (`id_theme`, `id_score`, `nom_theme`, `image_theme`) VALUES
+(7, NULL, 'Football', 'football.jpg'),
+(8, NULL, 'Développeur Web', 'DeveloppeurWeb.jpg');
 
 -- --------------------------------------------------------
 
@@ -147,7 +148,20 @@ CREATE TABLE `utilisateur` (
 
 INSERT INTO `utilisateur` (`id_utilisateur`, `login`, `mdp`, `roles`) VALUES
 (1, 'fethi', 'ladmin', 'admin'),
-(2, 'hicham', 'ladmin', 'admin');
+(2, 'hicham', 'ladmin', 'admin'),
+(3, 'test1', 'Test123456', 'user'),
+(4, 'dezze', 'Dejfizj1', 'user'),
+(5, 'test10', 'Test10test', 'user'),
+(6, 'fethi', 'hijjpM156', 'user'),
+(7, 'fethi', '$2y$10$/w/onjAIvOp0QVzPfQIL1OmO7tJp4KKgWNshTuQ2eiIEcabU4wLkK', 'user'),
+(8, 'fethi123', '$2y$10$3Mb2k5zHHBZDpQnq2b58xONgitwV./lPT8co0WwecgvIfjdlx9KN.', 'user'),
+(9, 'fethi123', '$2y$10$HCRrdFRDvFF2XpKQsyDiQO/xSIXlbk0dDLnnPkEH3zoAYycCefSA.', 'user'),
+(10, 'Testdu30Mai', '$2y$10$a3BhT97mhUoZhG5lJxG/F.pf0QjUyu4FRhIqqut3nim1HpVUm4NVW', 'user'),
+(11, 'Testdu30Mai1', '$2y$10$GNoeJ2HBd1KMejU9kN9YNu7IJ764RCq1rE1lmih0SJUuRPSkwsrBC', 'user'),
+(12, 'Testdu30Mai', '$2y$10$B5QUvQCuFW1yxyCpojyYvupwd1bVQYYZRHtmdxd18W2uygtLxwPhu', 'user'),
+(13, 'Testdu30Mai', '$2y$10$P0bL9axNEwImQPAwQmxfj.FCjsW3Ch97krkkP2ao2QTjTZW889GIy', 'user'),
+(14, 'Testdu30Mai125532', '$2y$10$7MTp4mMDeXh0j5U/nQ0.4ewXLVR71c5n6vPder40zq1EXduR0BLOi', 'user'),
+(15, 'HICHAMCAMARCHE', '$2y$10$iiCv8B4R1IkBq22xpndMwe4z7hOwRPvx3TDsL0Rqkt2osqXI5oyOq', 'user');
 
 --
 -- Index pour les tables déchargées
@@ -229,7 +243,7 @@ ALTER TABLE `theme`
 -- AUTO_INCREMENT pour la table `utilisateur`
 --
 ALTER TABLE `utilisateur`
-  MODIFY `id_utilisateur` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=3;
+  MODIFY `id_utilisateur` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=16;
 
 --
 -- Contraintes pour les tables déchargées
