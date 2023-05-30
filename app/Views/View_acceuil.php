@@ -15,12 +15,19 @@
         <?php endif ?>
     <section id="regles">
             <header class="regles">
-                <h3>Les Règles du Quizz</h3>
+                <h3></h3>
             </header>
             <main class="presentation">
-                <p>Êtes-vous prêt à tester vos connaissances sur ce sport passionnant ? Plongez dans l'univers du football et défiez-vous avec des questions sur les règles du jeu, les joueurs légendaires, les coupes du monde, les rivalités historiques et bien plus encore.</p>
-                <p>Que vous soyez un fan inconditionnel ou simplement curieux de découvrir cet univers, notre quiz vous offre l'opportunité de vous mesurer à d'autres passionnés. Faites preuve de rapidité, de précision et montrez vos talents de connaisseur pour gravir les échelons du classement.</p>
-                <p>Préparez-vous à ressentir l'excitation des grandes compétitions et à vivre une expérience de quiz unique en son genre. Alors, préparez vos crampons virtuels, enfilez votre maillot et embarquez pour une aventure footballistique captivante !</p>
+                <p>Êtes-vous prêt à tester vos connaissances sur ce sport passionnant ? 
+                    Plongez dans l'univers du football et défiez-vous avec des questions sur les règles du jeu, 
+                    les joueurs légendaires, les coupes du monde, les rivalités historiques et bien plus encore.</p>
+                
+                <p>Que vous soyez un fan inconditionnel ou simplement curieux de découvrir cet univers, notre quiz vous offre l'opportunité de vous mesurer à d'autres passionnés. 
+                    Faites preuve de rapidité, de précision et montrez vos talents de connaisseur pour gravir les échelons du classement.</p>
+                
+                <p>Préparez-vous à ressentir l'excitation des grandes compétitions et à vivre une expérience de quiz unique en son genre. 
+                    Alors, préparez vos crampons virtuels, enfilez votre maillot et embarquez pour une aventure footballistique captivante !</p>
+                
                 <p>Bonne chance et que le meilleur joueur gagne !</p>
             </main>
 
