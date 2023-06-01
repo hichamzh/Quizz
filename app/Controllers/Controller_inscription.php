@@ -12,17 +12,24 @@ class Controller_inscription extends Controller
     }
     // POUR FAIRE L'INSERTION A LA BDD, S'INSCRIRE
     public function action_inscription_insert (){
+
         if ($_SERVER['REQUEST_METHOD'] === 'POST') {
             $login = $_POST['login'];
             $mdp = $_POST['mdp'];
             $role ="user";
             $m = Model::get_model();
-            
-            $m->get_inscription($login, $mdp, $role);
-            $this->render("connexion"); //envoie vers la page de connexion
-            
-        }
+            $existing_user = $m->get_check_login($login);
 
+            if($existing_user) {
+                $data = ['erreur' => "L\'identifiant existe déjà veuillez en choisir un autre"];
+                $this->render('inscription', $data);
+             
+            } 
+            else {
+                $m->get_inscription($login, $mdp, $role);
+                $this->render("connexion"); //envoie vers la page de connexion
+            }
+        }
     }
     // Afficher la View SIGN IN (connexion)
     public function action_connexion(){
@@ -31,14 +38,16 @@ class Controller_inscription extends Controller
     }
 
     public function action_connexion_verif(){
-
+            // $id_user = 
             $login = $_POST['login'];
             $mdp = $_POST['mdp'];
-
             $m = Model::get_model(); 
             $success = $m->get_connexion($login, $mdp);
             if($success){
                 $_SESSION['login'] = $login;
+                $_SESSION['id'] = $success['id_utilisateur'];
+                // print '<pre>' . print_r($_SESSION, true). '</pre>';
+                // die();
                 header("location: index.php?controller=home&action=acceuil");
                 // $this->render("Acceui", ["login" => $_SESSION['login']]);
                 
@@ -50,11 +59,11 @@ class Controller_inscription extends Controller
                 $this->render("connexion", $data);
             }
         }
-
     
         public function action_log_out(){
             
             unset($_SESSION['login']); // Destruction de la variable $_SESSION['login']
+            unset($_SESSION['id_utilisateur']); // Destruction de la variable $_SESSION['login']
             session_destroy(); // Destruction complète de la session
             header("location: index.php?controller=inscription&action=connexion");
             exit;

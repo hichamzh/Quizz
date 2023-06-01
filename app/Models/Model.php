@@ -6,7 +6,7 @@ class Model {
 
     public function __construct() {
         
-        $dsn = "mysql:host=localhost;dbname=qcm"; // Adresse du serveur de la base de données avec le nom de la bdd
+        $dsn = "mysql:host=localhost;dbname=qcm_test"; // Adresse du serveur de la base de données avec le nom de la bdd
         $dbUser = "root"; // Nom d'utilisateur de la base de données
         $dbPass = ""; // Mot de passe de la base de données
         $this->bdd = new PDO($dsn, $dbUser, $dbPass);
@@ -37,6 +37,19 @@ class Model {
             return false; // Erreur lors de l'insertion
         }
     }
+// FUNCTION POUR VERIFIER SI LE LOGIN EXISTE DEJA 
+    public function get_check_login($login) {
+        $requete = $this->bdd->prepare("SELECT login from utilisateur WHERE login = :login");
+        $requete->bindParam(":login", $login);
+        $requete->execute();
+        $result = $requete->fetchAll(PDO::FETCH_ASSOC);
+
+        if(!empty($result)) {
+            return true;
+        } else {
+            return false;
+        }
+    }
 // FUNCTION POUR FAIRE LA CONNEXION DES UTILISATEUR AU WEBSITE 
     public function get_connexion($login, $mdp){
 
@@ -44,10 +57,10 @@ class Model {
         $requete->bindParam(':login', $login);
         // $requete->bindParam(':mdp', $mdp);
         $requete->execute();
-
         $result = $requete->fetch(PDO::FETCH_ASSOC);
+        
         if ($result !== false && password_verify($mdp, $result['mdp']) && $result['login'] === $login ) {
-            return true; // Connexion réussie
+            return $result; // Connexion réussie
         } else {
             return false; // Identifiants invalides
         }
@@ -76,7 +89,7 @@ class Model {
     }
 // pareil mais pour les reponses 
     public function get_reponse($id_theme) {
-        
+
         $requete = $this->bdd->prepare("SELECT r.reponse, r.id_question FROM reponses r INNER JOIN questions q ON r.id_question = q.id_question WHERE q.id_theme = :id_theme");
         $requete->bindParam(":id_theme", $id_theme);
         $requete->execute();

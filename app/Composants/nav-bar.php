@@ -8,9 +8,11 @@
 // }
 
 ?>
-
+<head>
+    <script src="public/Js/butt_deconnexion.js" defer></script>
+</head>
 <nav class="nav-bar">
-    <img src="./public/Assets/logo_hfk.png" alt=""> 
+    <img src="./public/Assets/logo_hf.png" alt="logo hf quizz"> 
     <ul class="nav-right">
         <?php if (isset($_SESSION['login'])) : ?>
             <li class="ligne"> <a href="?controller=home&action=acceuil">Accueil</a></li>
@@ -21,8 +23,13 @@
             <a href="?controller=qcm&action=theme"  >Commencer le Quizz </a>
 
             </li>
-            <form method="post" action="?controller=inscription&action=log_out">
                 <button type="submit" class="butt">Déconnexion</button>
+            <form action="?controller=inscription&action=log_out" class="form_deco" method="post">
+                    <h2>Voulez-vous vraiment vous déconnectez ?</h2>
+                    <div class="container_butt_deco">
+                        <button class="valider" type="submit">Oui</button>
+                        <button class="close" type='button'>Non</button>
+                    </div>
             </form>
             <?php else :?>
             <li class="ligne"> <a href="?controller=home&action=home">Accueil</a></li>

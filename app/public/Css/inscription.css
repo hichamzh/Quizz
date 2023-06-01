@@ -76,6 +76,10 @@ header h1{
     animation: animate 15s linear infinite;
     transition: all ease 0.1s;
  }
+ .carre img {
+    width: 90%;
+    height: 90%;
+ }
 
  .carre:nth-of-type(2) {
     width: 30px;
@@ -87,32 +91,62 @@ header h1{
 .carre:nth-of-type(3) {
     width: 60px;
     height: 60px;
-    right: 30%;
+    right: 25%;
     animation-delay: 5s;
  }
 .carre:nth-of-type(4) {
     width: 20px;
     height: 20px;
-    right: 40%;
+    right: 35%;
     animation-delay: 10s;
  }
 .carre:nth-of-type(5) {
     width: 30px;
     height: 30px;
-    right: 50%;
+    right: 40%;
     animation-delay: 5s;
  }
 .carre:nth-of-type(6) {
     width: 70px;
     height: 70px;
-    right: 60%;
+    right: 50%;
     animation-delay: 3s;
  }
 .carre:nth-of-type(7) {
     width: 20px;
     height: 20px;
-    right: 70%;
+    right: 55%;
     animation-delay: 0s;
+ }
+.carre:nth-of-type(8) {
+    width: 35px;
+    height: 35px;
+    right: 65%;
+    animation-delay: 2s;
+ }
+.carre:nth-of-type(9) {
+    width: 25px;
+    height: 25px;
+    right: 70%;
+    animation-delay: 5s;
+ }
+.carre:nth-of-type(10) {
+    width: 30px;
+    height: 30px;
+    right: 80%;
+    animation-delay: 1s;
+ }
+.carre:nth-of-type(11) {
+    width: 50px;
+    height: 50px;
+    right: 85%;
+    animation-delay: 0s;
+ }
+.carre:nth-of-type(12) {
+    width: 20px;
+    height: 20px;
+    right: 90%;
+    animation-delay: 6s;
  }
 
  @keyframes animate {

@@ -9,14 +9,22 @@
     <title>Inscription</title>
 </head>
 <body>
+    <?php if(isset($data['erreur'])) :?>
+    <script>alert("<?php echo $data['erreur']; ?>")</script>
+    <?php endif; ?>
     <div>
 
     </div>
     <div class="carre"></div>
+    <div class="carre"><img src="public/Assets/pikachu.png" alt="pikachu"></div>
+    <div class="carre"></div>
+    <div class="carre"></div>
+    <div class="carre"><img src="public/Assets/pikachu.png" alt="pikachu"></div>
     <div class="carre"></div>
     <div class="carre"></div>
     <div class="carre"></div>
     <div class="carre"></div>
+    <div class="carre"><img src="public/Assets/pikachu.png" alt="pikachu"></div>
     <div class="carre"></div>
     <div class="carre"></div>
     <header>
@@ -26,13 +34,12 @@
         <form action="?controller=inscription&action=inscription_insert" method="POST" class="formulaire-inscription">
             <div class="container-input">
                 <input type="text" id="login" placeholder="Identifiant..." name="login" required minlength="5" maxlength="20">
-                
             </div>
             <div class="container-input">
                 <input type="password" id="mdp" placeholder="Mot de passe..." name="mdp" required minlength="8">
                 <i class="fas fa-eye" onclick="toggleVisibleMdp()" id="icon"></i>
             </div>
-            <button type="submit" class="butt_inscription" >S'inscrire</button>
+            <button type="submit" class="butt" >S'inscrire</button> <!--class butt heriter par la navbar -->
         </form>
     </section>
     
