@@ -3,9 +3,9 @@
 -- https://www.phpmyadmin.net/
 --
 -- Hôte : 127.0.0.1
--- Généré le : mar. 30 mai 2023 à 14:40
+-- Généré le : lun. 05 juin 2023 à 14:49
 -- Version du serveur : 10.4.27-MariaDB
--- Version de PHP : 8.2.0
+-- Version de PHP : 8.1.12
 
 SET SQL_MODE = "NO_AUTO_VALUE_ON_ZERO";
 START TRANSACTION;
@@ -20,6 +20,21 @@ SET time_zone = "+00:00";
 --
 -- Base de données : `qcm`
 --
+
+-- --------------------------------------------------------
+
+--
+-- Structure de la table `choix`
+--
+
+CREATE TABLE `choix` (
+  `id_choix` int(10) NOT NULL,
+  `id_utilisateur` int(10) NOT NULL,
+  `id_theme` int(10) NOT NULL,
+  `niveau` text NOT NULL,
+  `score` varchar(100) CHARACTER SET utf8 COLLATE utf8_general_ci NOT NULL,
+  `date_user` date NOT NULL
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_general_ci;
 
 -- --------------------------------------------------------
 
@@ -98,25 +113,11 @@ INSERT INTO `reponses` (`id_reponse`, `id_question`, `reponse`, `niveau`, `etat`
 -- --------------------------------------------------------
 
 --
--- Structure de la table `score`
---
-
-CREATE TABLE `score` (
-  `id_score` int(10) NOT NULL,
-  `id_utilisateur` int(10) DEFAULT NULL,
-  `score` varchar(100) DEFAULT NULL,
-  `date_user` date DEFAULT NULL
-) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_general_ci;
-
--- --------------------------------------------------------
-
---
 -- Structure de la table `theme`
 --
 
 CREATE TABLE `theme` (
   `id_theme` int(11) NOT NULL,
-  `id_score` int(11) DEFAULT NULL,
   `nom_theme` varchar(100) CHARACTER SET utf8 COLLATE utf8_general_ci NOT NULL,
   `image_theme` varchar(100) CHARACTER SET utf8 COLLATE utf8_general_ci NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_general_ci;
@@ -125,9 +126,9 @@ CREATE TABLE `theme` (
 -- Déchargement des données de la table `theme`
 --
 
-INSERT INTO `theme` (`id_theme`, `id_score`, `nom_theme`, `image_theme`) VALUES
-(7, NULL, 'Football', 'football.jpg'),
-(8, NULL, 'Développeur Web', 'DeveloppeurWeb.jpg');
+INSERT INTO `theme` (`id_theme`, `nom_theme`, `image_theme`) VALUES
+(7, 'Football', 'football.jpg'),
+(8, 'Développeur Web', 'DeveloppeurWeb.jpg');
 
 -- --------------------------------------------------------
 
@@ -161,11 +162,20 @@ INSERT INTO `utilisateur` (`id_utilisateur`, `login`, `mdp`, `roles`) VALUES
 (12, 'Testdu30Mai', '$2y$10$B5QUvQCuFW1yxyCpojyYvupwd1bVQYYZRHtmdxd18W2uygtLxwPhu', 'user'),
 (13, 'Testdu30Mai', '$2y$10$P0bL9axNEwImQPAwQmxfj.FCjsW3Ch97krkkP2ao2QTjTZW889GIy', 'user'),
 (14, 'Testdu30Mai125532', '$2y$10$7MTp4mMDeXh0j5U/nQ0.4ewXLVR71c5n6vPder40zq1EXduR0BLOi', 'user'),
-(15, 'HICHAMCAMARCHE', '$2y$10$iiCv8B4R1IkBq22xpndMwe4z7hOwRPvx3TDsL0Rqkt2osqXI5oyOq', 'user');
+(15, 'HICHAMCAMARCHE', '$2y$10$iiCv8B4R1IkBq22xpndMwe4z7hOwRPvx3TDsL0Rqkt2osqXI5oyOq', 'user'),
+(16, 'hichma_admin', '$2y$10$Ohb.AgdZYt6XxcBqq0qqFOHsW1PINo/RKoNcMzn78Htl4R1SIw386', 'user');
 
 --
 -- Index pour les tables déchargées
 --
+
+--
+-- Index pour la table `choix`
+--
+ALTER TABLE `choix`
+  ADD PRIMARY KEY (`id_choix`),
+  ADD KEY `id_utilisateur` (`id_utilisateur`) USING BTREE,
+  ADD KEY `id_theme` (`id_theme`);
 
 --
 -- Index pour la table `questions`
@@ -187,21 +197,11 @@ ALTER TABLE `reponses`
   ADD KEY `niveau` (`niveau`(768)) USING BTREE;
 
 --
--- Index pour la table `score`
---
-ALTER TABLE `score`
-  ADD PRIMARY KEY (`id_score`),
-  ADD KEY `score` (`score`) USING BTREE,
-  ADD KEY `date_user` (`date_user`) USING BTREE,
-  ADD KEY `id_user` (`id_utilisateur`);
-
---
 -- Index pour la table `theme`
 --
 ALTER TABLE `theme`
   ADD PRIMARY KEY (`id_theme`),
-  ADD KEY `nom_theme` (`nom_theme`) USING BTREE,
-  ADD KEY `id_score` (`id_score`);
+  ADD KEY `nom_theme` (`nom_theme`) USING BTREE;
 
 --
 -- Index pour la table `utilisateur`
@@ -216,6 +216,12 @@ ALTER TABLE `utilisateur`
 --
 
 --
+-- AUTO_INCREMENT pour la table `choix`
+--
+ALTER TABLE `choix`
+  MODIFY `id_choix` int(10) NOT NULL AUTO_INCREMENT;
+
+--
 -- AUTO_INCREMENT pour la table `questions`
 --
 ALTER TABLE `questions`
@@ -228,12 +234,6 @@ ALTER TABLE `reponses`
   MODIFY `id_reponse` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=20;
 
 --
--- AUTO_INCREMENT pour la table `score`
---
-ALTER TABLE `score`
-  MODIFY `id_score` int(10) NOT NULL AUTO_INCREMENT;
-
---
 -- AUTO_INCREMENT pour la table `theme`
 --
 ALTER TABLE `theme`
@@ -243,11 +243,18 @@ ALTER TABLE `theme`
 -- AUTO_INCREMENT pour la table `utilisateur`
 --
 ALTER TABLE `utilisateur`
-  MODIFY `id_utilisateur` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=16;
+  MODIFY `id_utilisateur` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=17;
 
 --
 -- Contraintes pour les tables déchargées
 --
+
+--
+-- Contraintes pour la table `choix`
+--
+ALTER TABLE `choix`
+  ADD CONSTRAINT `choix_ibfk_1` FOREIGN KEY (`id_utilisateur`) REFERENCES `utilisateur` (`id_utilisateur`),
+  ADD CONSTRAINT `choix_ibfk_2` FOREIGN KEY (`id_theme`) REFERENCES `theme` (`id_theme`);
 
 --
 -- Contraintes pour la table `questions`
@@ -260,18 +267,6 @@ ALTER TABLE `questions`
 --
 ALTER TABLE `reponses`
   ADD CONSTRAINT `reponses_ibfk_1` FOREIGN KEY (`id_question`) REFERENCES `questions` (`id_question`) ON DELETE CASCADE ON UPDATE CASCADE;
-
---
--- Contraintes pour la table `score`
---
-ALTER TABLE `score`
-  ADD CONSTRAINT `score_ibfk_1` FOREIGN KEY (`id_utilisateur`) REFERENCES `utilisateur` (`id_utilisateur`);
-
---
--- Contraintes pour la table `theme`
---
-ALTER TABLE `theme`
-  ADD CONSTRAINT `theme_ibfk_1` FOREIGN KEY (`id_score`) REFERENCES `score` (`id_score`);
 COMMIT;
 
 /*!40101 SET CHARACTER_SET_CLIENT=@OLD_CHARACTER_SET_CLIENT */;
