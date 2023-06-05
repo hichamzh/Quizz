@@ -29,8 +29,12 @@ class Controller_qcm extends Controller
             "questions" => $m->get_question($id_theme, $niveau),
             "reponses" => $m->get_reponse($id_theme)
         ];
+
+        // Afficher les données la Session en cours
         // print '<pre>' . print_r($_SESSION, true). '</pre>';
-        // // print '<pre>' . print_r($data['reponses'], true). '</pre>';
+        // Afficher les données des Réponses
+        // print '<pre>' . print_r($data['reponses'], true). '</pre>';
+        // var_dump($_SESSION);
         // die();
         $this->render("qcm", $data);
 

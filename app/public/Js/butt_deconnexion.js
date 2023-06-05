@@ -9,10 +9,16 @@ butt_deco.addEventListener('click', () => {
     console.log(overlay);
 })
 
-butt_close.addEventListener('click', () => {
-    document.querySelector('.form_deco').style.display = "none"
-    document.body.removeChild(overlay)
-})
+// butt_close.addEventListener('click', () => {
+//     document.querySelector('.form_deco').style.display = "none"
+//     document.body.removeChild(overlay)
+// })
+
+function close () {
+document.querySelector('.form_deco').style.display = "none"
+document.body.removeChild(overlay)
+}
+butt_close.addEventListener('click', close);
 
 
 
