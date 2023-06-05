@@ -15,26 +15,29 @@
             break;
         }
        ?>
+<form method="post" action="?controller=qcm&action=question_suivante">
 
-            <h3><?=$q['question'] ;?></h3><br>
-            <!--<p><?= $qr['reponse'] ;?></p>-->
-            <ul>
-                <?php foreach ($data['reponses'] as $r) : ?>
-                    <?php if ($r['id_question'] === $q['id_question']) :?>                    
-                    
-                    <li>
-                        <label>
-                            <input type="radio" name="reponse[]" value="<?= $reponse['id_reponse'] ?>">
-                            <?= $r['reponse'] ?>
-                        </label>
-                    </li>
+    <h3><?=$q['question'] ;?></h3><br>
+    
+    <ul>
+        <?php foreach ($data['reponses'] as $r) : ?>
+            <?php if ($r['id_question'] === $q['id_question']) :?>                    
+                
+                <li>
+                    <label>
+                        <input type="radio" name="reponse[<?=$qstCount?>]" value="<?= $r['reponse'] ?>">
+                        <?= $r['reponse'] ?>
+                    </label>
+                </li>
                 <?php endif ?>    
-                    <?php endforeach; ?>
-                </ul>
-                <?php 
+                <?php endforeach; ?>
+            </ul>
+            <?php 
                 $qstCount++;
-                endforeach; ?>
+            endforeach; ?>
 
-    <button type="submit">Prochain</button>
+<input type="submit" value="Suivant" />
+
+</form>
 </body>
 </html>

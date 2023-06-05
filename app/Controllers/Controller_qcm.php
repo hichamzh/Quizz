@@ -39,4 +39,37 @@ class Controller_qcm extends Controller
         $this->render("qcm", $data);
 
     }
+
+
+
+        public function action_question_suivante(){
+
+         
+     
+            // enregistrement reponse
+            if ($_SERVER['REQUEST_METHOD'] === 'POST') {
+                $reponses = $_POST['reponse']; // Les réponses sélectionnées par l'utilisateur
+    
+                // Enregistrement des réponses dans la session
+                if (!isset($_SESSION['quiz_reponses'])) {
+                    
+                    $_SESSION['quiz_reponses'] = array();
+                }
+
+
+                $_SESSION['quiz_reponses'][]= $reponses;                
+                // var_dump($_SESSION['quiz_reponses'] )  ;
+                print '<pre>' . print_r($_SESSION['quiz_reponses'], true). '</pre>';
+                
+                // Redirection ou affichage d'un message de confirmation
+
+
+            } else {
+                // Affichage du formulaire de quiz et des questions
+                // Charger les questions et les réponses depuis la base de données ou autre
+                // Afficher les questions et les réponses dans la vue correspondante
+                echo "ERREUR enregistrement";
+            }
+
+    }
 }
