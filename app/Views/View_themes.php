@@ -9,7 +9,7 @@
 </head>
 <body>
     
-    <header><h1>Choisissez votre thème (prenez football)</h1></header>
+    <header><h1>Choisissez votre thème</h1></header>
     <section class="container_theme">
 
     <?php foreach($data['themes'] as $t) :?>
