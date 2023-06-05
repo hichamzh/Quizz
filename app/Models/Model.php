@@ -6,7 +6,7 @@ class Model {
 
     public function __construct() {
         
-        $dsn = "mysql:host=localhost;dbname=qcm_test"; // Adresse du serveur de la base de données avec le nom de la bdd
+        $dsn = "mysql:host=localhost;dbname=qcm"; // Adresse du serveur de la base de données avec le nom de la bdd
         $dbUser = "root"; // Nom d'utilisateur de la base de données
         $dbPass = ""; // Mot de passe de la base de données
         $this->bdd = new PDO($dsn, $dbUser, $dbPass);
