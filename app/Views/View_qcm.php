@@ -11,7 +11,7 @@
     <header><h1>QCM</h1></header><br>
        <?php $qstCount = 0;
        foreach ($data["questions"] as $q) :
-        if ($qstCount >= 5) {
+        if ($qstCount >= 2) {
             break;
         }
        ?>
@@ -24,7 +24,7 @@
                     
                     <li>
                         <label>
-                            <input type="checkbox" name="reponse[]" value="<?= $reponse['id_reponse'] ?>">
+                            <input type="radio" name="reponse[]" value="<?= $reponse['id_reponse'] ?>">
                             <?= $r['reponse'] ?>
                         </label>
                     </li>

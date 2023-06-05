@@ -15,7 +15,7 @@ session_start();
     <?php
         // Vérification de la durée d'inactivité
         if (isset($_SESSION['last_activity'])) {
-            $inactive_duration = 300; // 3 sec test
+            $inactive_duration = 300; // 300 sec test
             $current_time = time();
             $last_activity = $_SESSION['last_activity'];
 
