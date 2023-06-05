@@ -10,6 +10,7 @@
 ?>
 <head>
     <script src="public/Js/butt_deconnexion.js" defer></script>
+    <script src="public/Js/menu_burger.js" defer></script>
 </head>
 <nav class="nav-bar">
     <img src="./public/Assets/logo_hf.png" alt="logo hf quizz"> 
@@ -41,4 +42,5 @@
             <li class='butt' ><a href='?controller=inscription&action=connexion'>Se connecter</a></li>
         <?php endif; ?>
     </ul>
+    <div class="icon_burger"><li></li></div>
 </nav>
