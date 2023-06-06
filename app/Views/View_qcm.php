@@ -4,6 +4,7 @@
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="public/Css/qcm.css">
     <title>Qcm ready</title>
 </head>
 <body>
@@ -18,28 +19,35 @@
         //     break;
         // }
        ?>
-<form method="post" action="?controller=qcm&action=question_suivante">
+<form  method="post" action="?controller=qcm&action=question_suivante">
+<div class="qcm" class="larger-click-area">
 
-    <h3><?=$q['question'] ;?></h3><br>
-    
-    <ul>
-        <?php foreach ($_SESSION["quizz_data"]['reponses'] as $r) : ?>
+    <h3 ><?=$q['question'] ;?></h3><br>
+  
+
+            <?php foreach ($_SESSION["quizz_data"]['reponses'] as $r) : ?>
             <?php if ($r['id_question'] === $q['id_question']) :?>                    
-                
-                <li>
-                    <label>
-                        <input type="radio" name="reponse[<?= $_SESSION['question_count']?>]" value="<?= $r['reponse'] ?>" required>
-                        <?= $r['reponse'] ?>
-                    </label>
-                </li>
+           
+            <label for="myInput" class="larger-click-area">
+              <input type="radio" id="myInput" name="reponse[<?= $_SESSION['question_count']?>]" value="<?= $r['reponse'] ?>" required>
+              <?= $r['reponse'] ?>
+            </label>         
+    
                 <?php endif ?>    
                 <?php endforeach; ?>
-            </ul>
-            <?php 
-                $_SESSION['question_count']++;
-            endforeach; ?>
+           
+    
+        </div>
+        <?php 
+                 $_SESSION['question_count']++;
 
-            <input type="submit" value="Suivant" />
+            endforeach; ?>
+<div class="button">
+    <input type="submit" value="Suivant" />
+
+
+</div>
+
 
 </form>
 </body>
