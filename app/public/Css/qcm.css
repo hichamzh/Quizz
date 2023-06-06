@@ -1,0 +1,42 @@
+.qcm{
+     /* centrer le qcm */
+    display: block;
+    
+    width: 50%;
+    margin: auto;
+}
+
+h3{
+    margin-top: 20px;
+}
+
+.button{
+margin-top: auto ;
+display: flex;
+justify-content: center;
+/* width: 20px;
+height: 20px; */
+}
+
+.reponse{
+    display: inline-block;
+    gap: 20px;
+}
+
+
+
+
+
+.larger-click-area {
+    width: 100px;
+    height: 50px;
+    padding: 10px;
+    display: inline-block;
+    border: 1px solid black;
+    border-radius: 4px;
+  cursor: pointer;
+
+
+
+
+}
