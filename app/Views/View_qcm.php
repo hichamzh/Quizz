@@ -9,23 +9,26 @@
 <body>
     
     <header><h1>QCM</h1></header><br>
-       <?php $qstCount = 0;
-       foreach ($data["questions"] as $q) :
-        if ($qstCount >= 2) {
-            break;
-        }
+       <?php 
+       $questionLimit = 2; // Nombre de questions à afficher à la fois
+       $questionOffset = $_SESSION['question_count'];
+       $displayedQuestions = array_slice($_SESSION["quizz_data"]['questions'], $questionOffset, $questionLimit);
+       foreach ($displayedQuestions as $q) :
+        // if ($qstCount >= 2) {
+        //     break;
+        // }
        ?>
 <form method="post" action="?controller=qcm&action=question_suivante">
 
     <h3><?=$q['question'] ;?></h3><br>
     
     <ul>
-        <?php foreach ($data['reponses'] as $r) : ?>
+        <?php foreach ($_SESSION["quizz_data"]['reponses'] as $r) : ?>
             <?php if ($r['id_question'] === $q['id_question']) :?>                    
                 
                 <li>
                     <label>
-                        <input type="radio" name="reponse[<?=$qstCount?>]" value="<?= $r['reponse'] ?>">
+                        <input type="radio" name="reponse[<?= $_SESSION['question_count']?>]" value="<?= $r['reponse'] ?>" required>
                         <?= $r['reponse'] ?>
                     </label>
                 </li>
@@ -33,10 +36,10 @@
                 <?php endforeach; ?>
             </ul>
             <?php 
-                $qstCount++;
+                $_SESSION['question_count']++;
             endforeach; ?>
 
-<input type="submit" value="Suivant" />
+            <input type="submit" value="Suivant" />
 
 </form>
 </body>
