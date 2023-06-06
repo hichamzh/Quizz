@@ -126,3 +126,75 @@ a{
     background: greenyellow;
     color: black;
 }
+/*RESPONSIVE NAV BAR */
+
+.icon_burger {
+    display: none;
+   
+    /* background-color: wheat; */
+   
+}
+@media (min-width: 768px) and (max-width: 991px) { /*tabelette portrait*/
+    .butt a{
+        font-size: 16px;
+        padding: 3px 6px;
+    }
+}
+
+@media (max-width: 575px) {
+    .icon_burger {
+        display: block;
+        width: 40px;
+        height: 40px;
+        margin-right: 20px;
+        position: relative;
+    }
+    .icon_burger li, .icon_burger li::before, .icon_burger li::after {
+        width: 100%;
+        height: 4px;
+        background: greenyellow;
+        position: absolute;
+        transform: translateY(-50%);
+        transition: all 0.5s ease;
+    }
+    .icon_burger li {
+        top: 50%;
+    }
+    .icon_burger li::before {
+        content: '';
+        transform: translateY(-10px);
+    }
+    .icon_burger li::after {
+        content: '';
+        transform: translateY(10px);
+    }
+    .nav-right {
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        justify-content: center;
+        position: absolute;
+        top: -100%;
+        left: 50%;
+        transform: translate(-50%, -50%);
+        margin: 0;
+        width: 100%;
+        height: 100vh;
+        background-color: rgba(255, 255, 255, 0.045);
+        backdrop-filter: blur(7px);
+        transition: all ease 0.5s;
+    }
+
+    .nav-right.active {
+        top: 50%;
+    }
+    .icon_burger li.active{
+        background: transparent;
+    }
+    .icon_burger li.active::after{
+        transform: rotate(-45deg);
+    }
+    .icon_burger li.active::before{
+        transform: rotate(45deg);
+    }
+}

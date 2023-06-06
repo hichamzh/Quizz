@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Hôte : 127.0.0.1
--- Généré le : mar. 30 mai 2023 à 14:40
+-- Généré le : mar. 06 juin 2023 à 09:36
 -- Version du serveur : 10.4.27-MariaDB
 -- Version de PHP : 8.2.0
 
@@ -20,6 +20,21 @@ SET time_zone = "+00:00";
 --
 -- Base de données : `qcm`
 --
+
+-- --------------------------------------------------------
+
+--
+-- Structure de la table `choix`
+--
+
+CREATE TABLE `choix` (
+  `id_choix` int(10) NOT NULL,
+  `id_utilisateur` int(10) NOT NULL,
+  `id_theme` int(10) NOT NULL,
+  `niveau` text NOT NULL,
+  `score` varchar(100) CHARACTER SET utf8 COLLATE utf8_general_ci NOT NULL,
+  `date_user` date NOT NULL
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_general_ci;
 
 -- --------------------------------------------------------
 
@@ -93,7 +108,8 @@ INSERT INTO `reponses` (`id_reponse`, `id_question`, `reponse`, `niveau`, `etat`
 (16, 16, 'Liverpool FC', '', 0),
 (17, 17, 'Manchester United FC', '', 0),
 (18, 18, ' Lionel Messi (7 fois)', '', 0),
-(19, 19, 'L\'Espagne', '', 0);
+(19, 19, 'L\'Espagne', '', 0),
+(20, 3, 'Le Rugby ', '', 1);
 
 -- --------------------------------------------------------
 
@@ -153,7 +169,7 @@ INSERT INTO `utilisateur` (`id_utilisateur`, `login`, `mdp`, `roles`) VALUES
 (4, 'dezze', 'Dejfizj1', 'user'),
 (5, 'test10', 'Test10test', 'user'),
 (6, 'fethi', 'hijjpM156', 'user'),
-(7, 'fethi', '$2y$10$/w/onjAIvOp0QVzPfQIL1OmO7tJp4KKgWNshTuQ2eiIEcabU4wLkK', 'user'),
+(7, 'fethi', '$2y$10$/w/onjAIvOp0QVzPfQIL1OmO7tJp4KKgWNshTuQ2eiIEcabU4wLkKc', 'user'),
 (8, 'fethi123', '$2y$10$3Mb2k5zHHBZDpQnq2b58xONgitwV./lPT8co0WwecgvIfjdlx9KN.', 'user'),
 (9, 'fethi123', '$2y$10$HCRrdFRDvFF2XpKQsyDiQO/xSIXlbk0dDLnnPkEH3zoAYycCefSA.', 'user'),
 (10, 'Testdu30Mai', '$2y$10$a3BhT97mhUoZhG5lJxG/F.pf0QjUyu4FRhIqqut3nim1HpVUm4NVW', 'user'),
@@ -161,7 +177,9 @@ INSERT INTO `utilisateur` (`id_utilisateur`, `login`, `mdp`, `roles`) VALUES
 (12, 'Testdu30Mai', '$2y$10$B5QUvQCuFW1yxyCpojyYvupwd1bVQYYZRHtmdxd18W2uygtLxwPhu', 'user'),
 (13, 'Testdu30Mai', '$2y$10$P0bL9axNEwImQPAwQmxfj.FCjsW3Ch97krkkP2ao2QTjTZW889GIy', 'user'),
 (14, 'Testdu30Mai125532', '$2y$10$7MTp4mMDeXh0j5U/nQ0.4ewXLVR71c5n6vPder40zq1EXduR0BLOi', 'user'),
-(15, 'HICHAMCAMARCHE', '$2y$10$iiCv8B4R1IkBq22xpndMwe4z7hOwRPvx3TDsL0Rqkt2osqXI5oyOq', 'user');
+(15, 'HICHAMCAMARCHE', '$2y$10$iiCv8B4R1IkBq22xpndMwe4z7hOwRPvx3TDsL0Rqkt2osqXI5oyOq', 'user'),
+(16, 'Testdu30Mai', '$2y$10$sg7KM5bgc.eUlHyhRCx3h.FNws0v0kFLfkc75SuWQ4EvSOkUUMip6', 'user'),
+(17, 'Testdu30Mai', '$2y$10$oV3vAdktCxcc8k7jI0STDOQ8ViMEScFoWYGgk/jZeQ.8OYscvWkVO', 'user');
 
 --
 -- Index pour les tables déchargées
@@ -225,7 +243,7 @@ ALTER TABLE `questions`
 -- AUTO_INCREMENT pour la table `reponses`
 --
 ALTER TABLE `reponses`
-  MODIFY `id_reponse` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=20;
+  MODIFY `id_reponse` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=21;
 
 --
 -- AUTO_INCREMENT pour la table `score`
@@ -243,7 +261,7 @@ ALTER TABLE `theme`
 -- AUTO_INCREMENT pour la table `utilisateur`
 --
 ALTER TABLE `utilisateur`
-  MODIFY `id_utilisateur` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=16;
+  MODIFY `id_utilisateur` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=18;
 
 --
 -- Contraintes pour les tables déchargées

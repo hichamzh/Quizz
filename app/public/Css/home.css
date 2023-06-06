@@ -61,23 +61,8 @@ body{
     text-decoration-line: underline;
 }
 
-.custom-shape-divider-bottom-1685522466 {
-    position: absolute;
-    bottom: 0;
-    left: 0;
-    width: 100%;
-    overflow: hidden;
-    line-height: 0;
-    transform: rotate(180deg);
-}
-
-.custom-shape-divider-bottom-1685522466 svg {
-    position: relative;
-    display: block;
-    width: calc(227% + 1.3px);
-    height: 235px;
-}
-
-.custom-shape-divider-bottom-1685522466 .shape-fill {
-    fill: #FFFFFF;
-}
+/*? DEBUT DU RESPONSIVE */
+/* Styles pour les écrans de petite taille (mobiles en mode portrait)(max-width: 575px)*/
+/* Styles pour les écrans de taille moyenne (mobiles en mode paysage)(min-width: 576px) and (max-width: 767px)*/
+/* Styles pour les écrans de taille moyenne (tablettes en mode portrait) (min-width: 768px) and (max-width: 991px) */
+/* Styles pour les écrans de taille moyenne (tablettes en mode paysage) (min-width: 992px) and (max-width: 1199px)*/
