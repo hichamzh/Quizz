@@ -11,42 +11,37 @@
     
     <header><h1>QCM</h1></header><br>
        <?php 
-       $questionLimit = 2; // Nombre de questions à afficher à la fois
-       $questionOffset = $_SESSION['question_count'];
-       $displayedQuestions = array_slice($_SESSION["quizz_data"]['questions'], $questionOffset, $questionLimit);
-       foreach ($displayedQuestions as $q) :
-        // if ($qstCount >= 2) {
-        //     break;
-        // }
-       ?>
-<form  method="post" action="?controller=qcm&action=question_suivante">
-<div class="qcm" class="larger-click-area">
+    //    $questionLimit = 2; // Nombre de questions à afficher à la fois
+    //    $questionOffset = $_SESSION['question_count'];
+    //    $displayedQuestions = array_slice($_SESSION["quizz_data"]['questions'], $questionOffset, $questionLimit);
+    //    foreach ($displayedQuestions as $q) :
+    //     // if ($qstCount >= 2) {
+    //     //     break;
+    //     // }
+    //    ?>
+        <form  method="post" action="?controller=qcm&action=question_suivante">
+        <div class="qcm" class="larger-click-area">
 
-    <h3 ><?=$q['question'] ;?></h3><br>
+                <h3 ><?=$data['question']->question ;?></h3><br>
   
 
-            <?php foreach ($_SESSION["quizz_data"]['reponses'] as $r) : ?>
-            <?php if ($r['id_question'] === $q['id_question']) :?>                    
+            <?php foreach ($data['reponses'] as $r) :?>
            
             <label for="myInput" class="larger-click-area">
-              <input type="radio" id="myInput" name="reponse[<?= $_SESSION['question_count']?>]" value="<?= $r['reponse'] ?>" required>
-              <?= $r['reponse'] ?>
+              <input type="radio" id="myInput" name="reponse[<?= $_SESSION['question_count']?>]" value="<?= $r->reponse ?>" required>
+              <?= $r->reponse ?>
             </label>         
     
-                <?php endif ?>    
                 <?php endforeach; ?>
            
     
         </div>
         <?php 
-                 $_SESSION['question_count']++;
-
-            endforeach; ?>
-<div class="button">
-    <input type="submit" value="Suivant" />
-
-
-</div>
+             $_SESSION['question_count']++;
+        ?>
+            <div class="button">
+                <input type="submit" value="Suivant" />
+            </div>
 
 
 </form>

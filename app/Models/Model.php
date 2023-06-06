@@ -77,23 +77,35 @@ class Model {
 // RECUP TOUTE LES QUESTIONS en fonction de l'id choisi et du niveau    
     public function get_question($id_theme, $niveau) {
 
-        $requete = $this->bdd->prepare("SELECT q.id_question, q.question FROM questions q  WHERE id_theme = :id AND q.niveau = :niveau");
+        $requete = $this->bdd->prepare("SELECT q.id_question FROM questions q  WHERE id_theme = :id AND q.niveau = :niveau ORDER BY RAND() LIMIT 20");
         $requete->bindParam(":id", $id_theme);
         $requete->bindParam(":niveau", $niveau);
         $requete->execute();
-        $result = $requete->fetchAll(PDO::FETCH_ASSOC);
+        $result = $requete->fetchAll(PDO::FETCH_OBJ);
         // while ($row =  $requete->fetch(PDO::FETCH_ASSOC)) {
         //     yield $row; // pour voir ligne par ligne 
         // }
         return $result;
     }
-// pareil mais pour les reponses 
-    public function get_reponse($id_theme) {
+    public function get_question_une($id_question) {
 
-        $requete = $this->bdd->prepare("SELECT r.reponse, r.id_question FROM reponses r INNER JOIN questions q ON r.id_question = q.id_question WHERE q.id_theme = :id_theme");
-        $requete->bindParam(":id_theme", $id_theme);
+        $requete = $this->bdd->prepare("SELECT * FROM questions q  WHERE id_question = :id ");
+        $requete->bindParam(":id", $id_question);
         $requete->execute();
-        $result = $requete->fetchAll(PDO::FETCH_ASSOC);
+        $result = $requete->fetch(PDO::FETCH_OBJ);
+        // while ($row =  $requete->fetch(PDO::FETCH_ASSOC)) {
+        //     yield $row; // pour voir ligne par ligne 
+        // }
+        return $result;
+    }
+
+// pareil mais pour les reponses 
+    public function get_reponse($id_question) {
+
+        $requete = $this->bdd->prepare("SELECT * FROM reponses r WHERE r.id_question = :id_question");
+        $requete->bindParam(":id_question", $id_question);
+        $requete->execute();
+        $result = $requete->fetchAll(PDO::FETCH_OBJ);
         return $result;
     }
 
