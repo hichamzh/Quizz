@@ -74,7 +74,7 @@ class Model {
         return $result;
     }
 
-// RECUP TOUTE LES QUESTIONS en fonction de l'id choisi et du niveau    
+// RECUP UN NOMBRE DE QUESTIONS(ID) en fonction de l'id choisi et du niveau    
     public function get_question($id_theme, $niveau) {
 
         $requete = $this->bdd->prepare("SELECT q.id_question FROM questions q  WHERE id_theme = :id AND q.niveau = :niveau ORDER BY RAND() LIMIT 20");
@@ -82,24 +82,21 @@ class Model {
         $requete->bindParam(":niveau", $niveau);
         $requete->execute();
         $result = $requete->fetchAll(PDO::FETCH_OBJ);
-        // while ($row =  $requete->fetch(PDO::FETCH_ASSOC)) {
-        //     yield $row; // pour voir ligne par ligne 
-        // }
+
         return $result;
     }
+//SELECT tous dans la table questions en rapport avec l'id question qui est afficher lors du qcm
     public function get_question_une($id_question) {
 
         $requete = $this->bdd->prepare("SELECT * FROM questions q  WHERE id_question = :id ");
         $requete->bindParam(":id", $id_question);
         $requete->execute();
         $result = $requete->fetch(PDO::FETCH_OBJ);
-        // while ($row =  $requete->fetch(PDO::FETCH_ASSOC)) {
-        //     yield $row; // pour voir ligne par ligne 
-        // }
+
         return $result;
     }
 
-// pareil mais pour les reponses 
+// RECUP les reponses en fonction de l'id question qui est afficher
     public function get_reponse($id_question) {
 
         $requete = $this->bdd->prepare("SELECT * FROM reponses r WHERE r.id_question = :id_question");

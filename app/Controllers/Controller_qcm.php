@@ -17,25 +17,24 @@ class Controller_qcm extends Controller
         // $img_theme = [ "football" => "public/Assets/football.jpg"];
         $this->render("themes", $data);
     }
-
     public function action_theme_question(){
 
         $id_theme = $_GET['id_theme']; // L'id du thème choisi
         $niveau = $_GET['lvl']; // Le niveau choisi
     
         $m = Model::get_model();
-        $questions = $m->get_question($id_theme, $niveau);
+        $questions = $m->get_question($id_theme, $niveau);//list des questions
             
             // Stocker les données dans la session
-            $questions_count = 0;
-        $_SESSION['id_theme'] = $id_theme;
-        $_SESSION['lvl'] = $niveau;
-        $_SESSION['question_count'] = $questions_count;
-        $_SESSION['list_questions'] = $questions;
+            $questions_count = 0;// compteur qui sera stocker dans la session['question_count']
+        $_SESSION['id_theme'] = $id_theme; // id_theme choisi qui est stocker dans la session['id_theme']
+        $_SESSION['lvl'] = $niveau; // le niveau choisi qui est stocker dans la session['lvl']
+        $_SESSION['question_count'] = $questions_count; //compteur stocker dans la session['question_count']
+        $_SESSION['list_questions'] = $questions; //la liste des questions choisis grace a la function get_question() stocker dans la session['list_questions]
 
-        $id_question = $questions[$questions_count]->id_question; 
-        $question = $m->get_question_une($id_question);
-        $reponses = $m->get_reponse($id_question);
+        $id_question = $questions[$questions_count]->id_question; //variable qui contient une id_question
+        $question = $m->get_question_une($id_question); // varibale qui contient une ligne entiere de la table questions
+        $reponses = $m->get_reponse($id_question);//variable qui contient les reponses en en fonction de l'id question 
 
         // print'<pre>' .print_r($question, true). '</pre>';
         // print'<pre>' .print_r($reponses, true). '</pre>';
@@ -44,19 +43,20 @@ class Controller_qcm extends Controller
         $data = [
                 "question" => $question,
                 "reponses" => $reponses
-            ];
+            ]; //taleau contenant deux clefs "question"(une seul id question est stocker la dedans) et "reponses" qui lui contient les reponses
 
         $this->render("qcm", $data);
 
     }
-    public function action_question_suivante(){
+    public function action_question_suivante(){ // fonction utilisé au moment du click vers la question suivante
 
         $m = Model::get_model();    
             // Stocker les données dans la session
-            $questions_count = $_SESSION['question_count'];
-            $questions_count++;
-            $_SESSION['question_count'] = $questions_count;
-            $questions = $_SESSION['list_questions'];
+            $questions_count = $_SESSION['question_count']; //variable contenant la session du compteur qui a été declarer dans la fonction au dessus
+            $questions_count++;//incrementation du compteur 
+            $_SESSION['question_count'] = $questions_count; // on met a jour la session
+            //pareil que dans la fonction au dessus
+            $questions = $_SESSION['list_questions']; 
 
             $id_question = $questions[$questions_count]->id_question;
 
@@ -75,29 +75,4 @@ class Controller_qcm extends Controller
         $this->render("qcm", $data);
 
     }
-
-    //     public function action_question_suivante(){
-    // // Enregistrement des réponses
-    // if ($_SERVER['REQUEST_METHOD'] === 'POST') {
-    //     $reponses = $_POST['reponse']; // Les réponses sélectionnées par l'utilisateur
-
-    //     // Enregistrement des réponses dans la session
-    //     if (!isset($_SESSION['quizz_reponses'])) {
-    //         $_SESSION['quizz_reponses'] = array();
-    //     }
-    //     $_SESSION['quizz_reponses'][] = $reponses;
-    //      print'<pre>' .print_r($_SESSION, true). '</pre>';
-    //     // Récupération des données de la session
-    //     // Utilisation des données pour la suite du traitement
-    //     // ...
-    //     // die();
-    //     $this->render("qcm");
-    // } else {
-    //     // Affichage du formulaire de quiz et des questions
-    //     // Charger les questions et les réponses depuis la base de données ou autre
-    //     // Afficher les questions et les réponses dans la vue correspondante
-    //     echo "ERREUR enregistrement";
-    // }
-
-    // }
 }
