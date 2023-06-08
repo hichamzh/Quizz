@@ -13,7 +13,9 @@
     <script src="public/Js/menu_burger.js" defer></script>
 </head>
 <nav class="nav-bar">
-    <img src="./public/Assets/logo_hf.png" alt="logo hf quizz"> 
+    <a href="index.php">
+        <img src="./public/Assets/logo_hf.png" alt="logo hf quizz"> 
+    </a>    
     <ul class="nav-right">
         <?php if (isset($_SESSION['login'])) : ?>
             <li class="ligne"> <a href="?controller=home&action=acceuil">Accueil</a></li>
