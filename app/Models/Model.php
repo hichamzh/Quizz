@@ -106,5 +106,11 @@ class Model {
         return $result;
     }
 
-    
+    public function check_reponse($id_reponse){
+        $requete = $this->bdd->prepare("SELECT * FROM reponses r WHERE r.id_reponse = :id_reponse");
+        $requete->bindParam(":id_reponse", $id_reponse);
+        $requete->execute();
+        $result = $requete->fetch(PDO::FETCH_OBJ);
+        return $result;
+    }
 }

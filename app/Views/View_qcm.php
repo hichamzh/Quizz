@@ -9,31 +9,30 @@
 </head>
 <body>
     
-    <header><h1>QCM</h1></header><br>
-       <?php 
-    //    $questionLimit = 2; // Nombre de questions à afficher à la fois
-    //    $questionOffset = $_SESSION['question_count'];
-    //    $displayedQuestions = array_slice($_SESSION["quizz_data"]['questions'], $questionOffset, $questionLimit);
-    //    foreach ($displayedQuestions as $q) :
-    //     // if ($qstCount >= 2) {
-    //     //     break;
-    //     // }
-    //    ?>
+    <header><h1>QCM </h1></header><br>
+  
+    <?php
+            $score=$_SESSION['score'];
+            $score_string= intval($score);
+            ?>
+            <div class=score>
+                <h2>Score = </h2> <?php echo $score_string; ?>
+            </div>
         <form  method="post" action="?controller=qcm&action=question_suivante">
         <div class="qcm" class="larger-click-area">
 
                 <h3 ><?=$data['question']->question ;?></h3><br>
-  
-
+           
             <?php foreach ($data['reponses'] as $r) :?>
            
-            <label for="myInput" class="larger-click-area">
-              <input type="radio" id="myInput" name="reponse[<?= $_SESSION['question_count']?>]" value="<?= $r->reponse ?>" required>
+            <label for="reponse<?= $r->id_reponse ?>" class="larger-click-area">
+              <input type="radio" id="reponse<?= $r->id_reponse ?>" name="reponse" value="<?= $r->id_reponse ?>" required>
               <?= $r->reponse ?>
-            </label>         
-    
-                <?php endforeach; ?>
-           
+            </label>   
+
+            <?php endforeach; ?>
+
+        
     
         </div>
         <?php 

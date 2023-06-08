@@ -14,8 +14,8 @@ h3{
 margin-top: auto ;
 display: flex;
 justify-content: center;
-/* width: 20px;
-height: 20px; */
+width: auto; 
+height: auto;
 }
 
 .reponse{
@@ -44,5 +44,19 @@ label {
     padding: 5px;
     border: 1px solid #ccc;
     /* Ajoutez d'autres styles selon vos besoins */
+  }
+
+  .none{
+    display: none;
+  }
+
+  .score{
+    margin-left: 5px;
+    display: flex;
+    font-family: 'Times New Roman', Times, serif, sans-serif;
+    background-color: grey;
+    border:solid 3px black;
+    width: 6%;
+    font-size: medium;
   }
   
