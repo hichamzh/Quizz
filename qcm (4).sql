@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Hôte : 127.0.0.1
--- Généré le : mar. 06 juin 2023 à 09:36
+-- Généré le : jeu. 08 juin 2023 à 17:30
 -- Version du serveur : 10.4.27-MariaDB
 -- Version de PHP : 8.2.0
 
@@ -101,15 +101,31 @@ INSERT INTO `reponses` (`id_reponse`, `id_question`, `reponse`, `niveau`, `etat`
 (9, 9, 'Lionel Messi.', '', 0),
 (10, 10, 'Le Santiago Bernabeu.', '', 0),
 (11, 11, 'Didier Deschamps.', '', 0),
-(12, 12, 'pelé', '', 0),
+(12, 12, 'Pelé', '', 0),
 (13, 13, 'FC Barcelone', '', 0),
 (14, 14, 'Cristiano Ronaldo', '', 0),
 (15, 15, 'La Russie', '', 0),
 (16, 16, 'Liverpool FC', '', 0),
 (17, 17, 'Manchester United FC', '', 0),
 (18, 18, ' Lionel Messi (7 fois)', '', 0),
-(19, 19, 'L\'Espagne', '', 0),
-(20, 3, 'Le Rugby ', '', 1);
+(20, 3, 'Le Rugby ', '', 1),
+(21, 5, '15 joueurs', '', 1),
+(22, 6, 'Le ballon d\'or', '', 1),
+(23, 7, 'Steve Mandanda', '', 1),
+(24, 8, '80 minutes', '', 1),
+(25, 9, 'Olivier Giroud', '', 1),
+(26, 10, 'Le San Siro', '', 1),
+(27, 11, 'Laurent Blanc', '', 1),
+(28, 4, 'L\'Algérie', '', 1),
+(29, 12, 'Didier Deschamps', '', 1),
+(30, 13, 'L\'olympique de Barcelone', '', 1),
+(31, 14, 'Cavani', '', 1),
+(32, 15, 'Corée du Nord', '', 1),
+(33, 16, 'Les RED\'s', '', 1),
+(34, 17, 'RC Manchester United', '', 1),
+(35, 18, 'Karim Benzema', '', 1),
+(36, 19, 'Igor Tudor', '', 1),
+(37, 19, 'Carlo Ancelotti', '', 0);
 
 -- --------------------------------------------------------
 
@@ -243,7 +259,7 @@ ALTER TABLE `questions`
 -- AUTO_INCREMENT pour la table `reponses`
 --
 ALTER TABLE `reponses`
-  MODIFY `id_reponse` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=21;
+  MODIFY `id_reponse` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=38;
 
 --
 -- AUTO_INCREMENT pour la table `score`

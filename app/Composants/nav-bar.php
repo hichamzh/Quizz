@@ -13,7 +13,6 @@
     <script src="public/Js/menu_burger.js" defer></script>
 </head>
 <nav class="nav-bar">
-    TEST §§§§!!!!!
     <a href="index.php">
         <img src="./public/Assets/logo_hf.png" alt="logo hf quizz"> 
     </a>    
