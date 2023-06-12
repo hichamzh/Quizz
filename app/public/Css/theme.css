@@ -22,7 +22,9 @@ header {
 }
 .container_theme {
   display: flex;
+  flex-wrap: wrap;
   justify-content: space-evenly;
+  gap: 20px;
   width: 70%;
   margin: 0 auto;
 }
@@ -31,7 +33,7 @@ header {
   flex-direction: column;
   position: relative;
   min-height: 35vh;
-  min-width: 30%;
+  min-width: 350px;
   color: white;
   border: solid 2px greenyellow;
   border-radius: 10px;

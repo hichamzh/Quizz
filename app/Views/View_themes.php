@@ -13,7 +13,7 @@
     <section class="container_theme">
 
     <?php foreach($data['themes'] as $t) :?>
-        <div href="" class="card_theme">
+        <div class="card_theme">
             <img src="public/Assets/<?=$t['image_theme'] ?>" alt="logo" class="img_theme">
             <p class="nom_theme"><?= $t['nom_theme'] ?></p>
             <div class="niveaux">
