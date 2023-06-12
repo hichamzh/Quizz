@@ -1,17 +1,17 @@
-<?php 
+<?php
 
 
-abstract class Controller 
+abstract class Controller
 {
     abstract public function action_default();
 
-    public function __construct(){
+    public function __construct()
+    {
 
-        if(isset($_GET['action']) and method_exists($this, 'action_' . $_GET['action'])){
+        if (isset($_GET['action']) and method_exists($this, 'action_' . $_GET['action'])) {
             $action = 'action_' . $_GET['action'];
             $this->$action();
-        } 
-        else {
+        } else {
             $this->action_default();
         }
     }

@@ -23,7 +23,7 @@
                 <a href='?controller=home&action=acceuil#regles'>Les Règles</a>
             </li>
             <li class="ligne">
-            <a href="?controller=qcm&action=theme"  >Commencer le Quizz </a>
+            <a href="?controller=qcm&action=theme">Commencer le Quizz </a>
 
             </li>
                 <button type="submit" class="butt">Déconnexion</button>

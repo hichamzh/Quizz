@@ -15,9 +15,9 @@
             $score=$_SESSION['score'];
             $score_string= intval($score);
             ?>
-            <div class=score>
+            <!--<div class="score none">
                 <h2>Score = </h2> <?php echo $score_string; ?>
-            </div>
+            </div>-->
         <form  method="post" action="?controller=qcm&action=question_suivante">
         <div class="qcm" class="larger-click-area">
 
@@ -35,9 +35,6 @@
         
     
         </div>
-        <?php 
-             $_SESSION['question_count']++;
-        ?>
             <div class="button">
                 <input type="submit" value="Suivant" />
             </div>
