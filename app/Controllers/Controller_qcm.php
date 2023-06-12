@@ -98,10 +98,9 @@ class Controller_qcm extends Controller
 
             $this->render("qcm", $data);
         } else {
-            echo "Terminer voici votre score : " . $_SESSION['score'];
+            $this->render('end_qcm');
             // $this->render('home', $_SESSION['score']);
         }
-
 
     }
 }
