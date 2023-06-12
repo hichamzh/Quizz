@@ -2,7 +2,6 @@
   margin: 0;
   padding: 0;
   box-sizing: border-box;
-  border: solid 2px red;
 }
 
 body {
@@ -19,7 +18,7 @@ body {
 }
 
 .bienvenue h1 {
-  font-size: 3vw;
+  font-size: 40px;
   padding: 2%;
   color: greenyellow;
 }
@@ -32,6 +31,7 @@ body {
   justify-content: center;
   max-width: 70%;
   margin: 0 auto;
+  border: solid 2px red;
 }
 
 .presentation p {
@@ -67,17 +67,35 @@ body {
 /* Styles pour les écrans de taille moyenne (mobiles en mode paysage)(min-width: 576px) and (max-width: 767px)*/
 /* Styles pour les écrans de taille moyenne (tablettes en mode portrait) (min-width: 768px) and (max-width: 991px) */
 /* Styles pour les écrans de taille moyenne (tablettes en mode paysage) (min-width: 992px) and (max-width: 1199px)*/
+
 @media (max-width: 575px) {
+  /*Format mobile*/
   .bienvenue h1 {
     font-size: 24px;
   }
   .presentation p {
+    font-size: 18px;
+  }
+  .container-bienvenue {
+    margin-top: 10%;
+    border: solid 2px red;
+  }
+  @media (min-width: 768px) and (max-width: 991px) {
+    /*Format tablette*/
+    .bienvenue h1 {
+      font-size: 30px;
+    }
+  }
+
+  @media (min-width: 992px) and (max-width: 1199px) {
+    .bienvenue h1 {
+      font-size: 35px;
+    }
+  }
+  /* .presentation p {
     font-size: 12px;
   }
   .regles h3 {
     font-size: 24px;
-  }
-  .container-bienvenue {
-    margin: auto;
-  }
+  } */
 }

@@ -10,10 +10,20 @@ body {
   width: 100%;
   background-color: #2c2c2c;
 }
-header {
-  margin: 2%;
+
+.connexion_inscription {
+  display: flex;
+  flex-direction: column;
+  justify-content: space-evenly;
+  width: 100%;
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  padding: 5%;
 }
 header h1 {
+  margin: 2%;
   text-align: center;
   color: greenyellow;
 }
@@ -29,7 +39,9 @@ header h1 {
   background-color: #222021;
   border-radius: 10px;
 }
-
+.formulaire-inscription {
+  width: 670px;
+}
 .formulaire-inscription .container-input {
   text-align: center;
   width: 100%;
@@ -158,5 +170,29 @@ header h1 {
     transform: translateY(-1000px) rotate(720deg);
     opacity: 0;
     border-radius: 50%;
+  }
+}
+
+@media (max-width: 575px) {
+  /*format mobile*/
+  .formulaire-inscription {
+    width: 100%;
+  }
+}
+@media (min-width: 576px) and (max-width: 767px) {
+  .formulaire-inscription {
+    width: 80%;
+  }
+}
+@media (min-width: 768px) and (max-width: 991px) {
+  /*tabelette portrait*/
+  .formulaire-inscription {
+    width: 90%;
+  }
+}
+
+@media (min-width: 992px) and (max-width: 1199px) {
+  .formulaire-inscription {
+    width: 70%;
   }
 }
