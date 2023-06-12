@@ -2,6 +2,7 @@
   margin: 0;
   padding: 0;
   box-sizing: border-box;
+  border: solid 2px red;
 }
 
 body {
@@ -18,7 +19,7 @@ body {
 }
 
 .bienvenue h1 {
-  font-size: 34px;
+  font-size: 3vw;
   padding: 2%;
   color: greenyellow;
 }
@@ -66,3 +67,17 @@ body {
 /* Styles pour les écrans de taille moyenne (mobiles en mode paysage)(min-width: 576px) and (max-width: 767px)*/
 /* Styles pour les écrans de taille moyenne (tablettes en mode portrait) (min-width: 768px) and (max-width: 991px) */
 /* Styles pour les écrans de taille moyenne (tablettes en mode paysage) (min-width: 992px) and (max-width: 1199px)*/
+@media (max-width: 575px) {
+  .bienvenue h1 {
+    font-size: 24px;
+  }
+  .presentation p {
+    font-size: 12px;
+  }
+  .regles h3 {
+    font-size: 24px;
+  }
+  .container-bienvenue {
+    margin: auto;
+  }
+}

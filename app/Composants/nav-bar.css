@@ -25,6 +25,13 @@ a{
 
 .nav-bar img{
     transform: scale(0.5);
+   
+}
+@media (max-width: 575px) {
+    .nav-bar img{
+        width: 50%;
+    }
+
 }
 .nav-right{
     display: flex;
