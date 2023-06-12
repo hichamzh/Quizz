@@ -55,3 +55,16 @@ label {
   width: 6%;
   font-size: medium;
 }
+
+.progress_bar_container {
+  width: 100%;
+  height: 20px;
+  background-color: #f2f2f2;
+}
+
+.progress_bar {
+  height: 100%;
+  width: 100%;
+  background-color: #4caf50;
+  transition: width 1s linear;
+}
