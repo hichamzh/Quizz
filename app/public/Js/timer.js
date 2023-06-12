@@ -13,6 +13,7 @@ function updateTimer() {
   // console.log(timer_duration);
 
   if (timer_duration <= 0) {
+    //find du timer, on récup le form_qcm et on applique un submit
     document.querySelector(".form_qcm").submit();
     clearInterval(intervalId);
   }
