@@ -89,8 +89,8 @@ a {
   left: 50%;
   transform: translate(-50%, -50%);
   z-index: 99; /*Pour mettre le popUp de deconnexion au dessus des thèmes ou autres */
-  width: 30%;
-  height: 40%;
+  width: 35%;
+  height: 35%;
   padding: 2%;
   background: aliceblue;
   border-radius: 10px;
@@ -150,7 +150,6 @@ a {
     position: relative;
     z-index: 90;
     cursor: pointer;
-    border: solid 2px red;
   }
   .icon_burger li,
   .icon_burger li::before,
@@ -204,6 +203,10 @@ a {
     transform: rotate(45deg);
   }
   .nav-bar img {
+    width: 70%;
+  }
+
+  .form_deco {
     width: 70%;
   }
 }

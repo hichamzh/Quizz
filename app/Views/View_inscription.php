@@ -45,6 +45,7 @@
                 <i class="fas fa-eye" onclick="toggleVisibleMdp()" id="icon"></i>
             </div>
             <button type="submit" class="butt">S'inscrire</button> <!--class butt heriter par la navbar -->
+            <a href="?controller=inscription&action=connexion" class="link_inscription_connexion">Déjà un compte ?</a>
         </form>
     </section>
 

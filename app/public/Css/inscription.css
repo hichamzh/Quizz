@@ -70,7 +70,14 @@ header h1 {
   cursor: pointer;
   color: white;
 }
-
+.link_inscription_connexion {
+  color: white;
+  text-decoration: underline;
+  text-underline-offset: 4px;
+}
+.link_inscription_connexion:hover {
+  color: greenyellow;
+}
 /* FICHIER CSS POUR LA VIEW INSCRIPTION ET CONNEXION  */
 
 /*TEST ANIMATION */

@@ -42,6 +42,8 @@
                 <i class="fas fa-eye" onclick="toggleVisibleMdp()" id="icon"></i>
             </div>
             <button type="submit" class="butt">Go Quizz</button> <!--class butt heriter par la navbar -->
+            <a href="?controller=inscription&action=connexion" class="link_inscription_connexion">Vous n'avez pas de compte ? Inscrivez-vous</a>
+
         </form>
     </section>
 
