@@ -150,7 +150,6 @@ a {
     position: relative;
     z-index: 90;
     cursor: pointer;
-    border: solid 2px red;
   }
   .icon_burger li,
   .icon_burger li::before,
