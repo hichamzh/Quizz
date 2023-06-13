@@ -17,6 +17,12 @@
     <header>
         <h1>QCM </h1>
     </header><br>
+    Question N° 
+    <?php
+    $compteur = $_SESSION['question_count'];
+    $compteur_string = intval($compteur)+1;
+    echo $compteur_string;
+    ?>
 
     <?php
     $score = $_SESSION['score'];
@@ -32,8 +38,8 @@
 
             <?php foreach ($data['reponses'] as $r): ?>
 
-                <label for="reponse<?= $r->id_reponse ?>" class="larger-click-area">
-                    <input type="radio" id="reponse<?= $r->id_reponse ?>" name="reponse" value="<?= $r->id_reponse ?>"
+                <label for="reponse<?= $r->id_reponse ?>" class="larger-click-area centre">
+                    <input type="radio" id="reponse<?= $r->id_reponse ?>" name="reponse" class="margin " value="<?= $r->id_reponse ?>"
                         required>
                     <?= $r->reponse ?>
                 </label>
@@ -43,6 +49,7 @@
 
 
         </div>
+
         <div class="button">
             <input type="submit" value="Suivant" />
         </div>
