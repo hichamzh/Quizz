@@ -1,7 +1,17 @@
+* {
+  padding: 0;
+  margin: 0;
+  box-sizing: border-box;
+}
+
+body{
+  background: #2c2c2c;
+  height: 100vh;
+  width: 100%;
+}
 .qcm {
   /* centrer le qcm */
   display: block;
-
   width: 50%;
   margin: auto;
 }
