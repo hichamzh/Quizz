@@ -20,6 +20,7 @@ abstract class Controller
     {
         $file_name = "Views/view_" . $vue . ".php";
         if (file_exists($file_name)) {
+            extract($data);
             require($file_name);
         } else {
             $this->action_error("pas de vue en vue ");
