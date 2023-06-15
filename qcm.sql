@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Hôte : 127.0.0.1
--- Généré le : jeu. 08 juin 2023 à 17:30
+-- Généré le : jeu. 15 juin 2023 à 10:27
 -- Version du serveur : 10.4.27-MariaDB
 -- Version de PHP : 8.2.0
 
@@ -71,7 +71,16 @@ INSERT INTO `questions` (`id_question`, `question`, `type`, `niveau`, `id_theme`
 (16, 'Quel est le nom de l\'équipe de football de Liverpool ?', 1, 'facile', 7),
 (17, 'Quel est le nom de l\'équipe de football de Manchester United ?', 1, 'facile', 7),
 (18, 'Quel joueur a remporté le Ballon d\'Or le plus de fois ?', 1, 'facile', 7),
-(19, 'Qui est l\'entraîneur actuel de l\'équipe de football du Real Madrid ?', 1, 'facile', 7);
+(19, 'Qui est l\'entraîneur actuel de l\'équipe de football du Real Madrid ?', 1, 'facile', 7),
+(31, 'Quel joueur de football est surnommé \"Neymar Jr\" ?', 1, 'facile', 7),
+(32, 'Quel est le nom de l\'équipe de football de Paris ?', 1, 'facile', 7),
+(35, 'Dans quel pays a eu lieu la coupe du monde de football en 2014 ?', 1, 'facile', 7),
+(37, 'Quel joueur a remporté le Ballon d\'Or en 2019 ?', 1, 'facile', 7),
+(39, '28 Quel joueur a remporté le Ballon d\'Or en 2018 ?', 1, 'facile', 7),
+(40, 'Dans quel pays a été créé le football moderne? ', 1, 'facile', 7),
+(41, 'Dans quelle ville se trouve le stade Maracanã? ', 1, 'facile', 7),
+(42, 'Qui a remporté la coupe du monde de football en 2010 ?', 1, 'facile', 7),
+(43, 'Quel joueur a remporté le Ballon d\'Or en 2020 ?', 1, 'facile', 7);
 
 -- --------------------------------------------------------
 
@@ -125,7 +134,16 @@ INSERT INTO `reponses` (`id_reponse`, `id_question`, `reponse`, `niveau`, `etat`
 (34, 17, 'RC Manchester United', '', 1),
 (35, 18, 'Karim Benzema', '', 1),
 (36, 19, 'Igor Tudor', '', 1),
-(37, 19, 'Carlo Ancelotti', '', 0);
+(37, 19, 'Carlo Ancelotti', '', 0),
+(38, 31, 'Neymar', '', 0),
+(39, 32, 'Paris Saint-Germain (PSG)', '', 0),
+(40, 35, 'Le Brésil', '', 0),
+(41, 37, 'Lionel Messi', '', 0),
+(42, 39, 'Luka Modric', '', 0),
+(43, 40, 'Royaume-Uni', '', 0),
+(44, 41, 'Rio de Janeiro', '', 0),
+(45, 42, 'L\'Espagne', '', 0),
+(46, 43, 'Robert Lewandowski', '', 0);
 
 -- --------------------------------------------------------
 
@@ -253,13 +271,13 @@ ALTER TABLE `utilisateur`
 -- AUTO_INCREMENT pour la table `questions`
 --
 ALTER TABLE `questions`
-  MODIFY `id_question` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=20;
+  MODIFY `id_question` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=44;
 
 --
 -- AUTO_INCREMENT pour la table `reponses`
 --
 ALTER TABLE `reponses`
-  MODIFY `id_reponse` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=38;
+  MODIFY `id_reponse` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=47;
 
 --
 -- AUTO_INCREMENT pour la table `score`
