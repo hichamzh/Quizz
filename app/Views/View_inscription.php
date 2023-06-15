@@ -19,15 +19,28 @@
 
     </div>
     <div class="carre"></div>
-    <div class="carre"><img src="public/Assets/pikachu.png" alt="pikachu"></div>
+    <div class="carre">
+        <a href="https://github.com/hichamzh/" target="_blank">
+            <img src="public/Assets/pikachu.png" alt="pikachu">
+        </a>
+    </div>
+
     <div class="carre"></div>
     <div class="carre"></div>
-    <div class="carre"><img src="public/Assets/pikachu.png" alt="pikachu"></div>
+    <div class="carre">
+        <a href="https://github.com/hichamzh/" target="_blank">
+            <img src="public/Assets/pikachu.png" alt="pikachu">
+        </a>
+    </div>
     <div class="carre"></div>
     <div class="carre"></div>
     <div class="carre"></div>
     <div class="carre"></div>
-    <div class="carre"><img src="public/Assets/pikachu.png" alt="pikachu"></div>
+    <div class="carre">
+        <a href="https://github.com/hichamzh/" target="_blank">
+            <img src="public/Assets/pikachu.png" alt="pikachu">
+        </a>
+    </div>
     <div class="carre"></div>
     <div class="carre"></div>
     <section class="connexion_inscription">

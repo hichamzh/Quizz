@@ -32,7 +32,7 @@ header {
   display: flex;
   flex-direction: column;
   position: relative;
-  min-height: 35vh;
+  min-height: 300px;
   min-width: 350px;
   color: white;
   border: solid 2px greenyellow;

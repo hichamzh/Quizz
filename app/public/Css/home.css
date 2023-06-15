@@ -12,6 +12,7 @@ body {
 }
 
 /************************************************** ACCEUIL WEBSITE AVANT CONNEXION*/
+
 .bienvenue {
   text-align: center;
   margin: 2% 0 5% 0;
@@ -31,7 +32,6 @@ body {
   justify-content: center;
   max-width: 70%;
   margin: 0 auto;
-  border: solid 2px red;
 }
 
 .presentation p {

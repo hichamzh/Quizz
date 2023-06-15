@@ -30,7 +30,8 @@ class Controller_qcm extends Controller
         $questions = $m->get_question($id_theme, $niveau); //list des questions
 
 
-
+        $list_timer = [];
+        $_SESSION["timer"] = $list_timer;
         // Stocker les données dans la session
         $questions_count = 0; // compteur qui sera stocker dans la session['question_count']
 
@@ -72,8 +73,12 @@ class Controller_qcm extends Controller
         }
 
         // var_dump($_SESSION['score']);
-
-
+        //stocker le timer
+        $timer = $_POST['timer'];
+        $list_timer = $_SESSION["timer"];
+        $list_timer[]= $timer;
+        $_SESSION["timer"] = $list_timer;       
+        
         // Stocker les données dans la session
         $questions_count = $_SESSION['question_count']; //variable contenant la session du compteur qui a été declarer dans la fonction au dessus
         $questions_count++; //incrementation du compteur 

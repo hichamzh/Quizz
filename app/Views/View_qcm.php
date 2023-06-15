@@ -14,47 +14,43 @@
     <div class="progress_bar_container">
         <div class="progress_bar"></div>
     </div>
-    <header>
-        <h1>QCM </h1>
-    </header><br>
-    Question N° 
-    <?php
-    $compteur = $_SESSION['question_count'];
-    $compteur_string = intval($compteur)+1;
-    echo $compteur_string;
-    ?>
 
     <?php
     $score = $_SESSION['score'];
     $score_string = intval($score);
     ?>
-    <!--<div class="score none">
-                <h2>Score = </h2> <?php echo $score_string; ?>
-            </div>-->
+
     <form method="post" action="?controller=qcm&action=question_suivante" class="form_qcm">
+        <input type="hidden" name="timer" value="0">
         <div class="qcm" class="larger-click-area">
+        <div class="qst_actuel">
+            Question N°
+            <?php
+            $compteur = $_SESSION['question_count'];
+            $compteur_string = intval($compteur) + 1;
+            echo $compteur_string;
+            ?>
+        </div>
+            <h3>
+                <?= $data['question']->question; ?>
+            </h3>
 
-            <h3><?= $data['question']->question; ?></h3><br>
-
+            <div class="container_reponses">
             <?php foreach ($data['reponses'] as $r): ?>
 
-                <label for="reponse<?= $r->id_reponse ?>" class="larger-click-area centre">
-                    <input type="radio" id="reponse<?= $r->id_reponse ?>" name="reponse" class="margin " value="<?= $r->id_reponse ?>"
-                        required>
-                    <?= $r->reponse ?>
-                </label>
+                    <label for="reponse<?= $r->id_reponse ?>" class="larger-click-area centre">
+                        <input type="radio" id="reponse<?= $r->id_reponse ?>" name="reponse" class="margin "
+                            value="<?= $r->id_reponse ?>" required>
+                        <?= $r->reponse ?>
+                    </label>
+                    
+                    <?php endforeach; ?>
+            </div>
 
-            <?php endforeach; ?>
-
-
-
+            <div class="button">
+                <input type="submit" value="Suivant" class="butt"/>
+            </div>
         </div>
-
-        <div class="button">
-            <input type="submit" value="Suivant" />
-        </div>
-
-
     </form>
 </body>
 

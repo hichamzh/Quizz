@@ -77,7 +77,7 @@ class Model {
 // RECUP UN NOMBRE DE QUESTIONS(ID) en fonction de l'id choisi et du niveau    
     public function get_question($id_theme, $niveau) {
 
-        $requete = $this->bdd->prepare("SELECT q.id_question FROM questions q  WHERE id_theme = :id AND q.niveau = :niveau ORDER BY RAND() LIMIT 20");
+        $requete = $this->bdd->prepare("SELECT q.id_question FROM questions q  WHERE id_theme = :id AND q.niveau = :niveau ORDER BY RAND() LIMIT 3");
         $requete->bindParam(":id", $id_theme);
         $requete->bindParam(":niveau", $niveau);
         $requete->execute();
@@ -99,7 +99,7 @@ class Model {
 // RECUP les reponses en fonction de l'id question qui est afficher
     public function get_reponse($id_question) {
 
-        $requete = $this->bdd->prepare("SELECT * FROM reponses r WHERE r.id_question = :id_question");
+        $requete = $this->bdd->prepare("SELECT * FROM reponses r WHERE r.id_question = :id_question ORDER BY RAND() ");
         $requete->bindParam(":id_question", $id_question);
         $requete->execute();
         $result = $requete->fetchAll(PDO::FETCH_OBJ);
