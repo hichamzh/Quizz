@@ -97,3 +97,250 @@ h3 {
   align-items: center;
   gap: 15px;
 }
+
+/*TEST ANIMATION */
+
+.carre {
+  width: 50px;
+  height: 50px;
+  position: absolute;
+  bottom: 0%;
+  opacity: 0;
+  right: 10%;
+  animation: animate 15s linear infinite;
+  transition: all ease 0.1s;
+  z-index: -1;
+  background-image: url("../Assets/ballon.png");
+  background-size: contain;
+  background-repeat: no-repeat;
+}
+.carre>img:hover {
+  cursor: pointer;
+}
+.carre img {
+  width: 90%;
+  height: 90%;
+}
+
+.carre:nth-of-type(2) {
+  width: 30px;
+  height: 30px;
+  right: 20%;
+  animation-delay: 3s;
+}
+
+.carre:nth-of-type(3) {
+  width: 60px;
+  height: 60px;
+  right: 25%;
+  animation-delay: 5s;
+}
+.carre:nth-of-type(4) {
+  width: 20px;
+  height: 20px;
+  right: 35%;
+  animation-delay: 10s;
+}
+.carre:nth-of-type(5) {
+  width: 30px;
+  height: 30px;
+  right: 40%;
+  animation-delay: 5s;
+}
+.carre:nth-of-type(6) {
+  width: 70px;
+  height: 70px;
+  right: 50%;
+  animation-delay: 3s;
+}
+.carre:nth-of-type(7) {
+  width: 20px;
+  height: 20px;
+  right: 55%;
+  animation-delay: 0s;
+}
+.carre:nth-of-type(8) {
+  width: 35px;
+  height: 35px;
+  right: 65%;
+  animation-delay: 2s;
+}
+.carre:nth-of-type(9) {
+  width: 25px;
+  height: 25px;
+  right: 70%;
+  animation-delay: 5s;
+}
+.carre:nth-of-type(10) {
+  width: 30px;
+  height: 30px;
+  right: 80%;
+  animation-delay: 1s;
+}
+.carre:nth-of-type(11) {
+  width: 50px;
+  height: 50px;
+  right: 85%;
+  animation-delay: 0s;
+}
+.carre:nth-of-type(12) {
+  width: 80px;
+  height: 80px;
+  right: 41%;
+  animation-delay: 6s;
+}
+.carre:nth-of-type(13) {
+  width: 83px;
+  height: 83px;
+  right: 50%;
+  animation-delay: 3s;
+}
+.carre:nth-of-type(14) {
+  width: 30px;
+  height: 30px;
+  right: 20%;
+  animation-delay: 8s;
+}
+.carre:nth-of-type(15) {
+  width: 70px;
+  height: 70px;
+  right: 2%;
+  animation-delay: 2s;
+}
+.carre:nth-of-type(16) {
+  width: 110px;
+  height: 110px;
+  right: 40%;
+  animation-delay: 0.5s;
+}
+
+
+
+
+.basket {
+  width: 50px;
+  height: 50px;
+  position: absolute;
+  bottom: 0%;
+  opacity: 0;
+  right: 10%;
+  animation: animate 15s linear infinite;
+  transition: all ease 0.1s;
+  z-index: -1;
+  background-image: url("../Assets/ballonBasket.png");
+  background-size: contain;
+  background-repeat: no-repeat;
+}
+.basket>img:hover {
+  cursor: pointer;
+}
+.basket img {
+  width: 90%;
+  height: 90%;
+}
+
+.basket:nth-of-type(2) {
+  width: 30px;
+  height: 30px;
+  right: 20%;
+  animation-delay: 3s;
+}
+
+.basket:nth-of-type(3) {
+  width: 60px;
+  height: 60px;
+  right: 25%;
+  animation-delay: 5s;
+}
+.basket:nth-of-type(4) {
+  width: 20px;
+  height: 20px;
+  right: 35%;
+  animation-delay: 10s;
+}
+.basket:nth-of-type(5) {
+  width: 30px;
+  height: 30px;
+  right: 40%;
+  animation-delay: 5s;
+}
+.basket:nth-of-type(6) {
+  width: 70px;
+  height: 70px;
+  right: 50%;
+  animation-delay: 3s;
+}
+.basket:nth-of-type(7) {
+  width: 20px;
+  height: 20px;
+  right: 55%;
+  animation-delay: 0s;
+}
+.basket:nth-of-type(8) {
+  width: 35px;
+  height: 35px;
+  right: 65%;
+  animation-delay: 2s;
+}
+.basket:nth-of-type(9) {
+  width: 25px;
+  height: 25px;
+  right: 70%;
+  animation-delay: 5s;
+}
+.basket:nth-of-type(10) {
+  width: 30px;
+  height: 30px;
+  right: 80%;
+  animation-delay: 1s;
+}
+.basket:nth-of-type(11) {
+  width: 50px;
+  height: 50px;
+  right: 85%;
+  animation-delay: 0s;
+}
+.basket:nth-of-type(12) {
+  width: 80px;
+  height: 80px;
+  right: 41%;
+  animation-delay: 6s;
+}
+.basket:nth-of-type(13) {
+  width: 83px;
+  height: 83px;
+  right: 50%;
+  animation-delay: 3s;
+}
+.basket:nth-of-type(14) {
+  width: 30px;
+  height: 30px;
+  right: 20%;
+  animation-delay: 8s;
+}
+.basket:nth-of-type(15) {
+  width: 70px;
+  height: 70px;
+  right: 2%;
+  animation-delay: 2s;
+}
+.basket:nth-of-type(16) {
+  width: 110px;
+  height: 110px;
+  right: 40%;
+  animation-delay: 0.5s;
+}
+
+@keyframes animate {
+  0% {
+    transform: translateY(0) rotate(0deg);
+    opacity: 3;
+    border-radius: 0;
+  }
+
+  100% {
+    transform: translateY(-1000px) rotate(720deg);
+    opacity: 1;
+    border-radius: 50%;
+  }
+}
