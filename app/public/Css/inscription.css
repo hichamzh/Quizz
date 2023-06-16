@@ -40,31 +40,31 @@ header h1 {
 .formulaire-inscription {
   width: 670px;
 }
-.formulaire-inscription .container-input {
+.container-input {
+  display: flex;
+  align-items: center;
   text-align: center;
-  width: 100%;
+  width: 50%;
   margin: 20px auto;
+  border: solid 1px white;
+  border-radius: 10px;
 }
 /* FICHIER CSS POUR LA VIEW INSCRIPTION ET CONNEXION  */
+
 .container-input input {
-  width: 50%;
-  margin: 0 auto;
+  all: unset;
+  width: 100%;
   padding: 5px 0;
   border: none;
-  border-bottom: 1px solid #fff;
+  /* border-bottom: 1px solid #fff; */
   background: transparent;
   outline: none;
   color: greenyellow;
   text-align: center;
   position: relative;
 }
-
-.container-input input::-webkit-input-placeholder {
-  color: #fff;
-}
-
 .container-input i {
-  position: absolute;
+  margin-right: 5px;
   cursor: pointer;
   color: white;
 }

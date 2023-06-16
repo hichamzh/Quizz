@@ -49,7 +49,6 @@ class Controller_qcm extends Controller
         // print'<pre>' .print_r($reponses, true). '</pre>';
         // die();
 
-
         $data = [
             "question" => $question,
             "reponses" => $reponses
@@ -80,10 +79,22 @@ class Controller_qcm extends Controller
         // var_dump($_SESSION['score']);
         //stocker le timer
         $timer = $_POST['timer'];
+        $intimer = intval($timer);
+        /////////////////////
         $list_timer = $_SESSION["timer"];
-        $list_timer[]= $timer;
-        $_SESSION["timer"] = $list_timer;       
-        
+        $list_timer[]= $intimer;
+        $_SESSION["timer"] = $list_timer; 
+        $total_timer = array_sum($_SESSION["timer"]);  
+        $total_timer_minute = floor($total_timer/60);
+        $secondes = $total_timer % 60;
+
+        if ($secondes === 60) {
+            $total_timer_minute++;
+            $secondes = 0;
+        }
+        $formatted_time = sprintf("%d:%02d secondes", $total_timer_minute, $secondes);
+       
+        ////////
         // Stocker les données dans la session
         $questions_count = $_SESSION['question_count']; //variable contenant la session du compteur qui a été declarer dans la fonction au dessus
         $questions_count++; //incrementation du compteur 
@@ -99,19 +110,22 @@ class Controller_qcm extends Controller
             $question = $m->get_question_une($id_question);
             $reponses = $m->get_reponse($id_question);
 
-            // print'<pre>' .print_r($reponses, true). '</pre>';
             // die();
             $data = [
                 "question" => $question,
                 "reponses" => $reponses
             ];
-
+            
             $this->render("qcm", $data);
-        } else {
-            $this->render('end_qcm');
+        }
+         else {
+            $data = [
+               "nbr" => count($_SESSION['list_questions']),
+               "total_timer" => $formatted_time
+            ];
+            $this->render('end_qcm', $data);
             // $this->render('home', $_SESSION['score']);
         }
-
     }
 
     public function action_correction()
