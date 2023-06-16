@@ -36,6 +36,7 @@
     ?>
 
     <form method="post" action="?controller=qcm&action=question_suivante" class="form_qcm">
+        <!-- input caché pour le timer -->
         <input type="hidden" name="timer" value="0">
         <div class="qcm" class="larger-click-area">
             <div class="qst_actuel">

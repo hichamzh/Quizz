@@ -17,14 +17,12 @@ function updateTimer() {
     timer.style.backgroundColor = "red";
   }
   if (timer_duration < 0) {
-    //find du timer, on récup le form_qcm et on applique un submit
+  //fin du timer, on récup le form_qcm et on applique un submit
     form.submit();
     clearInterval(intervalId);
   }
-  let fethi = (document.querySelector("[name=timer]").value =
-    30 - timer_duration);
-  console.log(timer);
-  console.log(progressPercent);
+//on envoie le temps mis a répondre dans l'input View_qcm
+let input_timer = (document.querySelector("[name=timer]").value = 30 - timer_duration);
 }
 
 setInterval(updateTimer, 1000);
