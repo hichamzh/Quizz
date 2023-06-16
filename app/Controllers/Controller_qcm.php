@@ -80,6 +80,16 @@ class Controller_qcm extends Controller
         $list_timer[]= $intimer;
         $_SESSION["timer"] = $list_timer; 
         $total_timer = array_sum($_SESSION["timer"]);  
+        $total_timer_minute = floor($total_timer/60);
+        $secondes = $total_timer % 60;
+
+        if ($secondes === 60) {
+            $total_timer_minute++;
+            $secondes = 0;
+        }
+        $formatted_time = sprintf("%d:%02d secondes", $total_timer_minute, $secondes);
+       
+        ////////
         // Stocker les données dans la session
         $questions_count = $_SESSION['question_count']; //variable contenant la session du compteur qui a été declarer dans la fonction au dessus
         $questions_count++; //incrementation du compteur 
@@ -106,7 +116,7 @@ class Controller_qcm extends Controller
          else {
             $data = [
                "nbr" => count($_SESSION['list_questions']),
-               "total_timer" => $total_timer
+               "total_timer" => $formatted_time
             ];
             $this->render('end_qcm', $data);
             // $this->render('home', $_SESSION['score']);
