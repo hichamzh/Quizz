@@ -12,6 +12,7 @@
         <header><h1>Choisissez votre thème</h1></header>
         <section class="container_theme">
     
+        <?php unset($_SESSION['questions']); ?>
         <?php foreach($data['themes'] as $t) :?>
             <div class="card_theme">
                 <img src="public/Assets/<?=$t['image_theme'] ?>" alt="logo" class="img_theme">

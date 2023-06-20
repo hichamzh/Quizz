@@ -8,26 +8,34 @@
 </head>
 <body>
   
- 
+
         <?php
+
 // Récupérer le tableau de réponses depuis la session
 $ancienne_reponses = $_SESSION['ancienne_reponse'];
+
+ print'<pre>' .print_r($_SESSION['questions' ],true). '</pre>';
+
+// Variable de compteur pour le numéro de la question
+$questionNumero = 1; 
 // Parcourir le tableau de réponses avec une boucle foreach
+
 foreach ($ancienne_reponses as $reponse) {
     $id_reponse = $reponse->id_reponse;
     $question = $reponse->id_question;
     $reponse_text = $reponse->reponse;
     $niveau = $reponse->niveau;
     $etat = $reponse->etat;
-
-    // Afficher les informations de chaque réponse
-
-    echo " Question: $question<br>";
+  
+    echo "Question N°" . $questionNumero . ":<br>";
+    echo "Question: $question<br>";
+    echo "Réponse: $id_reponse<br>";
     echo "Réponse: $reponse_text<br>";
-    echo "Niveau: $niveau<br>";
     echo "État: $etat<br>";
     echo "<br>";
-}
+  
+    $questionNumero++; // Incrémente le numéro de la question
+    }
 ?>
 
 </body>

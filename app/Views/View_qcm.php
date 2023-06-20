@@ -59,7 +59,21 @@
                         <?= $r->reponse ?>
                     </label>
 
-                <?php endforeach; ?>
+                <?php
+                endforeach;
+                // Récupérer la question actuelle
+                $questions = $data['question']->question;
+
+                // Vérifier si la variable de session 'questions' n'existe pas
+                if (!isset($_SESSION['questions'])) {
+                    $_SESSION['questions'] = array(); // Initialiser un tableau vide
+                }  
+
+                // Ajouter la question au tableau de sessions 'questions'
+                $_SESSION['questions'][] = $question;
+                // var_dump( $_SESSION['questions']) ;
+
+                 ?>
             </div>
 
             <div class="button">

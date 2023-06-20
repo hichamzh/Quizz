@@ -62,6 +62,7 @@ class Controller_qcm extends Controller
     { // fonction utilisé au moment du click vers la question suivante
 
         $m = Model::get_model();
+        $ancienne_reponse = null; // Initialisation de la variable
 
         if (isset($_POST["reponse"]) && $_POST["reponse"] > 0) {
             // var_dump($_POST["reponse"]);
@@ -127,6 +128,9 @@ class Controller_qcm extends Controller
                 "question" => $question,
                 "reponses" => $reponses
             ];
+
+       
+        
             
             $this->render("qcm", $data);
         }
