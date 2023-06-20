@@ -11,9 +11,16 @@
         <h1>Voici votre score</h1>
         <p><?php echo $_SESSION['score']?></p>
         <h1>Voici vos temps</h1>
+
+    <p>Question </p>
+    <?php for ($i = 1; $i <= 3; $i++) : ?>
+    <?php echo  $i.':'; ?>
+    <?php endfor; ?>
         <p><?php print implode(', ', $_SESSION['timer']); ?></p>
     </section>-->
 
+    </div>
+    <p><?php var_dump ($_SESSION['ancienne_reponse']); ?></p>
     <section class="score">
         <header>
             <h1><?php echo $message?> <span class="material-symbols-outlined"></span></h1>

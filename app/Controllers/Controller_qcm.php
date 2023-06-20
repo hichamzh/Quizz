@@ -22,6 +22,7 @@ class Controller_qcm extends Controller
     public function action_theme_question()
     {
         $_SESSION['score'] = 0;
+        $_SESSION['ancienne_reponse'] = [];
         $id_theme = $_GET['id_theme']; // L'id du thème choisi
         $niveau = $_GET['lvl']; // Le niveau choisi
 
@@ -55,6 +56,7 @@ class Controller_qcm extends Controller
         ]; //taleau contenant deux clefs "question"(une seul id question est stocker la dedans) et "reponses" qui lui contient les reponses
         $this->render("qcm", $data);
 
+
     }
     public function action_question_suivante()
     { // fonction utilisé au moment du click vers la question suivante
@@ -70,6 +72,9 @@ class Controller_qcm extends Controller
                 $_SESSION['score']++;
             }
         }
+
+        $list_reponse = $ancienne_reponse;
+        $_SESSION['ancienne_reponse'][] = $list_reponse;
 
         // var_dump($_SESSION['score']);
         //stocker le timer
@@ -138,6 +143,14 @@ class Controller_qcm extends Controller
             exit;
             // $this->render('home', $_SESSION['score']);
         }
+    }
+
+    public function action_correction()
+    {
+        $m = Model::get_model();
+      
+        // var_dump($_SESSION['ancienne_reponse']);
+        $this-> render('correction');
     }
 
     public function action_test() {
