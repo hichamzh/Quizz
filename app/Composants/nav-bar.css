@@ -71,8 +71,9 @@ a {
   transition: all ease 0.5s;
 }
 
-.nav-right li.ligne:hover::before {
+li.ligne:hover::before {
   width: 100%;
+  
 }
 
 /* Form deco */
@@ -129,12 +130,12 @@ a {
 }
 
 .container_butt_deco button:nth-child(1) {
-  background: red;
-  color: white;
+  background: greenyellow;
+  color: black;
 }
 
 .container_butt_deco button:nth-child(2) {
-  background: greenyellow;
+  background: red;
   color: black;
 }
 /*RESPONSIVE NAV BAR */
@@ -195,8 +196,8 @@ a {
     margin: 0;
     width: 100%;
     height: 100vh;
-    background-color: rgba(255, 255, 255, 0.045);
-    backdrop-filter: blur(7px);
+    background-color: rgba(121, 230, 19, 0.192);
+    backdrop-filter: blur(70px);
     transition: all ease 0.5s;
   }
 
@@ -219,5 +220,16 @@ a {
 
   .form_deco {
     width: 70%;
+  }
+
+  .nav-right li {
+    font-size: x-large;
+
+  }
+  .nav-right button{
+    font-size: x-large;
+  }
+  .nav-right li.ligne:before {
+    top: 28px;
   }
 }
