@@ -1,71 +1,20 @@
 <!DOCTYPE html>
 <html lang="en">
-
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
 </head>
-
 <body>
-    <section class="footer">
-        <p>Created By</p>
-    <main class="parent_container_reseaux">
-        <div class="container_reseaux_createur">
-            <h4>Hicham</h4>
-            <div class="container_card">
-                <div class="img_createur"><img src="public/Assets/pikachu.png" alt="image de pikachu"></div>
-                <div class="container_parent_reseaux">
-                    <a href="https://github.com/hichamzh" target="_blank">
-                        <div class="container_reseaux">
-                            <i class="fa-brands fa-linkedin-in"></i><!--LinkedIn -->
-                            <p>LinkedIn</p>
-                        </div>
-                    </a>
-                    <a href="https://github.com/hichamzh" target="_blank">
-                        <div class="container_reseaux">
-                            <i class="fa-brands fa-github"></i><!--GitHub -->
-                            <p>GitHub</p>
-                        </div>
-                    </a>
-                    <a href="https://github.com/hichamzh" target="_blank">
+<footer>
+  <div class="container">
+      <div class="footer-info">
+        <p>© 2023 HF Quizz. Tous droits réservés.</p>
+        <p>Réalisé par <a href="https://github.com/hichamzh/" target="_blank">Hicham </a> et <a href="" target="_blank">Fethi</a>.</p>
+    </div>
+  </div>
+</footer>
 
-                        <div class="container_reseaux">
-                            <i class="fa-regular fa-envelope"></i><!--Mail -->
-                            <p>Mail perso</p>
-                        </div>
-                    </a>
-                </div>
-            </div>
-        </div>
-        <div class="container_reseaux_createur">
-            <h4>Fethi</h4>
-            <div class="container_card">
-                <div class="img_createur"><img src="public/Assets/pikachu.png" alt="image de pikachu"></div>
-                <div class="container_parent_reseaux">
-                    <a href="https://github.com/hichamzh" target="_blank">
-                        <div class="container_reseaux">
-                            <i class="fa-brands fa-linkedin-in"></i><!--LinkedIn -->
-                            <p>LinkedIn</p>
-                        </div>
-                    </a>
-                    <a href="https://github.com/hichamzh" target="_blank">
-                        <div class="container_reseaux">
-                            <i class="fa-brands fa-github"></i><!--GitHub -->
-                            <p>GitHub</p>
-                        </div>
-                    </a>
-                    <a href="https://github.com/hichamzh" target="_blank">
 
-                        <div class="container_reseaux">
-                            <i class="fa-regular fa-envelope"></i><!--Mail -->
-                            <p>Mail perso</p>
-                        </div>
-                    </a>
-                </div>
-            </div>
-        </div>
-    </main>
-    </section>
 </body>
-
 </html>
