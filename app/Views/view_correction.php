@@ -12,11 +12,10 @@
         <?php
 // Récupérer le tableau de réponses depuis la session
 $ancienne_reponses = $_SESSION['ancienne_reponse'];
-
 // Parcourir le tableau de réponses avec une boucle foreach
 foreach ($ancienne_reponses as $reponse) {
     $id_reponse = $reponse->id_reponse;
-    $question = $reponse->question;
+    $question = $reponse->id_question;
     $reponse_text = $reponse->reponse;
     $niveau = $reponse->niveau;
     $etat = $reponse->etat;

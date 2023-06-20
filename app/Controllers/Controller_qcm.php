@@ -72,7 +72,6 @@ class Controller_qcm extends Controller
                 $_SESSION['score']++;
             }
         }
-
         $list_reponse = $ancienne_reponse;
         $_SESSION['ancienne_reponse'][] = $list_reponse;
 

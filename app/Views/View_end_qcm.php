@@ -17,10 +17,7 @@
     <?php echo  $i.':'; ?>
     <?php endfor; ?>
         <p><?php print implode(', ', $_SESSION['timer']); ?></p>
-    </section>-->
-
-    </div>
-    <p><?php var_dump ($_SESSION['ancienne_reponse']); ?></p>
+    </section>-->    </div>
     <section class="score">
         <header>
             <h1><?php echo $message?> <span class="material-symbols-outlined"></span></h1>
@@ -41,7 +38,7 @@
                 echo $total_timer; ?>
                 </p>
                 <div class="butt_result">
-                    <a href="">Voir correction</a>
+                    <a href="?controller=qcm&action=correction">Voir correction</a>
                     <a href="?controller=qcm&action=theme">Commencer un autre quizz</a>
                     
                 </div>
