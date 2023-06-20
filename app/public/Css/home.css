@@ -12,15 +12,21 @@ body {
 }
 
 /************************************************** ACCEUIL WEBSITE AVANT CONNEXION*/
-
+.container-bienvenue {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  height: 80%;
+  width: 100%;
+}
 .bienvenue {
   text-align: center;
-  margin: 2% 0 5% 0;
+  margin: 5% 0 2% 0;
 }
 
 .bienvenue h1 {
-  font-size: 40px;
-  padding: 2%;
+  font-size: 2em;
+  /* padding: 2%; */
   color: greenyellow;
 }
 
@@ -31,7 +37,8 @@ body {
   align-items: center;
   justify-content: center;
   max-width: 70%;
-  margin: 0 auto;
+  margin: 5% auto;
+  padding: 20px;
 }
 
 .presentation p {
@@ -61,6 +68,9 @@ body {
   color: greenyellow;
   text-decoration-line: underline;
 }
+.jouer a  {
+  font-size: 24px;
+}
 
 /*? DEBUT DU RESPONSIVE */
 /* Styles pour les écrans de petite taille (mobiles en mode portrait)(max-width: 575px)*/
@@ -68,34 +78,27 @@ body {
 /* Styles pour les écrans de taille moyenne (tablettes en mode portrait) (min-width: 768px) and (max-width: 991px) */
 /* Styles pour les écrans de taille moyenne (tablettes en mode paysage) (min-width: 992px) and (max-width: 1199px)*/
 
+@media (min-width: 992px) and (max-width: 1199px) {
+  .bienvenue h1 {
+    font-size: 35px;
+  }
+  .jouer  {
+    margin-top: 2%;
+  }
+}
+@media (min-width: 768px) and (max-width: 991px) {
+  /* Format tablette */
+  .bienvenue h1 {
+    font-size: 30px;
+  }
+}
 @media (max-width: 575px) {
-  /*Format mobile*/
+  /* Format mobile */
   .bienvenue h1 {
     font-size: 24px;
   }
-  .presentation p {
-    font-size: 18px;
-  }
-  .container-bienvenue {
-    margin-top: 10%;
-    border: solid 2px red;
-  }
-  @media (min-width: 768px) and (max-width: 991px) {
-    /*Format tablette*/
-    .bienvenue h1 {
-      font-size: 30px;
-    }
-  }
-
-  @media (min-width: 992px) and (max-width: 1199px) {
-    .bienvenue h1 {
-      font-size: 35px;
-    }
-  }
   /* .presentation p {
-    font-size: 12px;
-  }
-  .regles h3 {
-    font-size: 24px;
+    font-size: 18px;
   } */
-}
+} 
+

@@ -13,12 +13,16 @@
             <h1>Bienvenue sur HF Quizz, le site idéal pour les fans de sport !</h1>
         </header>
         <main class="presentation">
-            <p>Testez vos connaissances, défiez vos amis et découvrez si vous êtes un véritable expert grâce à nos QCM sportifs. Que vous soyez un fan passionné ou simplement curieux, plongez dans notre univers captivant et prouvez vos compétences sportives.</p>
-            <p>Que vous soyez un fan inconditionnel ou simplement curieux de découvrir cet univers, notre quiz vous offre l'opportunité de vous mesurer à d'autres passionnés. Faites preuve de rapidité, de précision et montrez vos talents de connaisseur pour gravir les échelons du classement.</p>
+            <p>Testez vos connaissances sportives, défiez vos amis et devenez le champion du quizz. </p>
             <p>Êtes-vous prêt à relever le défi ?</p>
-            <p><a href="?controller=inscription&action=inscription" class="lien_inscription">Inscrivez-vous dès maintenant</a> et montrez que vous êtes le champion du quizz sportif !</p>
+            <p><a href="?controller=inscription&action=inscription" class="lien_inscription">Inscrivez-vous dès maintenant</a> et prouvez que vous êtes le champion du quizz sportif !</p>
             <p>Bonne chance et que le meilleur joueur gagne !</p>
         </main>
+        <li class="butt jouer">
+            <a href="?controller=inscription&action=inscription">
+                Jouer
+            </a>     
+            </li>
     </section>
 </body>
 </html>
