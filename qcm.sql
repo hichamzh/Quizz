@@ -3,9 +3,9 @@
 -- https://www.phpmyadmin.net/
 --
 -- Hôte : 127.0.0.1
--- Généré le : jeu. 15 juin 2023 à 10:27
+-- Généré le : mar. 20 juin 2023 à 16:09
 -- Version du serveur : 10.4.27-MariaDB
--- Version de PHP : 8.2.0
+-- Version de PHP : 8.1.12
 
 SET SQL_MODE = "NO_AUTO_VALUE_ON_ZERO";
 START TRANSACTION;
@@ -33,8 +33,36 @@ CREATE TABLE `choix` (
   `id_theme` int(10) NOT NULL,
   `niveau` text NOT NULL,
   `score` varchar(100) CHARACTER SET utf8 COLLATE utf8_general_ci NOT NULL,
-  `date_user` date NOT NULL
+  `time` varchar(100) CHARACTER SET utf8 COLLATE utf8_general_ci NOT NULL,
+  `date_user` date NOT NULL DEFAULT current_timestamp()
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_general_ci;
+
+--
+-- Déchargement des données de la table `choix`
+--
+
+INSERT INTO `choix` (`id_choix`, `id_utilisateur`, `id_theme`, `niveau`, `score`, `time`, `date_user`) VALUES
+(9, 18, 7, 'facile', '3', '0:03', '2023-06-19'),
+(10, 18, 7, 'facile', '3', '0:03', '2023-06-19'),
+(11, 18, 7, 'facile', '1', '0:04', '2023-06-19'),
+(12, 10, 7, 'facile', '3', '0:04', '2023-06-19'),
+(13, 10, 7, 'facile', '2', '0:03', '2023-06-19'),
+(14, 10, 7, 'facile', '3', '0:03', '2023-06-19'),
+(15, 10, 7, 'facile', '3', '0:03', '2023-06-19'),
+(16, 10, 7, 'facile', '3', '0:03', '2023-06-19'),
+(17, 10, 7, 'facile', '2', '0:36', '2023-06-19'),
+(18, 10, 7, 'facile', '3', '0:03', '2023-06-19'),
+(19, 10, 7, 'facile', '3', '0:11', '2023-06-19'),
+(20, 10, 7, 'facile', '3', '0:04', '2023-06-19'),
+(21, 10, 7, 'facile', '3', '0:06', '2023-06-19'),
+(22, 10, 7, 'facile', '2', '0:23', '2023-06-19'),
+(23, 10, 7, 'facile', '3', '0:07', '2023-06-20'),
+(24, 10, 7, 'facile', '3', '0:07', '2023-06-20'),
+(25, 10, 7, 'facile', '3', '0:07', '2023-06-20'),
+(26, 10, 7, 'facile', '3', '0:07', '2023-06-20'),
+(27, 10, 7, 'facile', '3', '0:07', '2023-06-20'),
+(28, 10, 7, 'facile', '3', '0:03', '2023-06-20'),
+(29, 10, 7, 'facile', '3', '0:03', '2023-06-20');
 
 -- --------------------------------------------------------
 
@@ -213,11 +241,18 @@ INSERT INTO `utilisateur` (`id_utilisateur`, `login`, `mdp`, `roles`) VALUES
 (14, 'Testdu30Mai125532', '$2y$10$7MTp4mMDeXh0j5U/nQ0.4ewXLVR71c5n6vPder40zq1EXduR0BLOi', 'user'),
 (15, 'HICHAMCAMARCHE', '$2y$10$iiCv8B4R1IkBq22xpndMwe4z7hOwRPvx3TDsL0Rqkt2osqXI5oyOq', 'user'),
 (16, 'Testdu30Mai', '$2y$10$sg7KM5bgc.eUlHyhRCx3h.FNws0v0kFLfkc75SuWQ4EvSOkUUMip6', 'user'),
-(17, 'Testdu30Mai', '$2y$10$oV3vAdktCxcc8k7jI0STDOQ8ViMEScFoWYGgk/jZeQ.8OYscvWkVO', 'user');
+(17, 'Testdu30Mai', '$2y$10$oV3vAdktCxcc8k7jI0STDOQ8ViMEScFoWYGgk/jZeQ.8OYscvWkVO', 'user'),
+(18, 'fehti_plein_de_meuf', '$2y$10$VI8LqUz1H9niqN/wgc9xj./y1TF9nRtZyYSKe9cTZFGWhfuvw4L/C', 'user');
 
 --
 -- Index pour les tables déchargées
 --
+
+--
+-- Index pour la table `choix`
+--
+ALTER TABLE `choix`
+  ADD PRIMARY KEY (`id_choix`);
 
 --
 -- Index pour la table `questions`
@@ -268,6 +303,12 @@ ALTER TABLE `utilisateur`
 --
 
 --
+-- AUTO_INCREMENT pour la table `choix`
+--
+ALTER TABLE `choix`
+  MODIFY `id_choix` int(10) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=30;
+
+--
 -- AUTO_INCREMENT pour la table `questions`
 --
 ALTER TABLE `questions`
@@ -289,13 +330,13 @@ ALTER TABLE `score`
 -- AUTO_INCREMENT pour la table `theme`
 --
 ALTER TABLE `theme`
-  MODIFY `id_theme` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=9;
+  MODIFY `id_theme` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=12;
 
 --
 -- AUTO_INCREMENT pour la table `utilisateur`
 --
 ALTER TABLE `utilisateur`
-  MODIFY `id_utilisateur` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=18;
+  MODIFY `id_utilisateur` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=19;
 
 --
 -- Contraintes pour les tables déchargées

@@ -8,9 +8,11 @@
 
 <body>
     <section class="footer">
+        <p>Created By</p>
+    <main class="parent_container_reseaux">
         <div class="container_reseaux_createur">
             <h4>Hicham</h4>
-            <div class="container_enplus_cadeuh">
+            <div class="container_card">
                 <div class="img_createur"><img src="public/Assets/pikachu.png" alt="image de pikachu"></div>
                 <div class="container_parent_reseaux">
                     <a href="https://github.com/hichamzh" target="_blank">
@@ -37,7 +39,7 @@
         </div>
         <div class="container_reseaux_createur">
             <h4>Fethi</h4>
-            <div class="container_enplus_cadeuh">
+            <div class="container_card">
                 <div class="img_createur"><img src="public/Assets/pikachu.png" alt="image de pikachu"></div>
                 <div class="container_parent_reseaux">
                     <a href="https://github.com/hichamzh" target="_blank">
@@ -62,7 +64,7 @@
                 </div>
             </div>
         </div>
-
+    </main>
     </section>
 </body>
 
