@@ -9,6 +9,8 @@ session_start();
     <meta charset="utf-8">
     <!-- <title>Fichier index.php</title> -->
     <link rel="stylesheet" type="text/css" href="Composants/nav-bar.css">
+    <link rel="stylesheet" type="text/css" href="Composants/footer.css">
+    <script src="https://kit.fontawesome.com/33abf9a4e1.js" crossorigin="anonymous"></script>
 </head>
 
 <body>
@@ -33,7 +35,7 @@ session_start();
     
     require_once 'Controllers/Controller.php';
     require_once 'Models/Model.php';
-    $controllers = ["home","qcm","inscription"];
+    $controllers = ["home","qcm","inscription","classement"];
     $controller_default = "home";
     
     if (isset($_GET['controller']) and in_array($_GET['controller'], $controllers)) {
@@ -53,7 +55,7 @@ session_start();
         exit("Error 404 : not found");
     }
 
-    // require_once 'Composants/footer.php';
+    require_once 'Composants/footer.php';
     ?>
 </body>
 

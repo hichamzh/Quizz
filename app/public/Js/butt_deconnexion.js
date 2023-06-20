@@ -1,4 +1,4 @@
-const butt_deco = document.querySelector(".butt")
+const butt_deco = document.querySelector(".deco")
 const butt_close = document.querySelector('.close')
 var overlay = document.createElement('div')
 overlay.className = 'overlay'

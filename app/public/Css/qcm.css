@@ -11,7 +11,6 @@ body {
   overflow: hidden;
 }
 .form_qcm {
-  border: solid 2px red;
   display: flex;
   align-items: center;
   justify-content: center;
@@ -24,8 +23,8 @@ body {
   flex-direction: column;
   justify-content: space-evenly;
   align-items: center;
-  min-height: 50%;
-  min-width: 50%;
+  height: 80%;
+  width: 60%;
   padding: 10px;
   margin: auto;
   border: solid 1px greenyellow;
@@ -349,6 +348,16 @@ h3 {
 
 @media (max-width: 700px) {
   .qcm {
-    width: 60%;
+    width: 500px;
+  }
+}
+@media (max-width: 550px) {
+  .qcm {
+    width: 420px;
+  }
+}
+@media (max-width: 400px) {
+  .qcm {
+    width: 335px;
   }
 }

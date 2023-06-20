@@ -20,7 +20,7 @@
     </section>-->    </div>
     <section class="score">
         <header>
-            <h1></h1>
+            <h1><?php echo $message?> <span class="material-symbols-outlined"></span></h1>
         </header>
         <div class="container_result">
             <div class="container_pikachu">
@@ -32,7 +32,7 @@
                 <?php echo $_SESSION['score']."/".$nbr;?>
                 </p>
 
-                <p>
+                <p class="time_user">
                     Total du temps : 
                 <?php 
                 echo $total_timer; ?>

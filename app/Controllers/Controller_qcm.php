@@ -91,8 +91,8 @@ class Controller_qcm extends Controller
             $total_timer_minute++;
             $secondes = 0;
         }
-        $formatted_time = sprintf("%d:%02d secondes", $total_timer_minute, $secondes);
-       
+        $formatted_time = sprintf("%d:%02d", $total_timer_minute, $secondes);
+        $_SESSION['total_timer'] = $formatted_time;
         ////////
         // Stocker les données dans la session
         $questions_count = $_SESSION['question_count']; //variable contenant la session du compteur qui a été declarer dans la fonction au dessus
@@ -101,6 +101,19 @@ class Controller_qcm extends Controller
 
         //pareil que dans la fonction au dessus
         $questions = $_SESSION['list_questions'];
+        $message ="";
+        $score_pourcentage = $_SESSION['score'] / count($questions) *100;
+
+        if ($score_pourcentage > 75) {
+            $message = 'Bravo ' . $_SESSION['login'] . '<i class="fa-solid fa-party-bell" style="color: #ffffff;"></i>';
+        }
+        elseif ($score_pourcentage >= 50 && $score_pourcentage <=75){
+            $message = 'Très bonne note '.$_SESSION['login'];
+        } elseif ($score_pourcentage >= 30 && $score_pourcentage <=50){
+            $message = 'Bien jouer '.$_SESSION['login'];
+        } else {
+            $message = 'Vous pouvez mieux faire '.$_SESSION['login'];
+        }
 
         if ($questions_count < count($questions)) {
             // si le compteur est inferieur au nombre de question il continue a poser la question sinon il affiche le score 
@@ -120,9 +133,13 @@ class Controller_qcm extends Controller
          else {
             $data = [
                "nbr" => count($_SESSION['list_questions']),
-               "total_timer" => $formatted_time
+               "total_timer" => $formatted_time,
+               "message" => $message
             ];
-            $this->render('end_qcm', $data);
+            $queryString = http_build_query($data);
+            // $this->render('end_qcm', $data);
+            header("Location: ?controller=qcm&action=test&data=".urlencode($queryString));
+            exit;
             // $this->render('home', $_SESSION['score']);
         }
     }
@@ -134,4 +151,34 @@ class Controller_qcm extends Controller
         // var_dump($_SESSION['ancienne_reponse']);
         $this-> render('correction');
     }
+
+    public function action_test() {
+        $data = $_GET['data'];
+        parse_str(urldecode($data), $parsedData);
+    
+        $formattedData = [
+            "nbr" => $parsedData['nbr'],
+            "total_timer" => $parsedData['total_timer'],
+            "message" => $parsedData['message']
+        ];
+
+        $id_user = $_SESSION['id'];
+        $id_theme = $_SESSION['id_theme'];
+        $niveau = $_SESSION['lvl'];
+        $score =$_SESSION['score'];
+        $time = $_SESSION['total_timer'];
+        // var_dump($id_user);
+        // var_dump($id_theme);
+        // var_dump($score);
+        // var_dump($niveau);
+        // var_dump($time);
+        // print '<pre>' . print_r($_SESSION, true) . '</pre>';
+        // die();
+        $m = Model::get_model();
+        $m->insert_score($id_user, $id_theme, $niveau, $score, $time);
+        
+    
+        $this->render("end_qcm", $formattedData);
+    }
+    
 }

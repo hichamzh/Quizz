@@ -8,28 +8,29 @@
     <title>Thèmes</title>
 </head>
 <body>
+    <main>
+        <header><h1>Choisissez votre thème</h1></header>
+        <section class="container_theme">
     
-    <header><h1>Choisissez votre thème</h1></header>
-    <section class="container_theme">
-
-    <?php foreach($data['themes'] as $t) :?>
-        <div class="card_theme">
-            <img src="public/Assets/<?=$t['image_theme'] ?>" alt="logo" class="img_theme">
-            <p class="nom_theme"><?= $t['nom_theme'] ?></p>
-            <div class="niveaux">
-            <a href="?controller=qcm&action=theme_question&id_theme=<?= $t['id_theme'] ?>&lvl=facile">
-                    Facile
-                </a>
-                <a href="?controller=qcm&action=theme_question&id_theme=<?= $t['id_theme'] ?>&lvl=moyen">
-                    Moyen
-                </a>
-                <a href="?controller=qcm&action=theme_question&id_theme=<?= $t['id_theme'] ?>&lvl=difficile">
-                    Difficile
-                </a>
+        <?php foreach($data['themes'] as $t) :?>
+            <div class="card_theme">
+                <img src="public/Assets/<?=$t['image_theme'] ?>" alt="logo" class="img_theme">
+                <p class="nom_theme"><?= $t['nom_theme'] ?></p>
+                <div class="niveaux">
+                <a href="?controller=qcm&action=theme_question&id_theme=<?= $t['id_theme'] ?>&lvl=facile">
+                        Facile
+                    </a>
+                    <a href="?controller=qcm&action=theme_question&id_theme=<?= $t['id_theme'] ?>&lvl=moyen">
+                        Moyen
+                    </a>
+                    <a href="?controller=qcm&action=theme_question&id_theme=<?= $t['id_theme'] ?>&lvl=difficile">
+                        Difficile
+                    </a>
+                </div>
             </div>
-        </div>
-        <?php endforeach; ?>
-        
-    </section>
+            <?php endforeach; ?>
+            
+        </section>
+    </main>
 </body>
 </html>

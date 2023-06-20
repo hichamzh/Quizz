@@ -73,5 +73,10 @@ class Controller_inscription extends Controller
         exit;
     }
 
+    public function action_affiche_user() {
+        $m = Model::get_model();
+        $this->render('users');
+    }
+
 
 }
