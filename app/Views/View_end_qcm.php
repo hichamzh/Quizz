@@ -23,8 +23,8 @@
             <h1><?php echo $message?> <span class="material-symbols-outlined"></span></h1>
         </header>
         <div class="container_result">
-            <div class="container_pikachu">
-                <img src="public/Assets/pikachu_result.png" alt="pikachu results">
+            <div class="container_img_result">
+                <img src="public/Assets/<?php echo $img_result ?>" alt="image results">
             </div>
             <div class="results">
                 <p class="score_user">

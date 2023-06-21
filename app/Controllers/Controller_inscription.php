@@ -73,10 +73,14 @@ class Controller_inscription extends Controller
         exit;
     }
 
-    public function action_affiche_user() {
+    public function action_affiche_user()
+    {
+        $id_user = $_SESSION['id'];
         $m = Model::get_model();
-        $this->render('users');
+        $data = 
+        [
+            "user_compte" => $m->get_user_compte($id_user)
+        ];
+        $this->render('users', $data);
     }
-
-
 }
