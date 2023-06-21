@@ -38,7 +38,7 @@ body {
   justify-content: center;
   max-width: 70%;
   margin: 5% auto;
-  padding: 20px;
+  padding: 10px;
 }
 
 .presentation p {
@@ -83,7 +83,7 @@ body {
     font-size: 35px;
   }
   .jouer  {
-    margin-top: 2%;
+    margin-top: 0%;
   }
 }
 @media (min-width: 768px) and (max-width: 991px) {

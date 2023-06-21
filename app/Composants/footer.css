@@ -9,6 +9,7 @@ footer {
   color: white;
   border-top: 1px solid greenyellow;
   box-shadow: 0 0 10px greenyellow;
+  bottom: 0;
 }
 
 .container {

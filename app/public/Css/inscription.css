@@ -36,6 +36,7 @@ header h1 {
   margin: 0 auto;
   background-color: #222021;
   border-radius: 10px;
+  z-index: 1;
 }
 .formulaire-inscription {
   width: 670px;
@@ -90,6 +91,7 @@ header h1 {
   right: 10%;
   animation: animate 15s linear infinite;
   transition: all ease 0.1s;
+  z-index: -1;
 }
 .carre>img:hover {
   cursor: pointer;

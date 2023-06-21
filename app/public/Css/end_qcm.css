@@ -121,3 +121,10 @@ body {
     font-size: 15px;
   }
 }
+
+.red{
+  background-color: red;
+}
+.green{
+  background:green;
+}

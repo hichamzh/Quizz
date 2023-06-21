@@ -14,7 +14,7 @@
 
 
 
-<!-- Generation d'image en fond selon le theme -->
+    <!-- Generation d'image en fond selon le theme -->
     <?php for ($i = 0; $i < 16; $i++) : ?>
         <?php if ($_SESSION['id_theme'] == '7') : ?>
             <div class="carre"></div>
@@ -25,7 +25,7 @@
         <?php endif; ?>
     <?php endfor; ?>
 
-<!-- Generation barre de timer -->
+    <!-- Generation barre de timer -->
     <div class="progress_bar_container">
         <div class="progress_bar"></div>
     </div>
@@ -61,19 +61,35 @@
 
                 <?php
                 endforeach;
+              
+                // Vérifier si les reponses existent depuis la source
+                if (isset($data['reponses'])) {
+                    $reponsesEtat0 = array();
+                
+                    // Parcourir les réponses et ajouter celles avec un état de 0 au tableau $_SESSION['reponsesEtat0']
+                    foreach ($data['reponses'] as $reponse) {
+                        if ($reponse->etat == 0) {
+                            $reponsesEtat0[] = $reponse;
+                        }
+                    }
+                
+                    // Stocker le tableau $_SESSION['reponsesEtat0'] contenant les réponses avec un état de 0
+                    $_SESSION['reponsesEtat0'][] = $reponsesEtat0;
+                }
+   
                 // Récupérer la question actuelle
                 $questions = $data['question']->question;
 
                 // Vérifier si la variable de session 'questions' n'existe pas
                 if (!isset($_SESSION['questions'])) {
-                    $_SESSION['questions'] = array(); // Initialiser un tableau vide
-                }  
+                $_SESSION['questions'] = array(); // Initialiser un tableau vide
+                }
 
                 // Ajouter la question au tableau de sessions 'questions'
                 $_SESSION['questions'][] = $question;
                 // var_dump( $_SESSION['questions']) ;
 
-                 ?>
+                ?>
             </div>
 
             <div class="button">
