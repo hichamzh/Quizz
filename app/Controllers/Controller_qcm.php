@@ -107,13 +107,17 @@ class Controller_qcm extends Controller
 
         if ($score_pourcentage > 75) {
             $message = 'Bravo ' . $_SESSION['login'] . '<i class="fa-solid fa-party-bell" style="color: #ffffff;"></i>';
+            $img_result = "result_img.png";
         }
         elseif ($score_pourcentage >= 50 && $score_pourcentage <=75){
             $message = 'Très bonne note '.$_SESSION['login'];
+            $img_result = "result_very_good.png";
         } elseif ($score_pourcentage >= 30 && $score_pourcentage <=50){
             $message = 'Bien jouer '.$_SESSION['login'];
+            $img_result = "result_good.png";
         } else {
             $message = 'Vous pouvez mieux faire '.$_SESSION['login'];
+            $img_result = "result_bad.png";
         }
 
         if ($questions_count < count($questions)) {
@@ -138,7 +142,8 @@ class Controller_qcm extends Controller
             $data = [
                "nbr" => count($_SESSION['list_questions']),
                "total_timer" => $formatted_time,
-               "message" => $message
+               "message" => $message,
+               "img_result" => $img_result
             ];
             $queryString = http_build_query($data);
             // $this->render('end_qcm', $data);
@@ -163,7 +168,8 @@ class Controller_qcm extends Controller
         $formattedData = [
             "nbr" => $parsedData['nbr'],
             "total_timer" => $parsedData['total_timer'],
-            "message" => $parsedData['message']
+            "message" => $parsedData['message'],
+            "img_result" =>$parsedData["img_result"]
         ];
 
         $id_user = $_SESSION['id'];

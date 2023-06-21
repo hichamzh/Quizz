@@ -25,11 +25,11 @@ body {
   width: 70%;
 }
 
-.container_pikachu {
+.container_img_result {
   width: 40%;
 }
 
-.container_pikachu img {
+.container_img_result img {
   width: 100%;
   height: 100%;
 }
@@ -106,7 +106,7 @@ body {
     width: 90%;
     height: 400px;
   }
-  .container_pikachu {
+  .container_img_result {
     display: none;
   }
   .results {

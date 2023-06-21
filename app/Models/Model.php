@@ -147,4 +147,18 @@ class Model
         $result = $requete->fetchAll(PDO::FETCH_OBJ);
         return $result;
     }
+
+    public function get_user_compte($id_user)
+    {
+        $requete = $this->bdd->prepare("SELECT u.login, t.nom_theme, c.niveau, c.score, c.time, c.date_user
+        FROM choix c
+        INNER JOIN theme t ON t.id_theme = c.id_theme
+        INNER JOIN utilisateur u ON u.id_utilisateur = c.id_utilisateur
+        WHERE c.id_utilisateur = :id_user
+        ORDER BY c.score DESC, c.time ASC");
+        $requete->bindParam(':id_user', $id_user);
+        $requete->execute();
+        $result = $requete->fetchAll(PDO::FETCH_OBJ);
+        return $result;
+    }
 }
