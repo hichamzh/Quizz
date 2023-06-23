@@ -32,15 +32,10 @@
                 echo $data['question'];
             ?>
 
-                <div class="green">
-                    <label for="reponse<?= $data['goodAnswer']; ?>" class="larger-click-area centre">
-                        <input type="hidden" id="reponse<?= $data['goodAnswer']; ?>" name="reponse" class="margin" value="<?= $data['goodAnswer']; ?>">
-                        <?= $data['goodAnswer']; ?>
-                    </label>
-                </div>
+
 
                 <?php if ($data['userAnswer'] !== $data['goodAnswer']) : ?>
-             
+                    <h3>Mauvaise réponse</h3>
                     <div class="red">
                         <label for="reponse<?= $data['userAnswer'] ?>" class="larger-click-area centre">
                             <input type="hidden" id="reponse<?= $data['userAnswer'] ?>" name="reponse" class="margin" value="<?= $data['userAnswer'] ?>">
@@ -48,9 +43,28 @@
                         </label>
                     </div>
 
+                    <h3>Correction</h3>
+                    <div class="green">
+                        <label for="reponse<?= $data['goodAnswer']; ?>" class="larger-click-area centre">
+                            <input type="hidden" id="reponse<?= $data['goodAnswer']; ?>" name="reponse" class="margin" value="<?= $data['goodAnswer']; ?>">
+                            <?= $data['goodAnswer']; ?>
+                        </label>
+                    </div>
 
-            <?php
-                endif;
+
+
+                <?php endif; ?>
+
+                <?php if ($data['userAnswer'] == $data['goodAnswer']) : ?>
+                    <h3>Bonne Réponse</h3>
+                    <div class="green">
+                        <label for="reponse<?= $data['goodAnswer']; ?>" class="larger-click-area centre">
+                            <input type="hidden" id="reponse<?= $data['goodAnswer']; ?>" name="reponse" class="margin" value="<?= $data['goodAnswer']; ?>">
+                            <?= $data['goodAnswer']; ?>
+                        </label>
+                    </div>
+
+            <?php endif;
             endforeach; ?>
         </div>
     </div>

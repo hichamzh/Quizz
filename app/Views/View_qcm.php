@@ -87,7 +87,7 @@
                     'questions'=> $question,
                     'goodanswer'=>$reponsesEtat0[$data['question']->id_question]->reponse,
                 ] ;
-                print_r( $_SESSION['questions']) ;
+                // print_r( $_SESSION['questions']) ;
 
                 ?>
             </div>
