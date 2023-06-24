@@ -69,16 +69,13 @@
                     // Parcourir les réponses et ajouter celles avec un état de 0 au tableau $_SESSION['reponsesEtat0']
                     foreach ($data['reponses'] as $reponse) {
                         if ($reponse->etat == 0) {
-                            $reponsesEtat0[] = $reponse;
+                            $reponsesEtat0[$reponse->id_question] = $reponse;
+                            
                         }
-                    }
-                
-                    // Stocker le tableau $_SESSION['reponsesEtat0'] contenant les réponses avec un état de 0
-                    $_SESSION['reponsesEtat0'][] = $reponsesEtat0;
-                }
-   
+                    }}
+
                 // Récupérer la question actuelle
-                $questions = $data['question']->question;
+                $question = $data['question']->question;
 
                 // Vérifier si la variable de session 'questions' n'existe pas
                 if (!isset($_SESSION['questions'])) {
@@ -86,8 +83,11 @@
                 }
 
                 // Ajouter la question au tableau de sessions 'questions'
-                $_SESSION['questions'][] = $question;
-                // var_dump( $_SESSION['questions']) ;
+                $_SESSION['questions'][$data['question']->id_question] =[ 
+                    'questions'=> $question,
+                    'goodanswer'=>$reponsesEtat0[$data['question']->id_question]->reponse,
+                ] ;
+                // print_r( $_SESSION['questions']) ;
 
                 ?>
             </div>
