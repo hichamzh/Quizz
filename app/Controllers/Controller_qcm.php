@@ -157,9 +157,22 @@ class Controller_qcm extends Controller
     public function action_correction()
     {
         $m = Model::get_model();
-      
-        // var_dump($_SESSION['ancienne_reponse']);
-        $this-> render('correction');
+        $questionsData = array();
+
+        foreach ($_SESSION['questions'] as $key => $questionData) {
+            $question = $questionData['questions'];
+            $goodAnswer = $questionData['goodanswer'];
+            $userAnswer = $questionData['usersanswer'];
+
+            $questionsData[] = array(
+                'question' => $question,
+                'goodAnswer' => $goodAnswer,
+                'userAnswer' => $userAnswer
+            );
+        }
+
+        // Passer les données à la vue correction
+        $this->render ('correction', ['questionsData' => $questionsData]);
     }
 
     public function action_test() {
