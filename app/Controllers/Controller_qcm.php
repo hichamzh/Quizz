@@ -55,8 +55,6 @@ class Controller_qcm extends Controller
 
         ]; //taleau contenant deux clefs "question"(une seul id question est stocker la dedans) et "reponses" qui lui contient les reponses
         $this->render("qcm", $data);
-
-
     }
     public function action_question_suivante()
     { // fonction utilisé au moment du click vers la question suivante
@@ -68,6 +66,7 @@ class Controller_qcm extends Controller
             // var_dump($_POST["reponse"]);
             $ancienne_reponse = $m->check_reponse($_POST["reponse"]);
             // var_dump($ancienneReponse);
+            $_SESSION['questions'][$ancienne_reponse->id_question]['usersanswer'] = $ancienne_reponse->reponse;
 
             if ($ancienne_reponse->etat == 0) {
                 $_SESSION['score']++;
@@ -82,10 +81,10 @@ class Controller_qcm extends Controller
         $intimer = intval($timer);
         /////////////////////
         $list_timer = $_SESSION["timer"];
-        $list_timer[] = $intimer;
-        $_SESSION["timer"] = $list_timer;
-        $total_timer = array_sum($_SESSION["timer"]);
-        $total_timer_minute = floor($total_timer / 60);
+        $list_timer[]= $intimer;
+        $_SESSION["timer"] = $list_timer; 
+        $total_timer = array_sum($_SESSION["timer"]);  
+        $total_timer_minute = floor($total_timer/60);
         $secondes = $total_timer % 60;
 
         if ($secondes === 60) {
@@ -102,19 +101,22 @@ class Controller_qcm extends Controller
 
         //pareil que dans la fonction au dessus
         $questions = $_SESSION['list_questions'];
-        $message = "";
-        $score_pourcentage = $_SESSION['score'] / count($questions) * 100;
+        $message =  "";
+        $score_pourcentage = $_SESSION['score'] / count($questions) *  100;
 
         if ($score_pourcentage > 75) {
             $message = 'Bravo ' . $_SESSION['login'] . '<i class="fa-solid fa-party-bell" style="color: #ffffff;"></i>';
             $img_result = "result_img.png";
         } elseif ($score_pourcentage >= 50 && $score_pourcentage <= 75) {
             $message = 'Très bonne note ' . $_SESSION['login'];
+        } elseif ($score_pourcentage >= 50 && $score_pourcentage <= 75) {
+            $message = 'Très bonne note ' . $_SESSION['login'];
             $img_result = "result_very_good.png";
-        } elseif ($score_pourcentage >= 30 && $score_pourcentage <= 50) {
-            $message = 'Bien jouer ' . $_SESSION['login'];
+        } elseif ($score_pourcentage >= 30 && $score_pourcentage <=50){
+            $message = 'Bien jouer '.$_SESSION['login'];
             $img_result = "result_good.png";
         } else {
+            $message = 'Vous pouvez mieux faire ' . $_SESSION['login'];
             $message = 'Vous pouvez mieux faire ' . $_SESSION['login'];
             $img_result = "result_bad.png";
         }
@@ -132,19 +134,20 @@ class Controller_qcm extends Controller
                 "reponses" => $reponses
             ];
 
-
-
-
+       
+        
+            
             $this->render("qcm", $data);
         } else {
             $data = [
-                "nbr" => count($_SESSION['list_questions']),
-                "total_timer" => $formatted_time,
-                "message" => $message,
-                "img_result" => $img_result
+               "nbr" => count($_SESSION['list_questions']),
+               "total_timer" => $formatted_time,
+               "message" => $message,
+               "img_result" => $img_result
             ];
             $queryString = http_build_query($data);
             // $this->render('end_qcm', $data);
+            header("Location: ?controller=qcm&action=test&data=" . urlencode($queryString));
             header("Location: ?controller=qcm&action=test&data=" . urlencode($queryString));
             exit;
             // $this->render('home', $_SESSION['score']);
@@ -154,27 +157,27 @@ class Controller_qcm extends Controller
     public function action_correction()
     {
         $m = Model::get_model();
-
+      
         // var_dump($_SESSION['ancienne_reponse']);
-        $this->render('correction');
+        $this-> render('correction');
     }
 
-    public function action_test()
-    {
+    public function action_test() {
         $data = $_GET['data'];
         parse_str(urldecode($data), $parsedData);
+
 
         $formattedData = [
             "nbr" => $parsedData['nbr'],
             "total_timer" => $parsedData['total_timer'],
             "message" => $parsedData['message'],
-            "img_result" => $parsedData["img_result"]
+            "img_result" =>  $parsedData["img_result"]
         ];
 
         $id_user = $_SESSION['id'];
         $id_theme = $_SESSION['id_theme'];
         $niveau = $_SESSION['lvl'];
-        $score = $_SESSION['score'];
+        $score =  $_SESSION['score'];
         $time = $_SESSION['total_timer'];
         // var_dump($id_user);
         // var_dump($id_theme);
@@ -184,9 +187,9 @@ class Controller_qcm extends Controller
 
         $m = Model::get_model();
         $m->insert_score($id_user, $id_theme, $niveau, $score, $time);
-
-
+        
+    
         $this->render("end_qcm", $formattedData);
     }
-
+    
 }
