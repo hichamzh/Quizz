@@ -109,6 +109,7 @@ class Controller_qcm extends Controller
             $img_result = "result_img.png";
         } elseif ($score_pourcentage >= 50 && $score_pourcentage <= 75) {
             $message = 'Très bonne note ' . $_SESSION['login'];
+            $img_result = 'result_img.png';
         } elseif ($score_pourcentage >= 50 && $score_pourcentage <= 75) {
             $message = 'Très bonne note ' . $_SESSION['login'];
             $img_result = "result_very_good.png";
