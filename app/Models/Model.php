@@ -85,7 +85,7 @@ class Model
     public function get_question($id_theme, $niveau)
     {
 
-        $requete = $this->bdd->prepare("SELECT q.id_question FROM questions q  WHERE id_theme = :id AND q.niveau = :niveau ORDER BY RAND() LIMIT 3");
+        $requete = $this->bdd->prepare("SELECT q.id_question FROM questions q  WHERE id_theme = :id AND q.niveau = :niveau ORDER BY RAND() LIMIT 10");
         $requete->bindParam(":id", $id_theme);
         $requete->bindParam(":niveau", $niveau);
         $requete->execute();

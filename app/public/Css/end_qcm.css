@@ -128,3 +128,15 @@ body {
 .green{
   background:green;
 }
+.red1{
+  color: red;
+  display: flex;
+  justify-content: center;
+  margin: 5PX;
+}
+.green1{
+  color: green;
+  display: flex;
+  justify-content: center;
+  margin: 5PX;
+}

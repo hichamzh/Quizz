@@ -55,8 +55,9 @@ session_start();
         exit("Error 404 : not found");
     }
 
-    require_once 'Composants/footer.php';
     ?>
 </body>
-
+<footer>
+    <?php require_once 'Composants/footer.php';?>
+</footer>
 </html>
