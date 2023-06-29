@@ -16,7 +16,7 @@ class Controller_inscription extends Controller
     public function action_inscription_insert()
     {
         if ($_SERVER['REQUEST_METHOD'] === 'POST') {
-            if (isset($_POST['login']) && isset($_POST['mdp'])) {
+            if (!empty($_POST['login']) && !empty($_POST['mdp'])) {
                 $login = $_POST['login'];
                 $mdp = $_POST['mdp'];
                 $role = "user";
