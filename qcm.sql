@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Hôte : 127.0.0.1
--- Généré le : mar. 20 juin 2023 à 16:09
+-- Généré le : jeu. 29 juin 2023 à 14:07
 -- Version du serveur : 10.4.27-MariaDB
 -- Version de PHP : 8.1.12
 
@@ -62,7 +62,33 @@ INSERT INTO `choix` (`id_choix`, `id_utilisateur`, `id_theme`, `niveau`, `score`
 (26, 10, 7, 'facile', '3', '0:07', '2023-06-20'),
 (27, 10, 7, 'facile', '3', '0:07', '2023-06-20'),
 (28, 10, 7, 'facile', '3', '0:03', '2023-06-20'),
-(29, 10, 7, 'facile', '3', '0:03', '2023-06-20');
+(29, 10, 7, 'facile', '3', '0:03', '2023-06-20'),
+(30, 10, 7, 'facile', '3', '0:10', '2023-06-21'),
+(31, 10, 7, 'facile', '3', '0:10', '2023-06-21'),
+(32, 18, 7, 'facile', '3', '0:03', '2023-06-21'),
+(33, 18, 7, 'facile', '3', '0:04', '2023-06-21'),
+(34, 18, 7, 'facile', '3', '0:04', '2023-06-21'),
+(35, 18, 7, 'facile', '3', '0:03', '2023-06-21'),
+(36, 18, 7, 'facile', '3', '0:03', '2023-06-21'),
+(37, 18, 7, 'facile', '0', '0:04', '2023-06-21'),
+(38, 18, 7, 'facile', '1', '0:03', '2023-06-21'),
+(39, 18, 7, 'facile', '1', '0:03', '2023-06-21'),
+(40, 18, 7, 'facile', '1', '0:03', '2023-06-21'),
+(41, 18, 7, 'facile', '1', '0:03', '2023-06-21'),
+(42, 18, 7, 'facile', '1', '0:03', '2023-06-21'),
+(43, 18, 7, 'facile', '1', '0:03', '2023-06-21'),
+(44, 18, 7, 'facile', '1', '0:03', '2023-06-21'),
+(45, 18, 7, 'facile', '1', '0:03', '2023-06-21'),
+(46, 18, 7, 'facile', '3', '0:03', '2023-06-21'),
+(47, 18, 7, 'facile', '1', '0:04', '2023-06-21'),
+(48, 18, 7, 'facile', '2', '0:04', '2023-06-21'),
+(49, 18, 7, 'facile', '2', '0:08', '2023-06-21'),
+(50, 18, 7, 'facile', '3', '0:03', '2023-06-21'),
+(51, 18, 7, 'facile', '3', '0:05', '2023-06-24'),
+(52, 18, 7, 'facile', '2', '0:07', '2023-06-24'),
+(53, 18, 7, 'facile', '2', '0:04', '2023-06-24'),
+(54, 18, 7, 'facile', '2', '0:05', '2023-06-25'),
+(55, 18, 7, 'facile', '3', '0:03', '2023-06-26');
 
 -- --------------------------------------------------------
 
@@ -120,7 +146,6 @@ CREATE TABLE `reponses` (
   `id_reponse` int(11) NOT NULL,
   `id_question` int(11) NOT NULL,
   `reponse` varchar(100) NOT NULL,
-  `niveau` text NOT NULL,
   `etat` tinyint(1) NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_general_ci;
 
@@ -128,63 +153,50 @@ CREATE TABLE `reponses` (
 -- Déchargement des données de la table `reponses`
 --
 
-INSERT INTO `reponses` (`id_reponse`, `id_question`, `reponse`, `niveau`, `etat`) VALUES
-(3, 3, 'Le football.', '', 0),
-(4, 4, 'Le brésil.', '', 0),
-(5, 5, '11 joueurs', '', 0),
-(6, 6, 'La coupe du monde de la FIFA.', '', 0),
-(7, 7, 'Lionel Messi', '', 0),
-(8, 8, '90 minutes.', '', 0),
-(9, 9, 'Lionel Messi.', '', 0),
-(10, 10, 'Le Santiago Bernabeu.', '', 0),
-(11, 11, 'Didier Deschamps.', '', 0),
-(12, 12, 'Pelé', '', 0),
-(13, 13, 'FC Barcelone', '', 0),
-(14, 14, 'Cristiano Ronaldo', '', 0),
-(15, 15, 'La Russie', '', 0),
-(16, 16, 'Liverpool FC', '', 0),
-(17, 17, 'Manchester United FC', '', 0),
-(18, 18, ' Lionel Messi (7 fois)', '', 0),
-(20, 3, 'Le Rugby ', '', 1),
-(21, 5, '15 joueurs', '', 1),
-(22, 6, 'Le ballon d\'or', '', 1),
-(23, 7, 'Steve Mandanda', '', 1),
-(24, 8, '80 minutes', '', 1),
-(25, 9, 'Olivier Giroud', '', 1),
-(26, 10, 'Le San Siro', '', 1),
-(27, 11, 'Laurent Blanc', '', 1),
-(28, 4, 'L\'Algérie', '', 1),
-(29, 12, 'Didier Deschamps', '', 1),
-(30, 13, 'L\'olympique de Barcelone', '', 1),
-(31, 14, 'Cavani', '', 1),
-(32, 15, 'Corée du Nord', '', 1),
-(33, 16, 'Les RED\'s', '', 1),
-(34, 17, 'RC Manchester United', '', 1),
-(35, 18, 'Karim Benzema', '', 1),
-(36, 19, 'Igor Tudor', '', 1),
-(37, 19, 'Carlo Ancelotti', '', 0),
-(38, 31, 'Neymar', '', 0),
-(39, 32, 'Paris Saint-Germain (PSG)', '', 0),
-(40, 35, 'Le Brésil', '', 0),
-(41, 37, 'Lionel Messi', '', 0),
-(42, 39, 'Luka Modric', '', 0),
-(43, 40, 'Royaume-Uni', '', 0),
-(44, 41, 'Rio de Janeiro', '', 0),
-(45, 42, 'L\'Espagne', '', 0),
-(46, 43, 'Robert Lewandowski', '', 0);
-
--- --------------------------------------------------------
-
---
--- Structure de la table `score`
---
-
-CREATE TABLE `score` (
-  `id_score` int(10) NOT NULL,
-  `id_utilisateur` int(10) DEFAULT NULL,
-  `score` varchar(100) DEFAULT NULL,
-  `date_user` date DEFAULT NULL
-) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_general_ci;
+INSERT INTO `reponses` (`id_reponse`, `id_question`, `reponse`, `etat`) VALUES
+(3, 3, 'Le football.', 0),
+(4, 4, 'Le brésil.', 0),
+(5, 5, '11 joueurs', 0),
+(6, 6, 'La coupe du monde de la FIFA.', 0),
+(7, 7, 'Lionel Messi', 0),
+(8, 8, '90 minutes.', 0),
+(9, 9, 'Lionel Messi.', 0),
+(10, 10, 'Le Santiago Bernabeu.', 0),
+(11, 11, 'Didier Deschamps.', 0),
+(12, 12, 'Pelé', 0),
+(13, 13, 'FC Barcelone', 0),
+(14, 14, 'Cristiano Ronaldo', 0),
+(15, 15, 'La Russie', 0),
+(16, 16, 'Liverpool FC', 0),
+(17, 17, 'Manchester United FC', 0),
+(18, 18, ' Lionel Messi (7 fois)', 0),
+(20, 3, 'Le Rugby ', 1),
+(21, 5, '15 joueurs', 1),
+(22, 6, 'Le ballon d\'or', 1),
+(23, 7, 'Steve Mandanda', 1),
+(24, 8, '80 minutes', 1),
+(25, 9, 'Olivier Giroud', 1),
+(26, 10, 'Le San Siro', 1),
+(27, 11, 'Laurent Blanc', 1),
+(28, 4, 'L\'Algérie', 1),
+(29, 12, 'Didier Deschamps', 1),
+(30, 13, 'L\'olympique de Barcelone', 1),
+(31, 14, 'Cavani', 1),
+(32, 15, 'Corée du Nord', 1),
+(33, 16, 'Les RED\'s', 1),
+(34, 17, 'RC Manchester United', 1),
+(35, 18, 'Karim Benzema', 1),
+(36, 19, 'Igor Tudor', 1),
+(37, 19, 'Carlo Ancelotti', 0),
+(38, 31, 'Neymar', 0),
+(39, 32, 'Paris Saint-Germain (PSG)', 0),
+(40, 35, 'Le Brésil', 0),
+(41, 37, 'Lionel Messi', 0),
+(42, 39, 'Luka Modric', 0),
+(43, 40, 'Royaume-Uni', 0),
+(44, 41, 'Rio de Janeiro', 0),
+(45, 42, 'L\'Espagne', 0),
+(46, 43, 'Robert Lewandowski', 0);
 
 -- --------------------------------------------------------
 
@@ -242,7 +254,8 @@ INSERT INTO `utilisateur` (`id_utilisateur`, `login`, `mdp`, `roles`) VALUES
 (15, 'HICHAMCAMARCHE', '$2y$10$iiCv8B4R1IkBq22xpndMwe4z7hOwRPvx3TDsL0Rqkt2osqXI5oyOq', 'user'),
 (16, 'Testdu30Mai', '$2y$10$sg7KM5bgc.eUlHyhRCx3h.FNws0v0kFLfkc75SuWQ4EvSOkUUMip6', 'user'),
 (17, 'Testdu30Mai', '$2y$10$oV3vAdktCxcc8k7jI0STDOQ8ViMEScFoWYGgk/jZeQ.8OYscvWkVO', 'user'),
-(18, 'fehti_plein_de_meuf', '$2y$10$VI8LqUz1H9niqN/wgc9xj./y1TF9nRtZyYSKe9cTZFGWhfuvw4L/C', 'user');
+(18, 'fehti_plein_de_meuf', '$2y$10$VI8LqUz1H9niqN/wgc9xj./y1TF9nRtZyYSKe9cTZFGWhfuvw4L/C', 'user'),
+(19, 'Briac_du_13', '$2y$10$O3LkjtDebbDvRbxHqp7THORzMGRod0Ca2AvnuRaX5JPm4V/bXT0x.', 'user');
 
 --
 -- Index pour les tables déchargées
@@ -252,7 +265,9 @@ INSERT INTO `utilisateur` (`id_utilisateur`, `login`, `mdp`, `roles`) VALUES
 -- Index pour la table `choix`
 --
 ALTER TABLE `choix`
-  ADD PRIMARY KEY (`id_choix`);
+  ADD PRIMARY KEY (`id_choix`),
+  ADD KEY `id_utilisateur` (`id_utilisateur`,`id_theme`),
+  ADD KEY `id_theme` (`id_theme`);
 
 --
 -- Index pour la table `questions`
@@ -270,17 +285,7 @@ ALTER TABLE `questions`
 ALTER TABLE `reponses`
   ADD PRIMARY KEY (`id_reponse`),
   ADD KEY `id_question` (`id_question`) USING BTREE,
-  ADD KEY `reponse` (`reponse`) USING BTREE,
-  ADD KEY `niveau` (`niveau`(768)) USING BTREE;
-
---
--- Index pour la table `score`
---
-ALTER TABLE `score`
-  ADD PRIMARY KEY (`id_score`),
-  ADD KEY `score` (`score`) USING BTREE,
-  ADD KEY `date_user` (`date_user`) USING BTREE,
-  ADD KEY `id_user` (`id_utilisateur`);
+  ADD KEY `reponse` (`reponse`) USING BTREE;
 
 --
 -- Index pour la table `theme`
@@ -306,7 +311,7 @@ ALTER TABLE `utilisateur`
 -- AUTO_INCREMENT pour la table `choix`
 --
 ALTER TABLE `choix`
-  MODIFY `id_choix` int(10) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=30;
+  MODIFY `id_choix` int(10) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=56;
 
 --
 -- AUTO_INCREMENT pour la table `questions`
@@ -321,12 +326,6 @@ ALTER TABLE `reponses`
   MODIFY `id_reponse` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=47;
 
 --
--- AUTO_INCREMENT pour la table `score`
---
-ALTER TABLE `score`
-  MODIFY `id_score` int(10) NOT NULL AUTO_INCREMENT;
-
---
 -- AUTO_INCREMENT pour la table `theme`
 --
 ALTER TABLE `theme`
@@ -336,11 +335,18 @@ ALTER TABLE `theme`
 -- AUTO_INCREMENT pour la table `utilisateur`
 --
 ALTER TABLE `utilisateur`
-  MODIFY `id_utilisateur` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=19;
+  MODIFY `id_utilisateur` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=20;
 
 --
 -- Contraintes pour les tables déchargées
 --
+
+--
+-- Contraintes pour la table `choix`
+--
+ALTER TABLE `choix`
+  ADD CONSTRAINT `choix_ibfk_1` FOREIGN KEY (`id_utilisateur`) REFERENCES `utilisateur` (`id_utilisateur`),
+  ADD CONSTRAINT `choix_ibfk_2` FOREIGN KEY (`id_theme`) REFERENCES `theme` (`id_theme`);
 
 --
 -- Contraintes pour la table `questions`
@@ -353,12 +359,6 @@ ALTER TABLE `questions`
 --
 ALTER TABLE `reponses`
   ADD CONSTRAINT `reponses_ibfk_1` FOREIGN KEY (`id_question`) REFERENCES `questions` (`id_question`) ON DELETE CASCADE ON UPDATE CASCADE;
-
---
--- Contraintes pour la table `score`
---
-ALTER TABLE `score`
-  ADD CONSTRAINT `score_ibfk_1` FOREIGN KEY (`id_utilisateur`) REFERENCES `utilisateur` (`id_utilisateur`);
 
 --
 -- Contraintes pour la table `theme`
