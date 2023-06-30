@@ -15,23 +15,28 @@ class Controller_inscription extends Controller
     // POUR FAIRE L'INSERTION A LA BDD, S'INSCRIRE
     public function action_inscription_insert()
     {
-
         if ($_SERVER['REQUEST_METHOD'] === 'POST') {
-            $login = $_POST['login'];
-            $mdp = $_POST['mdp'];
-            $role = "user";
-            $m = Model::get_model();
-            $existing_user = $m->get_check_login($login);
+            if (!empty($_POST['login']) && !empty($_POST['mdp'])) {
+                $login = $_POST['login'];
+                $mdp = $_POST['mdp'];
+                $role = "user";
+                $m = Model::get_model();
+                $existing_user = $m->get_check_login($login);
 
-            if ($existing_user) {
-                $data = ['erreur' => "L\'identifiant existe déjà veuillez en choisir un autre"];
-                $this->render('inscription', $data);
-
+                if ($existing_user) {
+                    $data = ['erreur' => "L'identifiant existe déjà, veuillez en choisir un autre"];
+                    $this->render('inscription', $data);
+                } else {
+                    $m->get_inscription($login, $mdp, $role);
+                    $this->render("connexion"); // envoie vers la page de connexion
+                }
             } else {
-                $m->get_inscription($login, $mdp, $role);
-                $this->render("connexion"); //envoie vers la page de connexion
+                $data = [
+                    "erreur" => "Veuillez remplir tous les champs"
+                ];
+                $this->render('inscription', $data);
             }
-        }
+        } 
     }
     // Afficher la View SIGN IN (connexion)
     public function action_connexion()
@@ -77,10 +82,10 @@ class Controller_inscription extends Controller
     {
         $id_user = $_SESSION['id'];
         $m = Model::get_model();
-        $data = 
-        [
-            "user_compte" => $m->get_user_compte($id_user)
-        ];
+        $data =
+            [
+                "user_compte" => $m->get_user_compte($id_user)
+            ];
         $this->render('users', $data);
     }
 }
