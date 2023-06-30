@@ -15,7 +15,6 @@ class Controller_qcm extends Controller
                 "themes" => $m->get_theme()
             ];
 
-        // $img_theme = [ "football" => "public/Assets/football.jpg"];
         $this->render("themes", $data);
     }
 
@@ -90,7 +89,7 @@ class Controller_qcm extends Controller
         if ($secondes === 60) {
             $total_timer_minute++;
             $secondes = 0;
-        }
+            }
         $formatted_time = sprintf("%d:%02d", $total_timer_minute, $secondes);
         $_SESSION['total_timer'] = $formatted_time;
         ////////

@@ -3,26 +3,31 @@
 class Model
 {
     private $bdd; // Propriété pour stocker l'objet de connexion
-    private static $instance = null;
+    private static $instance = null; //stocker une unique instance de la classe Model
 
     public function __construct()
     {
-
+        // 
         $dsn = "mysql:host=localhost;dbname=qcm"; // Adresse du serveur de la base de données avec le nom de la bdd
         $dbUser = "root"; // Nom d'utilisateur de la base de données
         $dbPass = ""; // Mot de passe de la base de données
+        // Crée un nouvel objet PDO qui permet la connexion
         $this->bdd = new PDO($dsn, $dbUser, $dbPass);
+        // encodage en utf-8 pour communiquer avec bdd
         $this->bdd->query("SET NAMES 'utf8'");
+        // l'attribut ERRMODE_Exception permet de générer des exceptions en cas d'erreur
         $this->bdd->setAttribute(PDO::ATTR_ERRMODE, PDO::ERRMODE_EXCEPTION);
     }
 
+
     public static function get_model()
     {
-
+        // vérifie d'abord que propriété $instance est null/vide
         if (is_null(self::$instance)) {
-            // Création d'une instance de la classe Model en utilisant la connexion fournie
+            // Création d'une instance de la classe Model en utilisant la connexion fournie 
             self::$instance = new Model();
         }
+        // stock dans $instance et la retourne 
         return self::$instance;
     }
     // FUNCTION POUR FAIRE L INSERTION A LA BDD
@@ -30,7 +35,11 @@ class Model
     {
 
         $hashedPassword = password_hash($mdp, PASSWORD_DEFAULT);
-        $requete = $this->bdd->prepare("INSERT INTO `utilisateur`(`login`, `mdp`, `roles`) VALUES (:user, :mdp, :roles)");
+        $requete = $this->bdd->prepare(
+            "INSERT INTO `utilisateur`(`login`, `mdp`, `roles`) 
+            VALUES (:user, :mdp, :roles)"
+        );
+
         $requete->bindParam(':user', $login);
         $requete->bindParam(':mdp', $hashedPassword);
         $requete->bindParam(':roles', $role);
@@ -116,13 +125,17 @@ class Model
         return $result;
     }
 
-    public function check_reponse($id_reponse)
+    public function check_reponse($id_reponse) //fonction avec un paramètre
     {
-
+        // création de la requête SQL préparée en utilisant la méthode prepare de l'objet $bdd. 
         $requete = $this->bdd->prepare("SELECT * FROM reponses r WHERE r.id_reponse = :id_reponse");
+        // on lie le parametre a une variable
         $requete->bindParam(":id_reponse", $id_reponse);
+        // éxécute la requete
         $requete->execute();
+        // récupere le résultat dans un objet
         $result = $requete->fetch(PDO::FETCH_OBJ);
+        // retourne le résultat qui est dans la variable
         return $result;
     }
 
@@ -135,13 +148,11 @@ class Model
         $requete->bindParam(":score", $score);
         $requete->bindParam(":timer", $time);
         $requete->execute();
-
     }
 
     public function get_classement()
     {
-        $requete = $this->bdd->prepare
-        ('SELECT u.login, t.nom_theme, c.niveau, c.score, c.time, c.date_user FROM choix c INNER JOIN theme t  on t.id_theme = c.id_theme INNER JOIN utilisateur u ON u.id_utilisateur = c.id_utilisateur ORDER BY
+        $requete = $this->bdd->prepare('SELECT u.login, t.nom_theme, c.niveau, c.score, c.time, c.date_user FROM choix c INNER JOIN theme t  on t.id_theme = c.id_theme INNER JOIN utilisateur u ON u.id_utilisateur = c.id_utilisateur ORDER BY
         c.score DESC, c.time ASC');
         $requete->execute();
         $result = $requete->fetchAll(PDO::FETCH_OBJ);
