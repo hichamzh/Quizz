@@ -47,23 +47,26 @@ class Controller_inscription extends Controller
 
     public function action_connexion_verif()
     {
-        // $id_user = 
-        $login = $_POST['login'];
-        $mdp = $_POST['mdp'];
-        $m = Model::get_model();
-        $success = $m->get_connexion($login, $mdp);
-        if ($success) {
-            $_SESSION['login'] = $login;
-            $_SESSION['id'] = $success['id_utilisateur'];
-            // print '<pre>' . print_r($_SESSION, true). '</pre>';
-            // die();
-            header("location: index.php?controller=home&action=acceuil");
-            // $this->render("Acceui", ["login" => $_SESSION['login']]);
-
+        if (!empty($_POST['login']) && !empty($_POST['mdp'])) { //si les champs ne sont pas vides on continue le code 
+            $login = $_POST['login']; // on cree donc une variable login 
+            $mdp = $_POST['mdp'];// et mdp
+            $m = Model::get_model(); // on recupere l'instance cree dans get model qui est une fonction static de class Model
+            $success = $m->get_connexion($login, $mdp); //on stock la methode get_connexion qui nous permet de faire la connexion
+            if ($success) { // si c'est true
+                $_SESSION['login'] = $login;
+                $_SESSION['id'] = $success['id_utilisateur'];
+                // print '<pre>' . print_r($_SESSION, true). '</pre>';
+                // die();
+                header("location: index.php?controller=home&action=acceuil");
+    
+            } else {
+                // var_dump($success);
+                // die();
+                $data = ["erreur" => 'Identifiant ou Mot de passe incorrect'];
+                $this->render("connexion", $data);
+            }
         } else {
-            // var_dump($success);
-            // die();
-            $data = ["erreur" => 'Identifiant ou Mot de passe incorrect'];
+            $data = ["erreur" => "Veuillez saisir tous les champs"];
             $this->render("connexion", $data);
         }
     }
