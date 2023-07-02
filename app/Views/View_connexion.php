@@ -24,7 +24,8 @@
     <div class="carre"></div>
     <div class="carre"></div>
 
-    <?php if (isset($data)): ?>
+<?php unset($_SESSION['login']);
+    if (isset($data)): ?>
         <script>alert("<?php echo $data['erreur'] ?>")</script>
     <?php endif ?>
     <section class="connexion_inscription">
