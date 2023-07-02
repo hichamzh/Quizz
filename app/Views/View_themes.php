@@ -11,9 +11,11 @@
     <main>
         <header><h1>Choisissez votre thème</h1></header>
         <section class="container_theme">
-    
+    <!-- Détruire les Sessions précédentes afin de les rénitialiser--> 
         <?php unset($_SESSION['questions']); ?>
         <?php unset($_SESSION['reponsesEtat0']); ?>
+
+    <!-- Parcourir les données renvoyées par le controller(action theme)-->
         <?php foreach($data['themes'] as $t) :?>
             <div class="card_theme">
                 <img src="public/Assets/<?=$t['image_theme'] ?>" alt="logo" class="img_theme">

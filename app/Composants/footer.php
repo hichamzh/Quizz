@@ -7,8 +7,7 @@
   <title>Document</title>
 </head>
 
-<body>
-  <footer>
+
     <div class="container">
       <div class="footer-info">
         <p>© 2023 HF Quizz. Tous droits réservés.</p>
@@ -17,9 +16,5 @@
         </p>
       </div>
     </div>
-  </footer>
-
-
-</body>
 
 </html>

@@ -3,9 +3,9 @@
 -- https://www.phpmyadmin.net/
 --
 -- Hôte : 127.0.0.1
--- Généré le : jeu. 29 juin 2023 à 14:07
+-- Généré le : dim. 02 juil. 2023 à 01:23
 -- Version du serveur : 10.4.27-MariaDB
--- Version de PHP : 8.1.12
+-- Version de PHP : 8.2.0
 
 SET SQL_MODE = "NO_AUTO_VALUE_ON_ZERO";
 START TRANSACTION;
@@ -42,53 +42,7 @@ CREATE TABLE `choix` (
 --
 
 INSERT INTO `choix` (`id_choix`, `id_utilisateur`, `id_theme`, `niveau`, `score`, `time`, `date_user`) VALUES
-(9, 18, 7, 'facile', '3', '0:03', '2023-06-19'),
-(10, 18, 7, 'facile', '3', '0:03', '2023-06-19'),
-(11, 18, 7, 'facile', '1', '0:04', '2023-06-19'),
-(12, 10, 7, 'facile', '3', '0:04', '2023-06-19'),
-(13, 10, 7, 'facile', '2', '0:03', '2023-06-19'),
-(14, 10, 7, 'facile', '3', '0:03', '2023-06-19'),
-(15, 10, 7, 'facile', '3', '0:03', '2023-06-19'),
-(16, 10, 7, 'facile', '3', '0:03', '2023-06-19'),
-(17, 10, 7, 'facile', '2', '0:36', '2023-06-19'),
-(18, 10, 7, 'facile', '3', '0:03', '2023-06-19'),
-(19, 10, 7, 'facile', '3', '0:11', '2023-06-19'),
-(20, 10, 7, 'facile', '3', '0:04', '2023-06-19'),
-(21, 10, 7, 'facile', '3', '0:06', '2023-06-19'),
-(22, 10, 7, 'facile', '2', '0:23', '2023-06-19'),
-(23, 10, 7, 'facile', '3', '0:07', '2023-06-20'),
-(24, 10, 7, 'facile', '3', '0:07', '2023-06-20'),
-(25, 10, 7, 'facile', '3', '0:07', '2023-06-20'),
-(26, 10, 7, 'facile', '3', '0:07', '2023-06-20'),
-(27, 10, 7, 'facile', '3', '0:07', '2023-06-20'),
-(28, 10, 7, 'facile', '3', '0:03', '2023-06-20'),
-(29, 10, 7, 'facile', '3', '0:03', '2023-06-20'),
-(30, 10, 7, 'facile', '3', '0:10', '2023-06-21'),
-(31, 10, 7, 'facile', '3', '0:10', '2023-06-21'),
-(32, 18, 7, 'facile', '3', '0:03', '2023-06-21'),
-(33, 18, 7, 'facile', '3', '0:04', '2023-06-21'),
-(34, 18, 7, 'facile', '3', '0:04', '2023-06-21'),
-(35, 18, 7, 'facile', '3', '0:03', '2023-06-21'),
-(36, 18, 7, 'facile', '3', '0:03', '2023-06-21'),
-(37, 18, 7, 'facile', '0', '0:04', '2023-06-21'),
-(38, 18, 7, 'facile', '1', '0:03', '2023-06-21'),
-(39, 18, 7, 'facile', '1', '0:03', '2023-06-21'),
-(40, 18, 7, 'facile', '1', '0:03', '2023-06-21'),
-(41, 18, 7, 'facile', '1', '0:03', '2023-06-21'),
-(42, 18, 7, 'facile', '1', '0:03', '2023-06-21'),
-(43, 18, 7, 'facile', '1', '0:03', '2023-06-21'),
-(44, 18, 7, 'facile', '1', '0:03', '2023-06-21'),
-(45, 18, 7, 'facile', '1', '0:03', '2023-06-21'),
-(46, 18, 7, 'facile', '3', '0:03', '2023-06-21'),
-(47, 18, 7, 'facile', '1', '0:04', '2023-06-21'),
-(48, 18, 7, 'facile', '2', '0:04', '2023-06-21'),
-(49, 18, 7, 'facile', '2', '0:08', '2023-06-21'),
-(50, 18, 7, 'facile', '3', '0:03', '2023-06-21'),
-(51, 18, 7, 'facile', '3', '0:05', '2023-06-24'),
-(52, 18, 7, 'facile', '2', '0:07', '2023-06-24'),
-(53, 18, 7, 'facile', '2', '0:04', '2023-06-24'),
-(54, 18, 7, 'facile', '2', '0:05', '2023-06-25'),
-(55, 18, 7, 'facile', '3', '0:03', '2023-06-26');
+(59, 20, 8, 'facile', '4', '0:11', '2023-07-02');
 
 -- --------------------------------------------------------
 
@@ -134,7 +88,27 @@ INSERT INTO `questions` (`id_question`, `question`, `type`, `niveau`, `id_theme`
 (40, 'Dans quel pays a été créé le football moderne? ', 1, 'facile', 7),
 (41, 'Dans quelle ville se trouve le stade Maracanã? ', 1, 'facile', 7),
 (42, 'Qui a remporté la coupe du monde de football en 2010 ?', 1, 'facile', 7),
-(43, 'Quel joueur a remporté le Ballon d\'Or en 2020 ?', 1, 'facile', 7);
+(43, 'Quel joueur a remporté le Ballon d\'Or en 2020 ?', 1, 'facile', 7),
+(44, 'Le basketball se joue avec un ballon rond.', 0, 'facile', 8),
+(45, 'Les matchs de basketball se déroulent en quatre quarts-temps ?', 0, 'facile', 8),
+(46, 'Un panier réussi à l\'intérieur de l\'arc vaut 2 points ?', 0, 'facile', 8),
+(47, 'Le tir à trois points est plus proche du panier que le tir à deux points ?', 0, 'facile', 8),
+(48, 'Le dunk est une action où un joueur saute et met le ballon directement dans le panier ?', 0, 'facile', 8),
+(49, 'Le basketball est un sport collectif opposant deux équipes de cinq joueurs ?', 0, 'facile', 8),
+(50, 'Les joueurs peuvent dribbler le ballon en utilisant leurs pieds ?', 0, 'facile', 8),
+(51, 'Les fautes personnelles sont sanctionnées par des lancers francs pour l\'équipe adverse ?', 0, 'facile', 8),
+(52, 'Les joueurs peuvent marquer des points en lançant le ballon hors du terrain ?', 0, 'facile', 8),
+(53, 'Les joueurs doivent dribbler le ballon tout en se déplaçant ?', 0, 'facile', 8),
+(54, 'Le joueur ayant le plus de points à la fin du match est désigné MVP (Joueur le plus précieux) ?', 0, 'facile', 8),
+(55, 'Le basketball est un sport originaire des États-Unis ?', 0, 'facile', 8),
+(56, 'Les matchs de basketball durent généralement 60 minutes ?', 0, 'facile', 8),
+(57, 'Les matchs de basketball se jouent à l\'intérieur seulement ?', 0, 'facile', 8),
+(58, 'Les joueurs peuvent effectuer des passes à leurs coéquipiers ?', 0, 'facile', 8),
+(59, 'Les joueurs portent des maillots numérotés sur le terrain ?', 0, 'facile', 8),
+(60, 'Les joueurs peuvent bloquer les tirs de leurs adversaires ?', 0, 'facile', 8),
+(61, 'Un match de basketball se termine lorsque l\'une des équipes atteint 100 points ?', 0, 'facile', 8),
+(62, 'Les joueurs doivent dribbler le ballon toutes les cinq secondes ?', 0, 'facile', 8),
+(63, 'Les équipes de basketball peuvent effectuer des remplacements pendant le match ?', 0, 'facile', 8);
 
 -- --------------------------------------------------------
 
@@ -196,7 +170,56 @@ INSERT INTO `reponses` (`id_reponse`, `id_question`, `reponse`, `etat`) VALUES
 (43, 40, 'Royaume-Uni', 0),
 (44, 41, 'Rio de Janeiro', 0),
 (45, 42, 'L\'Espagne', 0),
-(46, 43, 'Robert Lewandowski', 0);
+(46, 43, 'Robert Lewandowski', 0),
+(47, 31, 'Junior', 1),
+(48, 32, 'Paris Football Club', 1),
+(49, 35, 'Ghana', 1),
+(50, 37, 'Karim Benzema', 1),
+(51, 39, 'Manuel Neur', 1),
+(52, 40, 'La Turquie', 1),
+(53, 41, 'Montreal', 1),
+(54, 42, 'L\'Equateur', 1),
+(55, 43, 'Franck Ribéry', 1),
+(56, 44, 'Vrai', 0),
+(57, 44, 'Faux', 1),
+(58, 45, 'Vrai', 0),
+(59, 45, 'Faux', 1),
+(60, 46, 'Vrai', 0),
+(61, 46, 'Faux', 1),
+(62, 47, 'Faux', 0),
+(63, 47, 'Vrai', 1),
+(64, 48, 'Vrai', 0),
+(65, 48, 'Faux', 1),
+(66, 49, 'Vrai', 0),
+(67, 49, 'Faux', 1),
+(68, 50, 'Faux', 0),
+(69, 50, 'Vrai', 1),
+(70, 51, 'Vrai', 0),
+(71, 51, 'Faux', 1),
+(72, 52, 'Faux', 0),
+(73, 52, 'Vrai', 1),
+(74, 53, 'Vrai', 0),
+(75, 53, 'Faux', 1),
+(76, 54, 'Faux', 0),
+(77, 54, 'Vrai', 1),
+(78, 55, 'Vrai', 0),
+(79, 55, 'Faux', 1),
+(80, 56, 'Faux', 0),
+(81, 56, 'Vrai', 1),
+(97, 57, 'Faux', 0),
+(98, 57, 'Vrai', 1),
+(99, 58, 'Vrai', 0),
+(100, 58, 'Faux', 1),
+(101, 59, 'Vrai', 0),
+(102, 59, 'Faux', 1),
+(103, 60, 'Vrai', 0),
+(104, 60, 'Faux', 1),
+(105, 61, 'Faux', 0),
+(106, 61, 'Vrai', 1),
+(107, 62, 'Faux', 0),
+(108, 62, 'Vrai', 1),
+(109, 63, 'Vrai', 0),
+(110, 63, 'Faux', 1);
 
 -- --------------------------------------------------------
 
@@ -217,7 +240,7 @@ CREATE TABLE `theme` (
 
 INSERT INTO `theme` (`id_theme`, `id_score`, `nom_theme`, `image_theme`) VALUES
 (7, NULL, 'Football', 'football.jpg'),
-(8, NULL, 'Développeur Web', 'DeveloppeurWeb.jpg');
+(8, NULL, 'Basketball', 'basketball.jpg');
 
 -- --------------------------------------------------------
 
@@ -237,25 +260,11 @@ CREATE TABLE `utilisateur` (
 --
 
 INSERT INTO `utilisateur` (`id_utilisateur`, `login`, `mdp`, `roles`) VALUES
-(1, 'fethi', 'ladmin', 'admin'),
-(2, 'hicham', 'ladmin', 'admin'),
-(3, 'test1', 'Test123456', 'user'),
-(4, 'dezze', 'Dejfizj1', 'user'),
-(5, 'test10', 'Test10test', 'user'),
-(6, 'fethi', 'hijjpM156', 'user'),
-(7, 'fethi', '$2y$10$/w/onjAIvOp0QVzPfQIL1OmO7tJp4KKgWNshTuQ2eiIEcabU4wLkKc', 'user'),
-(8, 'fethi123', '$2y$10$3Mb2k5zHHBZDpQnq2b58xONgitwV./lPT8co0WwecgvIfjdlx9KN.', 'user'),
-(9, 'fethi123', '$2y$10$HCRrdFRDvFF2XpKQsyDiQO/xSIXlbk0dDLnnPkEH3zoAYycCefSA.', 'user'),
-(10, 'Testdu30Mai', '$2y$10$a3BhT97mhUoZhG5lJxG/F.pf0QjUyu4FRhIqqut3nim1HpVUm4NVW', 'user'),
-(11, 'Testdu30Mai1', '$2y$10$GNoeJ2HBd1KMejU9kN9YNu7IJ764RCq1rE1lmih0SJUuRPSkwsrBC', 'user'),
-(12, 'Testdu30Mai', '$2y$10$B5QUvQCuFW1yxyCpojyYvupwd1bVQYYZRHtmdxd18W2uygtLxwPhu', 'user'),
-(13, 'Testdu30Mai', '$2y$10$P0bL9axNEwImQPAwQmxfj.FCjsW3Ch97krkkP2ao2QTjTZW889GIy', 'user'),
-(14, 'Testdu30Mai125532', '$2y$10$7MTp4mMDeXh0j5U/nQ0.4ewXLVR71c5n6vPder40zq1EXduR0BLOi', 'user'),
-(15, 'HICHAMCAMARCHE', '$2y$10$iiCv8B4R1IkBq22xpndMwe4z7hOwRPvx3TDsL0Rqkt2osqXI5oyOq', 'user'),
-(16, 'Testdu30Mai', '$2y$10$sg7KM5bgc.eUlHyhRCx3h.FNws0v0kFLfkc75SuWQ4EvSOkUUMip6', 'user'),
-(17, 'Testdu30Mai', '$2y$10$oV3vAdktCxcc8k7jI0STDOQ8ViMEScFoWYGgk/jZeQ.8OYscvWkVO', 'user'),
-(18, 'fehti_plein_de_meuf', '$2y$10$VI8LqUz1H9niqN/wgc9xj./y1TF9nRtZyYSKe9cTZFGWhfuvw4L/C', 'user'),
-(19, 'Briac_du_13', '$2y$10$O3LkjtDebbDvRbxHqp7THORzMGRod0Ca2AvnuRaX5JPm4V/bXT0x.', 'user');
+(20, 'utilisateur1', '$2y$10$exXxHCQMMo1cyY6MnHj1GuC99Pger6P/7z.sS7GgU0f6KVAGQhExu', 'user'),
+(21, 'utilisateur2', '$2y$10$m9RXVsl3W1QpPIA44AcVHOoME2cmwLvDR.p/UF6YFNMj/0zzHkm2C', 'user'),
+(22, 'utilisateur3', '$2y$10$//Vv0aHL0WEVtTt7/B2R4uv8aVMnJSs9Z7Zjfzk4BD7bZgP.q08zi', 'user'),
+(23, 'utilisateur4', '$2y$10$/eXDFVcUEKPa3ti5v0/HGuCnDerSCejTksyMIcncPqfd4XsBmikLu', 'user'),
+(24, 'utilisateur5', '$2y$10$HrvfAXrr.yqxGzrmnTfONu.T.eY20eKLjInCeKFKniO4bcMekpVne', 'user');
 
 --
 -- Index pour les tables déchargées
@@ -311,19 +320,19 @@ ALTER TABLE `utilisateur`
 -- AUTO_INCREMENT pour la table `choix`
 --
 ALTER TABLE `choix`
-  MODIFY `id_choix` int(10) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=56;
+  MODIFY `id_choix` int(10) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=60;
 
 --
 -- AUTO_INCREMENT pour la table `questions`
 --
 ALTER TABLE `questions`
-  MODIFY `id_question` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=44;
+  MODIFY `id_question` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=64;
 
 --
 -- AUTO_INCREMENT pour la table `reponses`
 --
 ALTER TABLE `reponses`
-  MODIFY `id_reponse` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=47;
+  MODIFY `id_reponse` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=111;
 
 --
 -- AUTO_INCREMENT pour la table `theme`
@@ -335,7 +344,7 @@ ALTER TABLE `theme`
 -- AUTO_INCREMENT pour la table `utilisateur`
 --
 ALTER TABLE `utilisateur`
-  MODIFY `id_utilisateur` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=20;
+  MODIFY `id_utilisateur` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=25;
 
 --
 -- Contraintes pour les tables déchargées
@@ -359,12 +368,6 @@ ALTER TABLE `questions`
 --
 ALTER TABLE `reponses`
   ADD CONSTRAINT `reponses_ibfk_1` FOREIGN KEY (`id_question`) REFERENCES `questions` (`id_question`) ON DELETE CASCADE ON UPDATE CASCADE;
-
---
--- Contraintes pour la table `theme`
---
-ALTER TABLE `theme`
-  ADD CONSTRAINT `theme_ibfk_1` FOREIGN KEY (`id_score`) REFERENCES `score` (`id_score`);
 COMMIT;
 
 /*!40101 SET CHARACTER_SET_CLIENT=@OLD_CHARACTER_SET_CLIENT */;
