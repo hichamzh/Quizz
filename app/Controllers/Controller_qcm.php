@@ -40,9 +40,9 @@ class Controller_qcm extends Controller
         $_SESSION['list_questions'] = $questions; //la liste des id_questions choisis grace a la function get_question() stocker dans la session['list_questions]
 
         $id_question = $questions[0]->id_question; //variable qui contient une id_question
-        $question = $m->get_question($id_question); // varibale qui contient une ligne entiere de la table questions
+        $question = $m->get_question_une($id_question); // varibale qui contient une ligne entiere de la table questions
         $reponses = $m->get_reponse($id_question); //variable qui contient les reponses en en fonction de l'id question 
-        
+
         // var_dump($questions);
         // var_dump($question);
         // die;
