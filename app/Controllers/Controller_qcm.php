@@ -147,8 +147,8 @@ class Controller_qcm extends Controller
             ];
             $queryString = http_build_query($data);
             // $this->render('end_qcm', $data);
-            header("Location: ?controller=qcm&action=test&data=" . urlencode($queryString));
-            header("Location: ?controller=qcm&action=test&data=" . urlencode($queryString));
+            header("Location: ?controller=qcm&action=end&data=" . urlencode($queryString));
+            header("Location: ?controller=qcm&action=end&data=" . urlencode($queryString));
             exit;
             // $this->render('home', $_SESSION['score']);
         }
@@ -174,7 +174,7 @@ class Controller_qcm extends Controller
         $this->render ('correction', ['questionsData' => $questionsData]);
     }
 
-    public function action_test() {
+    public function action_end() {
         $data = $_GET['data'];
         parse_str(urldecode($data), $parsedData);
 
