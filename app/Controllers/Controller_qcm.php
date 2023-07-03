@@ -156,7 +156,6 @@ class Controller_qcm extends Controller
 
     public function action_correction()
     {
-        $m = Model::get_model();
         $questionsData = array();
 
         foreach ($_SESSION['questions'] as $key => $questionData) {
