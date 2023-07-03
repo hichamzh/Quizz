@@ -94,7 +94,7 @@ class Model
     public function get_question($id_theme, $niveau)
     {
 
-        $requete = $this->bdd->prepare("SELECT q.id_question FROM questions q  WHERE id_theme = :id AND q.niveau = :niveau ORDER BY RAND() LIMIT 10");
+        $requete = $this->bdd->prepare("SELECT id_question FROM questions   WHERE id_theme = :id AND niveau = :niveau ORDER BY RAND() LIMIT 10");
         $requete->bindValue(":id", $id_theme);
         $requete->bindValue(":niveau", $niveau);
         $requete->execute();
@@ -102,11 +102,12 @@ class Model
 
         return $result;
     }
+
     //SELECT tous dans la table questions en rapport avec l'id question qui est afficher lors du qcm
     public function get_question_une($id_question)
     {
 
-        $requete = $this->bdd->prepare("SELECT * FROM questions q  WHERE id_question = :id ");
+        $requete = $this->bdd->prepare("SELECT * FROM questions  WHERE id_question = :id ");
         $requete->bindValue(":id", $id_question);
         $requete->execute();
         $result = $requete->fetch(PDO::FETCH_OBJ);
