@@ -112,7 +112,6 @@ li.ligne:hover::before {
   width: 250px;
   height: 227px;
 }
-
 .container_butt_deco {
   display: flex;
   justify-content: center;
@@ -130,16 +129,15 @@ li.ligne:hover::before {
   padding: 5px 8px;
   cursor: pointer;
 }
-
 .container_butt_deco button:nth-child(1) {
   background: greenyellow;
   color: black;
 }
-
 .container_butt_deco button:nth-child(2) {
   background: red;
   color: black;
 }
+
 /*RESPONSIVE NAV BAR */
 
 .icon_burger {
