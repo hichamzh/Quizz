@@ -20,16 +20,26 @@ class Controller_inscription extends Controller
                 $login = $_POST['login'];
                 $mdp = $_POST['mdp'];
                 $role = "user";
+                $regex = '/^(?=.*[A-Z])(?=.*\d)/';
                 $m = Model::get_model();
-                $existing_user = $m->get_check_login($login);
+                $salt = random_bytes(32);
+                $mdp_salt = $salt . $mdp;
 
-                if ($existing_user) {
-                    $data = ['erreur' => "L'identifiant existe déjà, veuillez en choisir un autre"];
-                    $this->render('inscription', $data);
+                if (preg_match($regex, $mdp_salt) && strlen($mdp_salt) > 8) {
+                    $existing_user = $m->get_check_login($login);
+
+                    if ($existing_user) {
+                        $data = ['erreur' => "L'identifiant existe déjà, veuillez en choisir un autre"];
+                        $this->render('inscription', $data);
+                    } else {
+                        $m->get_inscription($login, $mdp, $role);
+                        $this->render("connexion"); // envoie vers la page de connexion
+                    }
                 } else {
-                    $m->get_inscription($login, $mdp, $role);
-                    $this->render("connexion"); // envoie vers la page de connexion
+                    $data =['erreur' => "Le mot de passe doit contenir au moins une lettre en majuscule, un chiffre et minimum 8 caractères."];
+                    $this->render("inscription", $data);
                 }
+
             } else {
                 $data = [
                     "erreur" => "Veuillez remplir tous les champs"

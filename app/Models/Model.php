@@ -5,7 +5,7 @@ class Model
     private $bdd; // Propriété pour stocker l'objet de connexion
     private static $instance = null; //stocker une unique instance de la classe Model
 
-    public function __construct()
+    private function __construct()
     {
         // 
         $dsn = "mysql:host=localhost;dbname=qcm"; // Adresse du serveur de la base de données avec le nom de la bdd

@@ -10,12 +10,12 @@
             e.preventDefault();
           }
           
-          if (inputlogin.length < 5) {
+          else if (inputlogin.length < 5) {
             alert("L'identifiant n'est pas assez long (minimum 5 caractères).");
             e.preventDefault();
           }
           
-          if (regex.test(inputMdp) && inputlogin.length >= 5 && inputMdp.length >= 8) {
+          else if (regex.test(inputMdp) && inputlogin.length >= 5 && inputMdp.length >= 8) {
             alert('Inscription réussi veuillez vous connectez !')
           }
 
