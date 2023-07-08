@@ -48,6 +48,7 @@ body {
   background: #222021;
   box-shadow: inset -2px 2px 4px #1c1a1b, inset 2px -2px 4px #282627;
   box-shadow: 0 0 10px greenyellow;
+  margin-top: 50px;
 }
 .qst_actuel {
   color: #f2f2f2;

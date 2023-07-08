@@ -25,14 +25,14 @@ class Controller_inscription extends Controller
                 $salt = random_bytes(32);
                 $mdp_salt = $salt . $mdp;
 
-                if (preg_match($regex, $mdp_salt) && strlen($mdp_salt) > 8) {
+                if (preg_match($regex, $mdp) && strlen($mdp) > 8) {
                     $existing_user = $m->get_check_login($login);
 
                     if ($existing_user) {
                         $data = ['erreur' => "L'identifiant existe déjà, veuillez en choisir un autre"];
                         $this->render('inscription', $data);
                     } else {
-                        $m->get_inscription($login, $mdp, $role);
+                        $m->get_inscription($login, $mdp_salt, $role);
                         $this->render("connexion"); // envoie vers la page de connexion
                     }
                 } else {

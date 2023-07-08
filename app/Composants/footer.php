@@ -7,7 +7,6 @@
   <title>Document</title>
 </head>
 
-
     <div class="container">
       <div class="footer-info">
         <p>© 2023 HF Quizz. Tous droits réservés.</p>
