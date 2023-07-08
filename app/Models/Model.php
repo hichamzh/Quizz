@@ -153,8 +153,9 @@ class Model
 
     public function get_classement()
     {
-        $requete = $this->bdd->prepare('SELECT u.login, t.nom_theme, c.niveau, c.score, c.time, c.date_user FROM choix c INNER JOIN theme t  on t.id_theme = c.id_theme INNER JOIN utilisateur u ON u.id_utilisateur = c.id_utilisateur ORDER BY
-        c.score DESC, c.time ASC');
+        $requete = $this->bdd->prepare('SELECT u.login, t.nom_theme, c.niveau, c.score, c.time, c.date_user FROM choix c 
+            INNER JOIN theme t  on t.id_theme = c.id_theme INNER JOIN utilisateur u ON u.id_utilisateur = c.id_utilisateur ORDER BY
+            c.score DESC, c.time ASC');
         $requete->execute();
         $result = $requete->fetchAll(PDO::FETCH_OBJ);
         return $result;

@@ -15,7 +15,7 @@ class Controller_inscription extends Controller
     // POUR FAIRE L'INSERTION A LA BDD, S'INSCRIRE
     public function action_inscription_insert()
     {
-        if ($_SERVER['REQUEST_METHOD'] === 'POST') {
+        if ($_SERVER['REQUEST_METHOD'] === 'POST') { // si la requete HTTP est en POST
             if (!empty($_POST['login']) && !empty($_POST['mdp'])) {
                 $login = $_POST['login'];
                 $mdp = $_POST['mdp'];
