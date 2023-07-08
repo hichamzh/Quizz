@@ -39,7 +39,7 @@
                 <input type="text" id="login" autocomplete="off" placeholder="Identifiant..." name="login" required>
             </div>
             <div class="container-input">
-                <input type="password" autocomplete="off" id="mdp" placeholder="Mot de passe..." name="mdp">
+                <input type="password" autocomplete="off" id="mdp" placeholder="Mot de passe..." name="mdp" required>
                 <i class="fas fa-eye" onclick="toggleVisibleMdp()" id="icon"></i>
             </div>
             <button type="submit" class="butt">Go Quizz</button> <!--class butt heriter par la navbar -->

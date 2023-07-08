@@ -8,6 +8,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css"
         integrity="sha512-..." crossorigin="anonymous" />
+        <script src="./public/Js/button_mdp.js" defer></script>
     <title>Inscription</title>
 </head>
 
@@ -62,7 +63,7 @@
         </form>
     </section>
 
-    <script src="./public/Js/button_mdp.js" defer></script>
+    
 </body>
 
 </html>
